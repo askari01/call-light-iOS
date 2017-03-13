@@ -16,5 +16,7 @@ pod 'GoogleSignIn'
 pod 'Fabric'
 pod 'TwitterKit'
 pod 'Alamofire', '~> 4.4'
+pod 'SwiftyJSON'
+pod 'SwiftyUserDefaults'
 
 end
