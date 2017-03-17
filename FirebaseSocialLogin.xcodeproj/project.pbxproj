@@ -10,6 +10,12 @@
 		3603270E1E7288BA00C1D412 /* SIgnUpEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3603270D1E7288BA00C1D412 /* SIgnUpEmail.swift */; };
 		360327101E72A61900C1D412 /* loginEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3603270F1E72A61900C1D412 /* loginEmail.swift */; };
 		361E36131E6D4F82004EC88E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 361E36121E6D4F82004EC88E /* GoogleService-Info.plist */; };
+		3634A0531E766BE2002816B2 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3634A0521E766BE2002816B2 /* ForgotPassword.swift */; };
+		3634A0551E766EBD002816B2 /* VerifyCodePasswordChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3634A0541E766EBD002816B2 /* VerifyCodePasswordChange.swift */; };
+		3634A0571E76798C002816B2 /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3634A0561E76798C002816B2 /* ChangePassword.swift */; };
+		36F0DBE21E7A696100B17C9F /* SignUpLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F0DBE11E7A696100B17C9F /* SignUpLocation.swift */; };
+		36F0DBE41E7A698900B17C9F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36F0DBE31E7A698900B17C9F /* MapKit.framework */; };
+		36F0DBE81E7A85E400B17C9F /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F0DBE71E7A85E400B17C9F /* LocationSearchTable.swift */; };
 		3BB11F5A22C3F1D8EF7DEB6A /* Pods_FirebaseSocialLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07674C9BE8EC46635E4CCD4B /* Pods_FirebaseSocialLogin.framework */; };
 		C7BE77FA1DBB3A70005E6090 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BE77F91DBB3A70005E6090 /* AppDelegate.swift */; };
 		C7BE77FC1DBB3A70005E6090 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BE77FB1DBB3A70005E6090 /* ViewController.swift */; };
@@ -23,6 +29,12 @@
 		3603270D1E7288BA00C1D412 /* SIgnUpEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIgnUpEmail.swift; sourceTree = "<group>"; };
 		3603270F1E72A61900C1D412 /* loginEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginEmail.swift; sourceTree = "<group>"; };
 		361E36121E6D4F82004EC88E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3634A0521E766BE2002816B2 /* ForgotPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		3634A0541E766EBD002816B2 /* VerifyCodePasswordChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyCodePasswordChange.swift; sourceTree = "<group>"; };
+		3634A0561E76798C002816B2 /* ChangePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
+		36F0DBE11E7A696100B17C9F /* SignUpLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpLocation.swift; sourceTree = "<group>"; };
+		36F0DBE31E7A698900B17C9F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		36F0DBE71E7A85E400B17C9F /* LocationSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 		7BC9603782C0E741DF30530E /* Pods-FirebaseSocialLogin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseSocialLogin.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseSocialLogin/Pods-FirebaseSocialLogin.release.xcconfig"; sourceTree = "<group>"; };
 		C7BE77F61DBB3A70005E6090 /* FirebaseSocialLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseSocialLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7BE77F91DBB3A70005E6090 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36F0DBE41E7A698900B17C9F /* MapKit.framework in Frameworks */,
 				3BB11F5A22C3F1D8EF7DEB6A /* Pods_FirebaseSocialLogin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,6 +72,7 @@
 		88F60E6899A7AB776DDE917C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				36F0DBE31E7A698900B17C9F /* MapKit.framework */,
 				07674C9BE8EC46635E4CCD4B /* Pods_FirebaseSocialLogin.framework */,
 			);
 			name = Frameworks;
@@ -95,6 +109,11 @@
 				361E36121E6D4F82004EC88E /* GoogleService-Info.plist */,
 				3603270D1E7288BA00C1D412 /* SIgnUpEmail.swift */,
 				3603270F1E72A61900C1D412 /* loginEmail.swift */,
+				3634A0521E766BE2002816B2 /* ForgotPassword.swift */,
+				3634A0541E766EBD002816B2 /* VerifyCodePasswordChange.swift */,
+				3634A0561E76798C002816B2 /* ChangePassword.swift */,
+				36F0DBE11E7A696100B17C9F /* SignUpLocation.swift */,
+				36F0DBE71E7A85E400B17C9F /* LocationSearchTable.swift */,
 			);
 			path = FirebaseSocialLogin;
 			sourceTree = "<group>";
@@ -245,8 +264,13 @@
 			files = (
 				360327101E72A61900C1D412 /* loginEmail.swift in Sources */,
 				3603270E1E7288BA00C1D412 /* SIgnUpEmail.swift in Sources */,
+				3634A0551E766EBD002816B2 /* VerifyCodePasswordChange.swift in Sources */,
+				36F0DBE81E7A85E400B17C9F /* LocationSearchTable.swift in Sources */,
 				C7BE77FC1DBB3A70005E6090 /* ViewController.swift in Sources */,
 				C7BE77FA1DBB3A70005E6090 /* AppDelegate.swift in Sources */,
+				3634A0531E766BE2002816B2 /* ForgotPassword.swift in Sources */,
+				36F0DBE21E7A696100B17C9F /* SignUpLocation.swift in Sources */,
+				3634A0571E76798C002816B2 /* ChangePassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
