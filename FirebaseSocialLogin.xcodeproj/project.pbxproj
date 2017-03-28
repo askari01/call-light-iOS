@@ -13,6 +13,7 @@
 		3634A0531E766BE2002816B2 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3634A0521E766BE2002816B2 /* ForgotPassword.swift */; };
 		3634A0551E766EBD002816B2 /* VerifyCodePasswordChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3634A0541E766EBD002816B2 /* VerifyCodePasswordChange.swift */; };
 		3634A0571E76798C002816B2 /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3634A0561E76798C002816B2 /* ChangePassword.swift */; };
+		36C0A08E1E826C460082B058 /* AddDocumentsHospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0A08D1E826C460082B058 /* AddDocumentsHospital.swift */; };
 		36F0DBE21E7A696100B17C9F /* SignUpLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F0DBE11E7A696100B17C9F /* SignUpLocation.swift */; };
 		36F0DBE41E7A698900B17C9F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36F0DBE31E7A698900B17C9F /* MapKit.framework */; };
 		36F0DBE81E7A85E400B17C9F /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F0DBE71E7A85E400B17C9F /* LocationSearchTable.swift */; };
@@ -32,6 +33,8 @@
 		3634A0521E766BE2002816B2 /* ForgotPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		3634A0541E766EBD002816B2 /* VerifyCodePasswordChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyCodePasswordChange.swift; sourceTree = "<group>"; };
 		3634A0561E76798C002816B2 /* ChangePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
+		36C0A08D1E826C460082B058 /* AddDocumentsHospital.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDocumentsHospital.swift; sourceTree = "<group>"; };
+		36EF108C1E8A43B1008A4B65 /* FirebaseSocialLogin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FirebaseSocialLogin.entitlements; sourceTree = "<group>"; };
 		36F0DBE11E7A696100B17C9F /* SignUpLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpLocation.swift; sourceTree = "<group>"; };
 		36F0DBE31E7A698900B17C9F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		36F0DBE71E7A85E400B17C9F /* LocationSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
@@ -43,7 +46,6 @@
 		C7BE78001DBB3A70005E6090 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7BE78031DBB3A70005E6090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7BE78051DBB3A70005E6090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C7BE780B1DBB3DF4005E6090 /* FirebaseSocialLogin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FirebaseSocialLogin.entitlements; sourceTree = "<group>"; };
 		F24A93C91C2D6D7AAE0CCF2B /* Pods-FirebaseSocialLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseSocialLogin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseSocialLogin/Pods-FirebaseSocialLogin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,7 +101,7 @@
 		C7BE77F81DBB3A70005E6090 /* FirebaseSocialLogin */ = {
 			isa = PBXGroup;
 			children = (
-				C7BE780B1DBB3DF4005E6090 /* FirebaseSocialLogin.entitlements */,
+				36EF108C1E8A43B1008A4B65 /* FirebaseSocialLogin.entitlements */,
 				C7BE77F91DBB3A70005E6090 /* AppDelegate.swift */,
 				C7BE77FB1DBB3A70005E6090 /* ViewController.swift */,
 				C7BE77FD1DBB3A70005E6090 /* Main.storyboard */,
@@ -114,6 +116,7 @@
 				3634A0561E76798C002816B2 /* ChangePassword.swift */,
 				36F0DBE11E7A696100B17C9F /* SignUpLocation.swift */,
 				36F0DBE71E7A85E400B17C9F /* LocationSearchTable.swift */,
+				36C0A08D1E826C460082B058 /* AddDocumentsHospital.swift */,
 			);
 			path = FirebaseSocialLogin;
 			sourceTree = "<group>";
@@ -154,10 +157,16 @@
 				TargetAttributes = {
 					C7BE77F51DBB3A70005E6090 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = BP8S7US7U6;
+						DevelopmentTeam = 79Q3Z37GR8;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -264,6 +273,7 @@
 			files = (
 				360327101E72A61900C1D412 /* loginEmail.swift in Sources */,
 				3603270E1E7288BA00C1D412 /* SIgnUpEmail.swift in Sources */,
+				36C0A08E1E826C460082B058 /* AddDocumentsHospital.swift in Sources */,
 				3634A0551E766EBD002816B2 /* VerifyCodePasswordChange.swift in Sources */,
 				36F0DBE81E7A85E400B17C9F /* LocationSearchTable.swift in Sources */,
 				C7BE77FC1DBB3A70005E6090 /* ViewController.swift in Sources */,
@@ -398,10 +408,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FirebaseSocialLogin/FirebaseSocialLogin.entitlements;
-				DEVELOPMENT_TEAM = BP8S7US7U6;
+				DEVELOPMENT_TEAM = 79Q3Z37GR8;
 				INFOPLIST_FILE = FirebaseSocialLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.askari.fmdm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.techease.calllight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -414,10 +424,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FirebaseSocialLogin/FirebaseSocialLogin.entitlements;
-				DEVELOPMENT_TEAM = BP8S7US7U6;
+				DEVELOPMENT_TEAM = 79Q3Z37GR8;
 				INFOPLIST_FILE = FirebaseSocialLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.askari.fmdm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.techease.calllight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
