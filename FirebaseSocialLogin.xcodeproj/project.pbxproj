@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3603270E1E7288BA00C1D412 /* SIgnUpEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3603270D1E7288BA00C1D412 /* SIgnUpEmail.swift */; };
 		360327101E72A61900C1D412 /* loginEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3603270F1E72A61900C1D412 /* loginEmail.swift */; };
+		360546FB1E8B81D70079AE29 /* NurseProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360546FA1E8B81D70079AE29 /* NurseProfile.swift */; };
+		360546FD1E8B847B0079AE29 /* NurseAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360546FC1E8B847B0079AE29 /* NurseAvailability.swift */; };
 		361E36131E6D4F82004EC88E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 361E36121E6D4F82004EC88E /* GoogleService-Info.plist */; };
 		3634A0531E766BE2002816B2 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3634A0521E766BE2002816B2 /* ForgotPassword.swift */; };
 		3634A0551E766EBD002816B2 /* VerifyCodePasswordChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3634A0541E766EBD002816B2 /* VerifyCodePasswordChange.swift */; };
@@ -29,6 +31,8 @@
 		07674C9BE8EC46635E4CCD4B /* Pods_FirebaseSocialLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseSocialLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3603270D1E7288BA00C1D412 /* SIgnUpEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIgnUpEmail.swift; sourceTree = "<group>"; };
 		3603270F1E72A61900C1D412 /* loginEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginEmail.swift; sourceTree = "<group>"; };
+		360546FA1E8B81D70079AE29 /* NurseProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NurseProfile.swift; sourceTree = "<group>"; };
+		360546FC1E8B847B0079AE29 /* NurseAvailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NurseAvailability.swift; sourceTree = "<group>"; };
 		361E36121E6D4F82004EC88E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3634A0521E766BE2002816B2 /* ForgotPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		3634A0541E766EBD002816B2 /* VerifyCodePasswordChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyCodePasswordChange.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 				36F0DBE11E7A696100B17C9F /* SignUpLocation.swift */,
 				36F0DBE71E7A85E400B17C9F /* LocationSearchTable.swift */,
 				36C0A08D1E826C460082B058 /* AddDocumentsHospital.swift */,
+				360546FA1E8B81D70079AE29 /* NurseProfile.swift */,
+				360546FC1E8B847B0079AE29 /* NurseAvailability.swift */,
 			);
 			path = FirebaseSocialLogin;
 			sourceTree = "<group>";
@@ -277,6 +283,8 @@
 				3634A0551E766EBD002816B2 /* VerifyCodePasswordChange.swift in Sources */,
 				36F0DBE81E7A85E400B17C9F /* LocationSearchTable.swift in Sources */,
 				C7BE77FC1DBB3A70005E6090 /* ViewController.swift in Sources */,
+				360546FD1E8B847B0079AE29 /* NurseAvailability.swift in Sources */,
+				360546FB1E8B81D70079AE29 /* NurseProfile.swift in Sources */,
 				C7BE77FA1DBB3A70005E6090 /* AppDelegate.swift in Sources */,
 				3634A0531E766BE2002816B2 /* ForgotPassword.swift in Sources */,
 				36F0DBE21E7A696100B17C9F /* SignUpLocation.swift in Sources */,
