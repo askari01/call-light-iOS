@@ -19,5 +19,6 @@ pod 'Alamofire', '~> 4.4'
 pod 'SwiftyJSON'
 pod 'SwiftyUserDefaults'
 pod 'KVLoading', '~> 1.1'
+pod 'IQKeyboardManagerSwift'
 
 end
