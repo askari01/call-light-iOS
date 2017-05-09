@@ -20,5 +20,6 @@ pod 'SwiftyJSON'
 pod 'SwiftyUserDefaults'
 pod 'KVLoading', '~> 1.1'
 pod 'IQKeyboardManagerSwift'
+pod 'SwiftyNotifications', '~>0.2'
 
 end

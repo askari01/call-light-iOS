@@ -64,6 +64,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftyNotifications.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyUserDefaults.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -73,11 +78,6 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>40EEC3E6DBCA21921803D7717FBFD1A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,12 +97,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<key>8140FFC9134046601CB29631E61C97FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A0A7D677B2F2C08E788125CCE4BF94AC</key>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,12 +117,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>BEE297DEE120E8AC0B2B55C1DF55D1D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C9D49E8ACEA8497269F8880B990BA347</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D7D8D249D86803A9F166E95F9D95C82D</key>
+		<key>D67083ECBFA6BC149873F883F8A52FB6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -133,6 +138,11 @@
 			<true/>
 		</dict>
 		<key>ED2850476F3FDDCCA74BF4A58AD09049</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FDA025ADDEB090568DF4C24B43AA2567</key>
 		<dict>
 			<key>primary</key>
 			<true/>

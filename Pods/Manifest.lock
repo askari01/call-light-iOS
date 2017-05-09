@@ -55,6 +55,7 @@ PODS:
   - IQKeyboardManagerSwift (4.0.8)
   - KVLoading (1.1)
   - SwiftyJSON (3.1.4)
+  - SwiftyNotifications (0.2)
   - SwiftyUserDefaults (3.0.0)
   - TwitterCore (2.8.0):
     - Fabric
@@ -73,6 +74,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - KVLoading (~> 1.1)
   - SwiftyJSON
+  - SwiftyNotifications (~> 0.2)
   - SwiftyUserDefaults
   - TwitterKit
 
@@ -95,10 +97,11 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
   KVLoading: c5113f8e064f5db17b477906d9541a606e1765f1
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  SwiftyNotifications: cc9405eccc57d4139fd1aac075ed77c8f43c8c17
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
   TwitterCore: e959987be23c767004d29eb7fab8d85d8585a2e5
   TwitterKit: 3b6044a7320340326a4098f3e37aa1dbaeb94942
 
-PODFILE CHECKSUM: 116dcb3a132d20fd68e461eb032d70db5b2b5b76
+PODFILE CHECKSUM: 2416a8f86f26040f7b4def923e2051486e5abfb9
 
 COCOAPODS: 1.1.1
