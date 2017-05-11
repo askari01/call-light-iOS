@@ -57,7 +57,7 @@ class Nurses: UITableViewController {
     }
     
     func getAllNurse() {
-        print ("Token: ",UserDefaults.standard.string(forKey: "apiToken")!)
+//        print ("Token: ",UserDefaults.standard.string(forKey: "apiToken")!)
         let url = "http://thenerdcamp.com/calllight/public/api/v1/nurse/all?api_token=" + UserDefaults.standard.string(forKey: "apiToken")!
         let completeUrl = URL(string:url)!
         
@@ -66,16 +66,16 @@ class Nurses: UITableViewController {
         ]
         
         Alamofire.request(completeUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
-            print(response.request as Any)  // original URL request
-            print(response.response as Any) // URL response
-            print(response.result.value as Any)   // result of response serialization
+//            print(response.request as Any)  // original URL request
+//            print(response.response as Any) // URL response
+//            print(response.result.value as Any)   // result of response serialization
             switch response.result {
             case .success:
                 if let value = response.result.value {
                     self.json = JSON(value)
-                    print(self.json)
+//                    print(self.json)
                     self.row = self.json["data"].count
-                    print(self.row)
+//                    print(self.row)
                     //print(self.json[0]["facilityPictures"])
                     self.nurseTable.reloadData()
                 }
@@ -104,7 +104,7 @@ class Nurses: UITableViewController {
         if segue.identifier == "NurseProfileSegue" {
             if let nurseProfileView = segue.destination as? NurseProfile {
                 let path = self.tableView.indexPathForSelectedRow
-                print (Int((path?.row)!))
+//                print (Int((path?.row)!))
                 var str = String(describing:self.json["data"][(path?.row)!]["id"])
                 var ID: Int = Int(str)!
                 var iddAlternative = self.json["data"][(path?.row)!]["id"].int
@@ -128,7 +128,7 @@ class Nurses: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NurseCell", for: indexPath)
-        print(self.json["data"][indexPath.row]["id"])
+//        print(self.json["data"][indexPath.row]["id"])
         cell.textLabel?.text = String(describing: self.json["data"][indexPath.row]["name"])
         // Configure the cell...
 

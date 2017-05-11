@@ -81,16 +81,16 @@ class AddDocumentsHospital: UITableViewController, UIGestureRecognizerDelegate, 
         ]
         if json != nil {
             Alamofire.request(completeUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
-                print(response.request as Any)  // original URL request
-                print(response.response as Any) // URL response
-                print(response.result.value as Any)   // result of response serialization
+//                print(response.request as Any)  // original URL request
+//                print(response.response as Any) // URL response
+//                print(response.result.value as Any)   // result of response serialization
                 switch response.result {
                 case .success:
                     if let value = response.result.value {
                         self.json = JSON(value)
-                        print(self.json)
+//                        print(self.json)
                         self.row = self.json["data"].count
-                        print(self.row)
+//                        print(self.row)
                         //print(self.json[0]["facilityPictures"])
                         KVLoading.hide()
                         self.documentsTableView.reloadData()
@@ -115,7 +115,7 @@ class AddDocumentsHospital: UITableViewController, UIGestureRecognizerDelegate, 
         let cell = tableView.dequeueReusableCell(withIdentifier: "DocumentsCell", for: indexPath)
         
         // Configure the cell...
-        print(self.json["data"][indexPath.row]["id"])
+//        print(self.json["data"][indexPath.row]["id"])
         cell.textLabel?.text = String(describing: self.json["data"][indexPath.row]["name"])
 
         return cell
@@ -132,8 +132,8 @@ class AddDocumentsHospital: UITableViewController, UIGestureRecognizerDelegate, 
         if editingStyle == UITableViewCellEditingStyle.delete {
 //            todos.remove(at: indexPath.row)
 //            self.json.dictionaryObject?.removeValue(forKey: indexPath.row)
-           self.json["data"].arrayObject?.remove(at: indexPath.row)
-            print(self.json)
+            self.json["data"].arrayObject?.remove(at: indexPath.row)
+//            print(self.json)
             self.documentsTableView.reloadData()
 //            documentsTableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         }
@@ -205,7 +205,7 @@ class AddDocumentsHospital: UITableViewController, UIGestureRecognizerDelegate, 
     }
     
     func pickImage() {
-        print("hello pick Image")
+//        print("hello pick Image")
         picker.allowsEditing = true
         picker.sourceType = .photoLibrary
         picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
@@ -213,7 +213,7 @@ class AddDocumentsHospital: UITableViewController, UIGestureRecognizerDelegate, 
     }
     
     func takeImage() {
-        print("hello take Image")
+//        print("hello take Image")
         picker.allowsEditing = true
         picker.sourceType = .camera
         picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
@@ -254,8 +254,8 @@ class AddDocumentsHospital: UITableViewController, UIGestureRecognizerDelegate, 
             let completeUrl = URL(string:url)!
             
             let imageData = UIImageJPEGRepresentation(self.chosenImage, 1)
-            print ("image data:: \(imageData)")
-            print ("chosenImage:: \(self.chosenImage)")
+//            print ("image data:: \(imageData)")
+//            print ("chosenImage:: \(self.chosenImage)")
             
             
             Alamofire.upload(
@@ -275,7 +275,7 @@ class AddDocumentsHospital: UITableViewController, UIGestureRecognizerDelegate, 
                     switch encodingResult {
                     case .success(let upload, _, _):
                         upload.responseJSON{ response in
-                            print(response)
+//                            print(response)
                             self.getAllDocs()
                         }
                     case .failure(let encodingError):
@@ -293,7 +293,7 @@ class AddDocumentsHospital: UITableViewController, UIGestureRecognizerDelegate, 
     // Document name
     
     func DocName() {
-        print("DOC NAME")
+//        print("DOC NAME")
         //1. Create the alert controller.
         let alert = UIAlertController(title: "Selected Doc", message: "Enter Name of the document", preferredStyle: .alert)
         
@@ -305,7 +305,7 @@ class AddDocumentsHospital: UITableViewController, UIGestureRecognizerDelegate, 
         // 3. Grab the value from the text field, and print it when the user clicks OK.
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
-            print("Text field: \(textField?.text)")
+//            print("Text field: \(textField?.text)")
             self.docName = textField?.text! as! String
             self.pickImageOptions()
         }))

@@ -21,11 +21,17 @@ class SignUpEmail: UIViewController, UIGestureRecognizerDelegate, UIImagePickerC
     @IBOutlet weak var signUp: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var phoneNumber: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    
     let picker = UIImagePickerController()
     var json: JSON = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loginButton.layer.cornerRadius = 8
+        signUp.layer.cornerRadius = 8
+        
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(pickImageOptions))
         tap.numberOfTapsRequired = 1
         tap.delegate = self
@@ -33,7 +39,7 @@ class SignUpEmail: UIViewController, UIGestureRecognizerDelegate, UIImagePickerC
         // Do any additional setup after loading the view.
         picker.delegate = self
         
-        print ("PROFILE USER TYPE: ", Defaults.value(forKey: "UserType"))
+//        print ("PROFILE USER TYPE: ", Defaults.value(forKey: "UserType"))
     }
     
     func pickImageOptions() {
@@ -54,7 +60,7 @@ class SignUpEmail: UIViewController, UIGestureRecognizerDelegate, UIImagePickerC
     }
     
     func pickImage() {
-        print("hello pick Image")
+//        print("hello pick Image")
         picker.allowsEditing = true
         picker.sourceType = .photoLibrary
         picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
@@ -62,7 +68,7 @@ class SignUpEmail: UIViewController, UIGestureRecognizerDelegate, UIImagePickerC
     }
     
     func takeImage() {
-        print("hello take Image")
+//        print("hello take Image")
         picker.allowsEditing = true
         picker.sourceType = .camera
         picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
@@ -76,7 +82,7 @@ class SignUpEmail: UIViewController, UIGestureRecognizerDelegate, UIImagePickerC
     
     @IBAction func SignUp(_ sender: Any) {
         KVLoading.show()
-        print("hello sexy")
+//        print("hello sexy")
         var deviceToken: String = "-1"
         #if (arch(i386) || arch(x86_64)) && os(iOS)
             print("It's an iOS Simulator")
@@ -96,28 +102,28 @@ class SignUpEmail: UIViewController, UIGestureRecognizerDelegate, UIImagePickerC
             "device_token": deviceToken
         ]
 
-        print(parameters)
+//        print(parameters)
         
         Alamofire.request("http://thenerdcamp.com/calllight/public/api/v1/user/register", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil ).responseJSON{ response in
-            print(response.request as Any)  // original URL request
-            print(response.response as Any) // URL response
-            print(response.result.value as Any)   // result of response serialization
+//            print(response.request as Any)  // original URL request
+//            print(response.response as Any) // URL response
+//            print(response.result.value as Any)   // result of response serialization
             KVLoading.hide()
             
             switch response.result {
             case .success:
-                print(response)
+//                print(response)
                 if let value = response.result.value {
                     self.json = JSON(value)
-                    print(self.json)
-                    print( self.json["success"])
+//                    print(self.json)
+//                    print( self.json["success"])
                     if self.json["success"] != false {
                         var tok = String(describing: self.json["data"]["api_token"])
-                        print(tok)
+//                        print(tok)
 //                        self.token.set(tok, forKey: "apiToken")
                         Defaults.set(tok, forKey: "apiToken")
                         
-                        print ("User TYPE:", Defaults.value(forKey: "UserType"))
+//                        print ("User TYPE:", Defaults.value(forKey: "UserType"))
                         
                     if UserDefaults.standard.string(forKey: "UserType") == "Nurse" {
                         self.performSegue(withIdentifier: "SignUpNurseSegue", sender: self)
@@ -173,8 +179,8 @@ class SignUpEmail: UIViewController, UIGestureRecognizerDelegate, UIImagePickerC
         let completeUrl = URL(string:url)!
         
         let imageData = UIImageJPEGRepresentation(chosenImage!, 1)
-        print ("image data:: \(imageData)")
-        print ("chosenImage:: \(chosenImage)")
+//        print ("image data:: \(imageData)")
+//        print ("chosenImage:: \(chosenImage)")
         
 //        Alamofire.upload(imageData!, to: completeUrl).response { response in
 //            print (response)
@@ -197,7 +203,7 @@ class SignUpEmail: UIViewController, UIGestureRecognizerDelegate, UIImagePickerC
                 switch encodingResult {
                 case .success(let upload, _, _):
                     upload.responseJSON{ response in
-                        print(response)
+//                        print(response)
                     }
                 case .failure(let encodingError):
                     print(encodingError)

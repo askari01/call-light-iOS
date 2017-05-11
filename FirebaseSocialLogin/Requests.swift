@@ -75,16 +75,16 @@ class Requests: UIViewController, UITableViewDelegate, UITableViewDataSource {
         ]
         
         Alamofire.request(completeUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
-            print(response.request as Any)  // original URL request
-            print(response.response as Any) // URL response
-            print(response.result.value as Any)   // result of response serialization
+//            print(response.request as Any)  // original URL request
+//            print(response.response as Any) // URL response
+//            print(response.result.value as Any)   // result of response serialization
             switch response.result {
             case .success:
                 if let value = response.result.value {
                     self.json = JSON(value)
-                    print(self.json)
+//                    print(self.json)
                     self.row = self.json["data"].count
-                    print(self.row)
+//                    print(self.row)
                     KVLoading.hide()
                     self.tableView.reloadData()
                 }

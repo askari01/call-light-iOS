@@ -54,16 +54,16 @@ class HospitalProfile: UIViewController {
         let completeUrl = URL(string:url)!
         
         Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
-            print(response.request as Any)  // original URL request
-            print(response.response as Any) // URL response
-            print(response.result.value as Any)   // result of response serialization
+//            print(response.request as Any)  // original URL request
+//            print(response.response as Any) // URL response
+//            print(response.result.value as Any)   // result of response serialization
             switch response.result {
             case .success:
-                print(response)
+//                print(response)
                 if let value = response.result.value {
                     json = JSON(value)
-                    print(json)
-                    print(json[0])
+//                    print(json)
+//                    print(json[0])
                     KVLoading.hide()
                     self.performSegue(withIdentifier: "userMenu", sender: self)
                 }
@@ -95,16 +95,16 @@ class HospitalProfile: UIViewController {
         let completeUrl = URL(string:url)!
         
         Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
-            print(response.request as Any)  // original URL request
-            print(response.response as Any) // URL response
-            print(response.result.value as Any)   // result of response serialization
+//            print(response.request as Any)  // original URL request
+//            print(response.response as Any) // URL response
+//            print(response.result.value as Any)   // result of response serialization
             switch response.result {
             case .success:
-                print(response)
+//                print(response)
                 if let value = response.result.value {
                     json = JSON(value)
-                    print(json)
-                    print(json[0])
+//                    print(json)
+//                    print(json[0])
                     KVLoading.show()
                     self.performSegue(withIdentifier: "userMenu", sender: self)
                 }
@@ -123,8 +123,8 @@ class HospitalProfile: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
-        print("response @% @% @% @%",shiftDate, shiftEndTime, shiftEndTime, latitude, longitude)
+        logoutBtn.layer.cornerRadius = 8
+//        print("response @% @% @% @%",shiftDate, shiftEndTime, shiftEndTime, latitude, longitude)
         
         if String(describing: Defaults.value(forKey: "UserType")) == "Nurse" {
             logoutBtn.isHidden = true

@@ -87,7 +87,7 @@ class signUpLocation: UIViewController, UIGestureRecognizerDelegate {
         let allAnnotations = self.mapView.annotations
         self.mapView.removeAnnotations(allAnnotations)
         mapView.addAnnotation(annotation)
-        print("location: \(location)  coordinate: \(coordinate)")
+//        print("location: \(location)  coordinate: \(coordinate)")
         
         // create the alert
         let alert = UIAlertController(title: "Add Your Location", message: "Would you like to mark this place as your address ?", preferredStyle: UIAlertControllerStyle.alert)
@@ -130,27 +130,27 @@ class signUpLocation: UIViewController, UIGestureRecognizerDelegate {
                 url = "http://thenerdcamp.com/calllight/public/api/v1/profile/nurses?api_token="+UserDefaults.standard.string(forKey: "apiToken")!
             }
             
-            print("url: ",url)
+//            print("url: ",url)
             let completeUrl = URL(string:url)!
             
             Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
-                print(response.request as Any)  // original URL request
-                print(response.response as Any) // URL response
-                print(response.result.value as Any)   // result of response serialization
+//                print(response.request as Any)  // original URL request
+//                print(response.response as Any) // URL response
+//                print(response.result.value as Any)   // result of response serialization
                 switch response.result {
                 case .success:
-                    print(response)
+//                    print(response)
                     if let value = response.result.value {
                         json = JSON(value)
-                        print(json)
+//                        print(json)
                         
 //                        self.profileComplete.set(true, forKey: "profileComplete")
                         Defaults.set(true, forKey: "profileComplete")
                         
-                        print (UserDefaults.standard.string(forKey: "UserType"))
+//                        print (UserDefaults.standard.string(forKey: "UserType"))
                         KVLoading.hide()
                         
-                        print ("User TYpe:", UserDefaults.standard.string(forKey: "UserType"))
+//                        print ("User TYpe:", UserDefaults.standard.string(forKey: "UserType"))
                         
                         if UserDefaults.standard.string(forKey: "UserType")! == "Nurse" {
                             self.performSegue(withIdentifier: "NurseProfileSegue", sender: self)
@@ -194,7 +194,7 @@ extension signUpLocation : CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if  let location = locations.first {
-            print("location:: \(location.coordinate) altitude:: \(location.altitude)")
+//            print("location:: \(location.coordinate) altitude:: \(location.altitude)")
             let span = MKCoordinateSpanMake(0.05, 0.05)
             let region = MKCoordinateRegion(center: location.coordinate, span: span)
             self.altitude = location.altitude
@@ -207,7 +207,7 @@ extension signUpLocation : CLLocationManagerDelegate {
                     print(error?.localizedDescription)
                 } else if let placemarkArray = placemarks {
                     if let placemark = placemarkArray.first {
-                        print("addressDisctionary: \(placemark.addressDictionary)")
+//                        print("addressDisctionary: \(placemark.addressDictionary)")
 //                        print("country: \(placemark.country)")
                         
                         if placemark.country != nil {
@@ -265,6 +265,9 @@ extension signUpLocation : CLLocationManagerDelegate {
 
 extension signUpLocation: HandleMapSearch {
     func dropPinZoomIn(placemark:MKPlacemark){
+        // stop Updating Location
+        locationManager.stopUpdatingLocation()
+        
         // cache the pin
         selectedPin = placemark
         // clear existing pins

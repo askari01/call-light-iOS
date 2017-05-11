@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyUserDefaults
+import UserNotifications
 
 class Logout {
     class func logOut() -> Bool {
@@ -15,6 +16,8 @@ class Logout {
             Defaults.set("", forKey: "UserType")
             Defaults.set("", forKey: "apiToken")
             Defaults.set("", forKey: "ProfileComplete")
+            Defaults.set("", forKey: "profileVerified")
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
             return true
         } else {
             return false

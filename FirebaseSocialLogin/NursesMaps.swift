@@ -49,26 +49,17 @@ class NursesMaps: UIViewController, UIGestureRecognizerDelegate, MKMapViewDelega
     }
     
     func addAnnotations() {
-        print ("helloWorld !")
+//        print ("helloWorld !")
         
         
         for index in 0...self.row {
             let annotation = MKPointAnnotation()
             let annotaoinView = MKAnnotationView()
-//            annotation.title = self.json["data"][index]["name"].string!
-//            print (self.json["data"][index]["latitude"])
-//            print ( self.json["data"][index]["latitude"])
-//            print (self.json["data"][index]["longitude"].doubleValue)
             var lat = self.json["data"][index]["latitude"].doubleValue
             var lng = self.json["data"][index]["longitude"].doubleValue
-//            print (lat)
-//            print (lng)
-//            print("wow")
-//            print(lat)
             annotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
             mapView.addAnnotation(annotation)
-
-            
+            locationManager.stopUpdatingLocation()
         }
         
         KVLoading.hide()
@@ -88,20 +79,20 @@ class NursesMaps: UIViewController, UIGestureRecognizerDelegate, MKMapViewDelega
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         var coordinate: CLLocationCoordinate2D = getLocation()
-        print ("latitude: ",coordinate.latitude)
-        print ("longitude: ",coordinate.longitude)
+//        print ("latitude: ",coordinate.latitude)
+//        print ("longitude: ",coordinate.longitude)
         
-        //My location
-        var myLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        
-        //My buddy's location
-        var myBuddysLocation = CLLocation(latitude: 59.326354, longitude: 18.072310)
-        
-        //Measuring my distance to my buddy's (in meters)
-        var distance = myLocation.distance(from: myBuddysLocation)
-        
-        //Display the result in km
-        print(String(format: "The distance to my buddy is %.01fmeters", distance))
+//        //My location
+//        var myLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+//        
+//        //My buddy's location
+//        var myBuddysLocation = CLLocation(latitude: 59.326354, longitude: 18.072310)
+//        
+//        //Measuring my distance to my buddy's (in meters)
+//        var distance = myLocation.distance(from: myBuddysLocation)
+//        
+//        //Display the result in km
+//        print(String(format: "The distance to my buddy is %.01fmeters", distance))
         
         // ZOOM on MAP VIEW on user Location
         
@@ -139,9 +130,9 @@ class NursesMaps: UIViewController, UIGestureRecognizerDelegate, MKMapViewDelega
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        print ("tapped on annotation")
+//        print ("tapped on annotation")
         let a = view.annotation
-        print(a?.title)
+//        print(a?.title)
         performSegue(withIdentifier: "showNurseSegue", sender: self)
         
     }
@@ -157,16 +148,16 @@ class NursesMaps: UIViewController, UIGestureRecognizerDelegate, MKMapViewDelega
         ]
         
         Alamofire.request(completeUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
-            print(response.request as Any)  // original URL request
-            print(response.response as Any) // URL response
-            print(response.result.value as Any)   // result of response serialization
+//            print(response.request as Any)  // original URL request
+//            print(response.response as Any) // URL response
+//            print(response.result.value as Any)   // result of response serialization
             switch response.result {
             case .success:
                 if let value = response.result.value {
                     self.json = JSON(value)
-                    print(self.json)
+//                    print(self.json)
                     self.row = self.json["data"].count
-                    print(self.row)
+//                    print(self.row)
                     //print(self.json[0]["facilityPictures"])
                     self.addAnnotations()
                 }

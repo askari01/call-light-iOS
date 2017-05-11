@@ -18,6 +18,7 @@ class loginEmail: UIViewController {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var signUpbutton: UIButton!
     
     var token = UserDefaults.standard
     var profileComplete = UserDefaults.standard
@@ -30,6 +31,8 @@ class loginEmail: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        signIn.layer.cornerRadius = 8
+        signUpbutton.layer.cornerRadius = 8
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +42,7 @@ class loginEmail: UIViewController {
     
     @IBAction func signInAction(_ sender: Any) {
         KVLoading.show()
-        print ("device token is",UserDefaults.standard.string(forKey: "deviceToken")!)
+//        print ("device token is",UserDefaults.standard.string(forKey: "deviceToken")!)
         var deviceToken: String
         if UserDefaults.standard.string(forKey: "deviceToken")! == "0" {
             deviceToken = "-1"
@@ -54,37 +57,37 @@ class loginEmail: UIViewController {
                 "device_token": deviceToken
             ]
             
-            print(parameters)
+//            print(parameters)
             
             Alamofire.request("http://thenerdcamp.com/calllight/public/api/v1/user/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil ).responseJSON{ response in
-                print(response.request as Any)  // original URL request
-                print(response.response as Any) // URL response
-                print(response.result.value as Any)   // result of response serialization
+//                print(response.request as Any)  // original URL request
+//                print(response.response as Any) // URL response
+//                print(response.result.value as Any)   // result of response serialization
                 KVLoading.hide()
                 switch response.result {
                 case .success:
-                    print(response)
+//                    print(response)
                     if let value = response.result.value {
                         self.json = JSON(value)
-                        print(self.json)
-                        print( self.json["success"])
+//                        print(self.json)
+//                        print( self.json["success"])
                         if self.json["success"] != false {
                             var tok = String(describing: self.json["data"]["api_token"])
-                            print(tok)
+//                            print(tok)
                             self.token.set(tok, forKey: "apiToken")
                             Defaults.set(tok, forKey: "apiToken")
                             var userID = String(describing: self.json["data"]["id"])
-                            print(userID)
+//                            print(userID)
                             self.token.set(userID, forKey: "userID")
                             Defaults.set(userID, forKey: "userID")
                             
         //                    var def = Defaults[.api_token].string
-                            print (Defaults.value(forKey: "apiToken"))
+//                            print (Defaults.value(forKey: "apiToken"))
                             
                             self.userType.set(self.json["data"]["type"].string, forKey: "UserType")
                             Defaults.set(self.json["data"]["type"].string, forKey: "UserType")
                             
-                            print (Defaults.value(forKey: "UserType"))
+//                            print (Defaults.value(forKey: "UserType"))
                             
                             if self.json["data"]["is_verified"].bool == true {
                                 self.profileComplete.set(true, forKey: "profileVerified")
@@ -98,7 +101,7 @@ class loginEmail: UIViewController {
                                 self.profileComplete.set(true, forKey: "profileComplete")
                                 Defaults.set(true, forKey: "profileComplete")
                                 
-                                print (self.json["data"]["type"].string)
+//                                print (self.json["data"]["type"].string)
                                 if self.json["data"]["type"].string == "Nurse" {
                                     self.performSegue(withIdentifier: "NurseCompSegue", sender: self)
                                 } else {

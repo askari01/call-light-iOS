@@ -9,8 +9,9 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-<img src="Screenshots/KVLoading-default.gif" width="320px" height="568px" />
-<img src="Screenshots/KVLoading-custom.gif" width="320px" height="568px" />
+| Default | Custom |
+| --- | --- |
+| <img src="Screenshots/KVLoading-default.gif" width="200px" height="355.5px" /> | <img src="Screenshots/KVLoading-custom.gif" width="200px" height="355.5px" /> |
 
 ## Requirements
 
@@ -20,10 +21,20 @@ KVLoading is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'KVLoading', '~> 1.1'
+pod 'KVLoading', '~> 1.2'
 ```
 
 ## Usage
+
+Enable dim background:
+```swift
+KVLoading.enableDimBackground()
+```
+
+Disable dim background:
+```swift
+KVLoading.disableDimBackgrounda()
+```
 
 Show default loading:
 ```swift
@@ -60,7 +71,7 @@ KVLoading.hide(animated: false)
 ## Author
 
 Vu Van Khac, khacvv0451@gmail.com <br />
-My Facebook: https://www.facebook.com/khacvv0451  <br />
+My Facebook: https://www.facebook.com/vuvankhac.official  <br />
 My Twitter: https://twitter.com/vuvankhac  <br />
 
 ## License

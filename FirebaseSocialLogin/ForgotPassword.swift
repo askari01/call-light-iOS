@@ -14,6 +14,7 @@ import SwiftyUserDefaults
 class ForgotPassword: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var reserPasswordButton: UIButton!
     
     var json: JSON = []
     
@@ -27,16 +28,16 @@ class ForgotPassword: UIViewController {
         
         if self.emailTextField.text != "" {
             Alamofire.request("http://thenerdcamp.com/calllight/public/api/v1/user/forgot-password", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil ).responseJSON{ response in
-                print(response.request as Any)  // original URL request
-                print(response.response as Any) // URL response
-                print(response.result.value as Any)   // result of response serialization
+//                print(response.request as Any)  // original URL request
+//                print(response.response as Any) // URL response
+//                print(response.result.value as Any)   // result of response serialization
                 switch response.result {
                 case .success:
-                    print(response)
+//                    print(response)
                     if let value = response.result.value {
                         self.json = JSON(value)
-                        print(self.json)
-                        print(self.json[0])
+//                        print(self.json)
+//                        print(self.json[0])
                     }
                     
                     break
@@ -52,6 +53,7 @@ class ForgotPassword: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        reserPasswordButton.layer.cornerRadius = 8
     }
 
     override func didReceiveMemoryWarning() {

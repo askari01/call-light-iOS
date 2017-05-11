@@ -28,6 +28,9 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        startShiftBtn.layer.cornerRadius = 8
+        startLunchBreakAction.layer.cornerRadius = 8
+        
         label.text = "Tap to set Status"
         image.image = UIImage(named: "nurseDecline.png")
         
@@ -68,7 +71,7 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         locationManager.delegate = self
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
+         
         if UserDefaults.standard.double(forKey: "HospitalLat") == 0.0 {
             self.startLunchBreakAction.isHidden = true
             self.startShiftBtn.isHidden = true
@@ -86,11 +89,11 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         var coordinate: CLLocationCoordinate2D = getLocation()
-        print ("latitude: ",coordinate.latitude)
-        print ("longitude: ",coordinate.longitude)
-        
-        print ("hospital latitude: ", UserDefaults.standard.double(forKey: "HospitalLat"))
-        print ("hospital longitude: ", UserDefaults.standard.double(forKey: "HospitalLong"))
+//        print ("latitude: ",coordinate.latitude)
+//        print ("longitude: ",coordinate.longitude)
+//        
+//        print ("hospital latitude: ", UserDefaults.standard.double(forKey: "HospitalLat"))
+//        print ("hospital longitude: ", UserDefaults.standard.double(forKey: "HospitalLong"))
         
         //My location
         var myLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
@@ -134,7 +137,7 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
     }
     
     func StartShift() {
-        print ("Start Shift")
+//        print ("Start Shift")
         KVLoading.show()
         var json: JSON = []
         var url: String = ""
@@ -158,7 +161,7 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         formatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
         let result = formatter.string(from: date)
         
-        print (result)
+//        print (result)
         
         let parameters: Parameters = [
             "shift_started": result,
@@ -166,15 +169,15 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         ]
         
         Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
-            print(response.request as Any)  // original URL request
-            print(response.response as Any) // URL response
-            print(response.result.value as Any)   // result of response serialization
+//            print(response.request as Any)  // original URL request
+//            print(response.response as Any) // URL response
+//            print(response.result.value as Any)   // result of response serialization
             switch response.result {
             case .success:
-                print(response)
+//                print(response)
                 if let value = response.result.value {
                     json = JSON(value)
-                    print(json)
+//                    print(json)
                     if self.startShiftBtn.titleLabel?.text == "Start Shift" {
                         self.startShiftBtn.titleLabel?.text = "End Shift"
                         self.startShiftBtn.tintColor = UIColor.red
@@ -198,7 +201,7 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
     }
     
     func LunchStart() {
-        print ("Lunch Start")
+//        print ("Lunch Start")
         KVLoading.show()
         var json: JSON = []
         let url = "http://thenerdcamp.com/calllight/public/api/v1/nurse/shift/lunchBreak?api_token=" + UserDefaults.standard.string(forKey: "apiToken")!
@@ -215,7 +218,7 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         formatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
         let result = formatter.string(from: date)
         
-        print (result)
+//        print (result)
         
         let parameters: Parameters = [
             "lunch_break": result,
@@ -223,15 +226,15 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         ]
         
         Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
-            print(response.request as Any)  // original URL request
-            print(response.response as Any) // URL response
-            print(response.result.value as Any)   // result of response serialization
+//            print(response.request as Any)  // original URL request
+//            print(response.response as Any) // URL response
+//            print(response.result.value as Any)   // result of response serialization
             switch response.result {
             case .success:
-                print(response)
+//                print(response)
                 if let value = response.result.value {
                     json = JSON(value)
-                    print(json)
+//                    print(json)
                     self.startLunchBreakAction.isEnabled = false
                     self.startLunchBreakAction.isHidden = true
                 }
@@ -260,11 +263,11 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
     
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        print("Hellooooo")
-        print(tabBar.items?.index(of: item))
-        print (item.badgeValue)
+//        print("Hellooooo")
+//        print(tabBar.items?.index(of: item))
+//        print (item.badgeValue)
         var tabIndex = tabBar.items?.index(of: tabBar.selectedItem!)
-        print (tabIndex)
+//        print (tabIndex)
     }
     
 
@@ -278,16 +281,16 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         ]
         
         Alamofire.request(completeUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
-            print(response.request as Any)  // original URL request
-            print(response.response as Any) // URL response
-            print(response.result.value as Any)   // result of response serialization
+//            print(response.request as Any)  // original URL request
+//            print(response.response as Any) // URL response
+//            print(response.result.value as Any)   // result of response serialization
             switch response.result {
             case .success:
-                print(response)
+//                print(response)
                 if let value = response.result.value {
                     json = JSON(value)
-                    print(json)
-                    print(json["data"]["available"])
+//                    print(json)
+//                    print(json["data"]["available"])
                     if (json["data"]["available"] == 1) {
                         Defaults[self.available] = 1
                         self.availabilitySet()
@@ -322,14 +325,14 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
     }
     
     func availability() {
-        print("hello")
+//        print("hello")
         
         KVLoading.show()
         
         var json: JSON = []
         
         var setAvail = 0
-        print (Defaults[self.available])
+//        print (Defaults[self.available])
         if Defaults[self.available] == 0 {
             setAvail = 1
         } else {
@@ -348,23 +351,23 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         let completeUrl = URL(string:url)!
         
         Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
-            print(response.request as Any)  // original URL request
-            print(response.response as Any) // URL response
-            print(response.result.value as Any)   // result of response serialization
+//            print(response.request as Any)  // original URL request
+//            print(response.response as Any) // URL response
+//            print(response.result.value as Any)   // result of response serialization
             switch response.result {
             case .success:
-                print(response)
+//                print(response)
                 if let value = response.result.value {
                     json = JSON(value)
-                    print(json)
-                    print(json["data"]["available"])
+//                    print(json)
+//                    print(json["data"]["available"])
                     if (json["data"]["available"] == 1) {
                         Defaults[self.available] = 1
-                        print (Defaults[self.available])
+//                        print (Defaults[self.available])
                         self.availabilitySet()
                     } else {
                         Defaults[self.available] = 0
-                        print (Defaults[self.available])
+//                        print (Defaults[self.available])
                         self.availabilitySet()
                     }
                 }

@@ -15,7 +15,6 @@ import UserNotifications
 import SwiftyJSON
 import IQKeyboardManagerSwift
 import SwiftyUserDefaults
-import SwiftyNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UNUserNotificationCenterDelegate {
@@ -75,8 +74,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDel
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         // will add token later to deal with
-        print("Successful registration. Token is:")
-        print(tokenString(deviceToken))
+//        print("Successful registration. Token is:")
+//        print(tokenString(deviceToken))
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -94,13 +93,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDel
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         application.applicationIconBadgeNumber + 1
-        print("Data is as follow: ",userInfo)
+//        print("Data is as follow: ",userInfo)
         let json = JSON(userInfo)
-        print ("json1: ", json)
-        print ("res1: ", json["aps"])
-        print ("res2: ", json["hospital"])
-        print ("res3: ", json["hospital_request"])
-        print (json["aps"]["alert"].string)
+//        print ("json1: ", json)
+//        print ("res1: ", json["aps"])
+//        print ("res2: ", json["hospital"])
+//        print ("res3: ", json["hospital_request"])
+//        print (json["aps"]["alert"].string)
         
         if application.applicationState == .active {
             var cancelTitle: String = "Close"
@@ -110,7 +109,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDel
             alertView.show()
         }
         
-        if json["hospital"] != nil {
+        if json["hospital"] != nil && UserDefaults.standard.string(forKey: "UserType") != "" {
         if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HospitalProfileView") as? HospitalProfile {
             if let window = self.window, let rootViewController = window.rootViewController {
                 var currentController = rootViewController

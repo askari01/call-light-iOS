@@ -45,7 +45,10 @@ class NurseProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print ("id: \(self.id!)")
+//        print ("id: \(self.id!)")
+        
+        request.layer.cornerRadius = 8
+        close.layer.cornerRadius = 8
         
         var json1: JSON = []
 //        let url1 = "http://thenerdcamp.com/calllight/public/api/v1/profile/hospitals?api_token" + UserDefaults.standard.string(forKey: "apiToken")!
@@ -57,17 +60,17 @@ class NurseProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         ]
         
         Alamofire.request(completeUrl1, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil ).responseJSON{ response in
-            print(response.request as Any)  // original URL request
-            print(response.response as Any) // URL response
-            print(response.result.value as Any)   // result of response serialization
+//            print(response.request as Any)  // original URL request
+//            print(response.response as Any) // URL response
+//            print(response.result.value as Any)   // result of response serialization
             switch response.result {
             case .success:
-                print(response)
+//                print(response)
                 if let value = response.result.value {
                     json1 = JSON(value)
-                    print(json1)
+//                    print(json1)
                     self.hospitalID = json1["data"]["id"].int
-                    print (self.hospitalID)
+//                    print (self.hospitalID)
                 }
                 
                 break
@@ -87,20 +90,20 @@ class NurseProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         
         let url = "http://thenerdcamp.com/calllight/public/api/v1/profile/nurses/\(self.id!)?api_token=" + UserDefaults.standard.string(forKey: "apiToken")!
         let completeUrl = URL(string:url)!
-        print(url)
+//        print(url)
         let headers: HTTPHeaders = [
             "api_token": UserDefaults.standard.string(forKey: "apiToken")!
         ]
         
         Alamofire.request(completeUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
-            print(response.request as Any)  // original URL request
-            print(response.response as Any) // URL response
-            print(response.result.value as Any)   // result of response serialization
+//            print(response.request as Any)  // original URL request
+//            print(response.response as Any) // URL response
+//            print(response.result.value as Any)   // result of response serialization
             switch response.result {
             case .success:
                 if let value = response.result.value {
                     json = JSON(value)
-                    print(json)
+//                    print(json)
                     
                     if json["data"]["gender"].string! == "0" {
                         self.name.text = json["data"]["name"].string! + " (M)"
@@ -233,31 +236,31 @@ class NurseProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
                 "shift_end_time": endTime
             ]
             
-            print (parameters)
+//            print (parameters)
             
             let headers: HTTPHeaders = [
                 "api_token": UserDefaults.standard.string(forKey: "apiToken")!
             ]
             
-            print (headers)
+//            print (headers)
             
             let url = "http://thenerdcamp.com/calllight/public/api/v1/hospital/request?api_token=" + UserDefaults.standard.string(forKey: "apiToken")!
             let completeUrl = URL(string:url)!
             
-            print (completeUrl)
+//            print (completeUrl)
             
             Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
-                print(response.request as Any)  // original URL request
-                print(response.response as Any) // URL response
-                print(response.result.value as Any)   // result of response serialization
-                print(response)
+//                print(response.request as Any)  // original URL request
+//                print(response.response as Any) // URL response
+//                print(response.result.value as Any)   // result of response serialization
+//                print(response)
                 switch response.result {
                 case .success:
-                    print(response)
+//                    print(response)
                     if let value = response.result.value {
                         json = JSON(value)
-                        print(json)
-                        print(json[0])
+//                        print(json)
+//                        print(json[0])
                         KVLoading.hide()
                         // create the alert
                         let alert = UIAlertController(title: "Request Nurse", message: "Request to Nurse Send", preferredStyle: UIAlertControllerStyle.alert)
@@ -340,9 +343,9 @@ class NurseProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         endTym = sender.date.addingTimeInterval(12*60)
         var entym = time.string(from: endTym)
         endTime = entym
-        print ("start Value changed", sender.date)
-        print ("start Value changed", selectedDate)
-        print ("start Value changed", selectedTime)
+//        print ("start Value changed", sender.date)
+//        print ("start Value changed", selectedDate)
+//        print ("start Value changed", selectedTime)
     }
     
     func endValueDidChange(sender: UIDatePicker) {
@@ -355,13 +358,13 @@ class NurseProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         var selectedTime = time.string(from: sender.date)
         startDate = selectedDate
         endTime = selectedTime
-        print ("start Value changed", sender.date)
-        print ("start Value changed", selectedDate)
-        print ("start Value changed", selectedTime)
+//        print ("start Value changed", sender.date)
+//        print ("start Value changed", selectedDate)
+//        print ("start Value changed", selectedTime)
     }
     
     func switchValueDidChange( ) {
-        print("value changes")
+//        print("value changes")
         var time = DateFormatter()
         time.dateFormat = "hh:mm:ss"
         

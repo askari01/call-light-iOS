@@ -15,6 +15,7 @@ class ChangePassword: UIViewController {
 
     @IBOutlet weak var enterPassTextField: UITextField!
     @IBOutlet weak var confirmPassTextField: UITextField!
+    @IBOutlet weak var changePasswordButton: UIButton!
     
     
     @IBAction func changePassAction(_ sender: Any) {
@@ -33,16 +34,16 @@ class ChangePassword: UIViewController {
             let completeUrl = URL(string:url)!
             
             Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
-                print(response.request as Any)  // original URL request
-                print(response.response as Any) // URL response
-                print(response.result.value as Any)   // result of response serialization
+//                print(response.request as Any)  // original URL request
+//                print(response.response as Any) // URL response
+//                print(response.result.value as Any)   // result of response serialization
                 switch response.result {
                 case .success:
-                    print(response)
+//                    print(response)
                     if let value = response.result.value {
                         json = JSON(value)
-                        print(json)
-                        print(json[0])
+//                        print(json)
+//                        print(json[0])
                     }
                     
                     break
@@ -59,6 +60,7 @@ class ChangePassword: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        changePasswordButton.layer.cornerRadius = 8
     }
 
     override func didReceiveMemoryWarning() {

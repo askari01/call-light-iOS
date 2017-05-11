@@ -14,6 +14,7 @@ import SwiftyUserDefaults
 class VerifyCodePasswordChange: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var verifyCodeTextField: UITextField!
+    @IBOutlet weak var verifyButton: UIButton!
     
     @IBAction func VerifyCodeAction(_ sender: Any) {
         if (self.verifyCodeTextField.text?.characters.count == 7) {
@@ -23,16 +24,16 @@ class VerifyCodePasswordChange: UIViewController, UITextFieldDelegate {
                 "verification_code": self.verifyCodeTextField.text
             ]
             Alamofire.request("http://thenerdcamp.com/calllight/public/api/v1/user/verify", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil ).responseJSON{ response in
-                print(response.request as Any)  // original URL request
-                print(response.response as Any) // URL response
-                print(response.result.value as Any)   // result of response serialization
+//                print(response.request as Any)  // original URL request
+//                print(response.response as Any) // URL response
+//                print(response.result.value as Any)   // result of response serialization
                 switch response.result {
                 case .success:
-                    print(response)
+//                    print(response)
                     if let value = response.result.value {
                         json = JSON(value)
-                        print(json)
-                        print(json[0])
+//                        print(json)
+//                        print(json[0])
                         Defaults.set(json["message"]["api_token"].string, forKey: "apiToken")
                     }
                     
@@ -49,6 +50,7 @@ class VerifyCodePasswordChange: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         verifyCodeTextField.delegate = self
         // Do any additional setup after loading the view.
+        verifyButton.layer.cornerRadius = 8
     }
 
     override func didReceiveMemoryWarning() {

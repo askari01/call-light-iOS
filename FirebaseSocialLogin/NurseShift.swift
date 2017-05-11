@@ -33,6 +33,9 @@ class NurseShift: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
 
         // Do any additional setup after loading the view.
         
+        logOut.layer.cornerRadius = 8
+        progressButton.layer.cornerRadius = 8
+        
         // Connect data:
         self.nurseSpeciality.delegate = self
         self.nurseSpeciality.dataSource = self
@@ -47,7 +50,7 @@ class NurseShift: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
             self.logOut.isHidden = true
         }
         
-        print (self.pickerData)
+//        print (self.pickerData)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -117,7 +120,7 @@ class NurseShift: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.NurseSpecilitySelect = pickerData[row]
-        print(pickerData[row])
+//        print(pickerData[row])
     }
     
     @IBAction func SaveData(_ sender: Any) {
@@ -136,21 +139,21 @@ class NurseShift: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
                 "speciality" : self.NurseSpecilitySelect
             ]
             
-            print ("parameters :", parameters)
+//            print ("parameters :", parameters)
             
             let url = "http://thenerdcamp.com/calllight/public/api/v1/profile/nurses?api_token="+UserDefaults.standard.string(forKey: "apiToken")!
             let completeUrl = URL(string:url)!
             
             Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil ).responseJSON{ response in
-                print(response.request as Any)  // original URL request
-                print(response.response as Any) // URL response
-                print(response.result.value as Any)   // result of response serialization
+//                print(response.request as Any)  // original URL request
+//                print(response.response as Any) // URL response
+//                print(response.result.value as Any)   // result of response serialization
                 switch response.result {
                 case .success:
-                    print(response)
+//                    print(response)
                     if let value = response.result.value {
                         json = JSON(value)
-                        print(json)
+//                        print(json)
                     }
                     KVLoading.hide()
                     if UserDefaults.standard.bool(forKey: "profileComplete") != true {

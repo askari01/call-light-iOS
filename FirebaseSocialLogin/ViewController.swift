@@ -24,6 +24,8 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
     @IBOutlet weak var googlePlusButton: UIButton!
     @IBOutlet weak var twitterButton: UIButton!
     @IBOutlet weak var userType: UISegmentedControl!
+    @IBOutlet weak var emailButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
     
     var email = "", id = "", name = "", provider = "", userTypeDefault = "Nurse"
 //    var userTypeDefault = UserDefaults.standard
@@ -32,8 +34,8 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         GIDSignIn.sharedInstance().uiDelegate = self
         
         
-        print (UserDefaults.standard.string(forKey: "profileComplete"))
-        print ("API token: ",UserDefaults.standard.string(forKey: "apiToken"))
+//        print (UserDefaults.standard.string(forKey: "profileComplete"))
+//        print ("API token: ",UserDefaults.standard.string(forKey: "apiToken"))
         
         if UserDefaults.standard.string(forKey: "apiToken") != nil && UserDefaults.standard.string(forKey: "apiToken") != "" {
             if UserDefaults.standard.string(forKey: "UserType") == "Nurse" {
@@ -43,7 +45,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
                     self.performSegue(withIdentifier: "NurseSegue", sender: self)
                 }
             } else if UserDefaults.standard.string(forKey: "UserType") == "Hospital" {
-                print (UserDefaults.standard.string(forKey: "profileComplete"))
+//                print (UserDefaults.standard.string(forKey: "profileComplete"))
                 if UserDefaults.standard.bool(forKey: "profileComplete") == true {
                     self.performSegue(withIdentifier: "HopitalCompSegue", sender: self)
                 } else {
@@ -55,49 +57,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
     
     override func viewWillAppear(_ animated: Bool) {
         
-//        let date: Date = Date.init()
-//        let calendar = Calendar(identifier: .gregorian)
-//        let components = calendar.dateComponents(in: .current, from: date)
-//        let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
-//
-//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
-//        
-//        let content = UNMutableNotificationContent()
-//        content.title = "Confirmation"
-//        content.body = "Do you confirm your shift ?"
-//        content.sound = UNNotificationSound.default()
-//        
-//        let request = UNNotificationRequest(identifier: "CallLight", content: content, trigger: trigger)
-//        
-//        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-//        UNUserNotificationCenter.current().add(request) {(error) in
-//            print("Uh oh! We had an error: \(error)")
-//            if let error = error {
-//                print("Uh oh! We had an error: \(error)")
-//            }
-//        }
-        
-        // Create Notification Content
-        let notificationContent = UNMutableNotificationContent()
-        
-        // Configure Notification Content
-        notificationContent.title = "Confirmation"
-//        notificationContent.subtitle = "Local Notifications"
-        notificationContent.body = "Do you confirm your shift ?"
-        
-        // Add Trigger
-        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
-        
-        // Create Notification Request
-        let notificationRequest = UNNotificationRequest(identifier: "calllight", content: notificationContent, trigger: notificationTrigger)
-        
-        // Add Request to User Notification Center
-        UNUserNotificationCenter.current().add(notificationRequest) { (error) in
-            if let error = error {
-                print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
-            }
-        }
-        
         if UserDefaults.standard.string(forKey: "apiToken") != nil && UserDefaults.standard.string(forKey: "apiToken") != "" {
             if UserDefaults.standard.string(forKey: "UserType") == "Nurse" {
                 if UserDefaults.standard.bool(forKey: "profileComplete") == true {
@@ -106,7 +65,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
                     self.performSegue(withIdentifier: "NurseSegue", sender: self)
                 }
             } else if UserDefaults.standard.string(forKey: "UserType") == "Hospital" {
-                print (UserDefaults.standard.string(forKey: "profileComplete"))
+//                print (UserDefaults.standard.string(forKey: "profileComplete"))
                 if UserDefaults.standard.bool(forKey: "profileComplete") == true {
                     self.performSegue(withIdentifier: "HopitalCompSegue", sender: self)
                 } else {
@@ -121,57 +80,11 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         
         Fabric.with([Twitter.self])
         GIDSignIn.sharedInstance().delegate = self
-                
-//        Alamofire.request("https://restcountries.eu/rest/v2/all").responseJSON { response in
-//            print(response.request)  // original URL request
-//            print(response.response) // HTTP URL response
-//            print(response.data)     // server data
-//            print(response.result)   // result of response serialization
-//            
-//            if let JSON = response.result.value {
-//                print("JSON: \(JSON)")
-//            }
-//        }
         
-        
-//        if (FBSDKAccessToken.current() != nil){
-//            print ("i am in if")
-//        } else {
-//            print("i am in else")
-//            let facebookButton = FBSDKLoginButton()
-//            view.addSubview(facebookButton)
-//            //frame's are obselete, please use constraints instead because its 2016 after all
-//            facebookButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
-//            facebookButton.readPermissions = ["public_profile", "email", "user_friends"]
-//            facebookButton.delegate = self
-//        }
-        
-        // Google Button
-        
-//        let googleButton = GIDSignInButton()
-//        googleButton.frame = CGRect(x: 16, y: 50 + 66, width: view.frame.width - 32, height: 50)
-//        view.addSubview(googleButton)
-//        GIDSignIn.sharedInstance().uiDelegate = self
-        
-        // twitter Button
-//        let logInButton = TWTRLogInButton { (session, error) in
-//            if let unwrappedSession = session {
-//                let alert = UIAlertController(title: "Logged In",
-//                                              message: "User \(unwrappedSession.userName) has logged in",
-//                    preferredStyle: UIAlertControllerStyle.alert
-//                )
-//                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-//                self.present(alert, animated: true, completion: nil)
-//            } else {
-//                NSLog("Login error: %@", error!.localizedDescription);
-//            }
-//        }
-//        
-//        // TODO: Change where the log in button is positioned in your view
-//            logInButton.center = self.view.center
-//            self.view.addSubview(logInButton)
-       
-        
+        facebookButton.layer.cornerRadius = 8
+        googlePlusButton.layer.cornerRadius = 8
+        signUpButton.layer.cornerRadius = 8
+        emailButton.layer.cornerRadius = 8
     }
     
     @IBAction func signUpAction(_ sender: Any) {
@@ -227,10 +140,10 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         Twitter.sharedInstance().logIn {
             (session, error) -> Void in
             if (session != nil) {
-                print("signed in as \(session?.userName)")
-                print("signed in as \(session?.userID)")
-                print("signed in as \(session?.authToken)")
-                print()
+//                print("signed in as \(session?.userName)")
+//                print("signed in as \(session?.userID)")
+//                print("signed in as \(session?.authToken)")
+//                print()
             } else {
                 print("error: \(error?.localizedDescription)")
             }
@@ -274,19 +187,15 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        print(123)
         if let err = error {
             print("error in google plus sign up",err)
         } else {
             
-            //            print ("successfuly log in ", user)
-            print ("User ID ", user.userID)
-            //            print ("Profile ",user.profile)
-            //            print ("Authentication ", user.authentication)
-            //            print ("Hosted Domain ", user.hostedDomain)
-            print ("profile Name ",user.profile.name)
-            //            print ("Given Name",user.profile.givenName)
-            print ("email ",user.profile.email)
+//            print ("User ID ", user.userID)
+//
+//            print ("profile Name ",user.profile.name)
+//
+//            print ("email ",user.profile.email)
             
             self.email = user.profile.email
             self.id = user.userID
@@ -306,21 +215,21 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
     
     func showEmailAddress() {
         KVLoading.show()
-        print("hello i am")
+//        print("hello i am")
         FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, err) in
             
             if err != nil {
                 print("Failed to start graph request:", err ?? "")
                 return
             }
-            print(result ?? "")
+//            print(result ?? "")
             var json: JSON = []
             if let theJSONData: Data = try? JSONSerialization.data(
                 withJSONObject: result,
                 options: [JSONSerialization.WritingOptions.prettyPrinted]) {
-                print (JSON(theJSONData))
+//                print (JSON(theJSONData))
                 json = JSON(theJSONData)
-                print (json["id"])
+//                print (json["id"])
                 self.email = json["email"].string!
                 self.id = json["id"].string!
                 self.name = json["name"].string!
@@ -357,22 +266,22 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         let completeUrl = URL(string:url)!
         
         Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil ).responseJSON{ response in
-            print(response.request as Any)  // original URL request
-            print(response.response as Any) // URL response
-            print(response.result.value as Any)   // result of response serialization
+//            print(response.request as Any)  // original URL request
+//            print(response.response as Any) // URL response
+//            print(response.result.value as Any)   // result of response serialization
             switch response.result {
             case .success:
-                print(response)
+//                print(response)
                 if let value = response.result.value {
                     json = JSON(value)
-                    print(json)
+//                    print(json)
                 }
                 Defaults["UserType"] = self.userTypeDefault
                 Defaults["Token"] = json["data"]["api_token"].string
                 UserDefaults.standard.set(json["data"]["api_token"].string, forKey: "apiToken")
                 UserDefaults.standard.set(json["data"]["id"].string, forKey: "userID")
-                print(self.userTypeDefault)
-                print(json["data"]["api_token"].string)
+//                print(self.userTypeDefault)
+//                print(json["data"]["api_token"].string)
                 UserDefaults.standard.set(String(self.userTypeDefault), forKey: "UserType")
                 
                 if json["data"]["profile_completed"].bool == true {
@@ -384,7 +293,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
                 }
                 
                 if (UserDefaults.standard.string(forKey: "UserType") == "Nurse"){
-                    print ("Nurse")
+//                    print ("Nurse")
                     if json["data"]["is_accepted"] != nil {
                         self.performSegue(withIdentifier: "SignInNurseSegue", sender: self)
                     } else {
@@ -410,10 +319,10 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
     func Delegate() {
         KVLoading.hide()
         if (UserDefaults.standard.string(forKey: "UserType") == "Nurse"){
-            print ("Nurse")
+//            print ("Nurse")
             performSegue(withIdentifier: "NurseSegue", sender: self)
         } else {
-            print ("Hospital")
+//            print ("Hospital")
             performSegue(withIdentifier: "HospIncomSegue", sender: self)
         }
     }
