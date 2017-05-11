@@ -46,6 +46,10 @@ class Requests: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return self.row
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "cell") as! UITableViewCell
         if self.json["data"][indexPath.row]["has_expired"].bool == false {
@@ -55,9 +59,19 @@ class Requests: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         
         if String(describing: Defaults.value(forKey: "UserType")!) == "Hospital" {
+            
+            cell.imageView?.image = UIImage(named: "nurseAccept")
+            cell.imageView?.layer.cornerRadius = (cell.imageView?.frame.size.width)!/2
+            cell.imageView?.clipsToBounds = true
+            
             cell.textLabel?.text = String(describing: self.json["data"][indexPath.row]["nurse"]["user"]["name"])
             cell.detailTextLabel?.text = String(describing: self.json["data"][indexPath.row]["shift_date"])
         } else {
+            
+            cell.imageView?.image = UIImage(named: "hospitalImage")
+            cell.imageView?.layer.cornerRadius = (cell.imageView?.frame.size.width)!/2
+            cell.imageView?.clipsToBounds = true
+            
             cell.textLabel?.text = String(describing: self.json["data"][indexPath.row]["hospital"]["user"]["name"])
             cell.detailTextLabel?.text = String(describing: self.json["data"][indexPath.row]["shift_date"])
         }
