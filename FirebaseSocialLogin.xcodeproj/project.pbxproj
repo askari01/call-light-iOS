@@ -13,6 +13,7 @@
 		360546FD1E8B847B0079AE29 /* NurseAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360546FC1E8B847B0079AE29 /* NurseAvailability.swift */; };
 		3606409D1E8BB1B10059D116 /* Nurses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3606409C1E8BB1B10059D116 /* Nurses.swift */; };
 		360909001E9381B2007BC915 /* NurseShift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360908FF1E9381B2007BC915 /* NurseShift.swift */; };
+		3616A5951EC59FBD00F10711 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3616A5941EC59FBD00F10711 /* CustomCell.swift */; };
 		361E36131E6D4F82004EC88E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 361E36121E6D4F82004EC88E /* GoogleService-Info.plist */; };
 		3634A0531E766BE2002816B2 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3634A0521E766BE2002816B2 /* ForgotPassword.swift */; };
 		3634A0551E766EBD002816B2 /* VerifyCodePasswordChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3634A0541E766EBD002816B2 /* VerifyCodePasswordChange.swift */; };
@@ -42,6 +43,7 @@
 		360546FC1E8B847B0079AE29 /* NurseAvailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NurseAvailability.swift; sourceTree = "<group>"; };
 		3606409C1E8BB1B10059D116 /* Nurses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nurses.swift; sourceTree = "<group>"; };
 		360908FF1E9381B2007BC915 /* NurseShift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NurseShift.swift; sourceTree = "<group>"; };
+		3616A5941EC59FBD00F10711 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		361E36121E6D4F82004EC88E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3634A0521E766BE2002816B2 /* ForgotPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		3634A0541E766EBD002816B2 /* VerifyCodePasswordChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyCodePasswordChange.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				36FCF90C1E9CAF6D001F8884 /* TimerPickerView.swift */,
 				3668D2D81E9E31310006767F /* HospitalProfile.swift */,
 				36B71D1A1EB095B500AA0F00 /* Requests.swift */,
+				3616A5941EC59FBD00F10711 /* CustomCell.swift */,
 			);
 			path = FirebaseSocialLogin;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			files = (
 				360327101E72A61900C1D412 /* loginEmail.swift in Sources */,
 				36F280101E9B471600EB2239 /* Logout.swift in Sources */,
+				3616A5951EC59FBD00F10711 /* CustomCell.swift in Sources */,
 				3606409D1E8BB1B10059D116 /* Nurses.swift in Sources */,
 				360909001E9381B2007BC915 /* NurseShift.swift in Sources */,
 				3603270E1E7288BA00C1D412 /* SIgnUpEmail.swift in Sources */,

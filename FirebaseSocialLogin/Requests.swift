@@ -15,6 +15,7 @@ import KVLoading
 class Requests: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    
     var json: JSON!
     var row = 0
 
@@ -47,33 +48,45 @@ class Requests: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 139
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "cell") as! UITableViewCell
+        var cell = self.tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomCell
         if self.json["data"][indexPath.row]["has_expired"].bool == false {
-            cell.textLabel?.textColor = UIColor.blue
+//            cell.textLabel?.textColor = UIColor.blue
         } else {
-            cell.textLabel?.textColor = UIColor.black
+//            cell.textLabel?.textColor = UIColor.black
         }
         
         if String(describing: Defaults.value(forKey: "UserType")!) == "Hospital" {
             
-            cell.imageView?.image = UIImage(named: "nurseAccept")
-            cell.imageView?.layer.cornerRadius = (cell.imageView?.frame.size.width)!/2
-            cell.imageView?.clipsToBounds = true
+//            cell.imageView?.image = UIImage(named: "nurseAccept")
+//            cell.imageView?.layer.cornerRadius = (cell.imageView?.frame.size.width)!/2
+//            cell.imageView?.clipsToBounds = true
+//            
+//            cell.textLabel?.text = String(describing: self.json["data"][indexPath.row]["nurse"]["user"]["name"])
+//            cell.detailTextLabel?.text = String(describing: self.json["data"][indexPath.row]["shift_date"])
+            cell.date.text = String(describing: self.json["data"][indexPath.row]["shift_date"])
+            cell.hospitalName.text = String(describing: self.json["data"][indexPath.row]["hospital"]["user"]["name"])
+            cell.hospitalLocation.text = String(describing: self.json["data"][indexPath.row]["hospital"]["address"])
+            cell.nurseName.text = String(describing: self.json["data"][indexPath.row]["nurse"]["user"]["name"])
+            cell.nurseSpecialityAndType.text = String(describing: self.json["data"][indexPath.row]["nurse"]["speciality"]) + " - " + String(describing: self.json["data"][indexPath.row]["nurse"]["type"])
             
-            cell.textLabel?.text = String(describing: self.json["data"][indexPath.row]["nurse"]["user"]["name"])
-            cell.detailTextLabel?.text = String(describing: self.json["data"][indexPath.row]["shift_date"])
         } else {
             
-            cell.imageView?.image = UIImage(named: "hospitalImage")
-            cell.imageView?.layer.cornerRadius = (cell.imageView?.frame.size.width)!/2
-            cell.imageView?.clipsToBounds = true
+//            cell.imageView?.image = UIImage(named: "hospitalImage")
+//            cell.imageView?.layer.cornerRadius = (cell.imageView?.frame.size.width)!/2
+//            cell.imageView?.clipsToBounds = true
+//            
+//            cell.textLabel?.text = String(describing: self.json["data"][indexPath.row]["hospital"]["user"]["name"])
+//            cell.detailTextLabel?.text = String(describing: self.json["data"][indexPath.row]["shift_date"])
+            cell.date.text = String(describing: self.json["data"][indexPath.row]["shift_date"])
+            cell.hospitalName.text = String(describing: self.json["data"][indexPath.row]["hospital"]["user"]["name"])
+            cell.hospitalLocation.text = String(describing: self.json["data"][indexPath.row]["hospital"]["address"])
+            cell.nurseName.text = String(describing: self.json["data"][indexPath.row]["nurse"]["user"]["name"])
+            cell.nurseSpecialityAndType.text = String(describing: self.json["data"][indexPath.row]["nurse"]["speciality"]) + " - " + String(describing: self.json["data"][indexPath.row]["nurse"]["type"])
             
-            cell.textLabel?.text = String(describing: self.json["data"][indexPath.row]["hospital"]["user"]["name"])
-            cell.detailTextLabel?.text = String(describing: self.json["data"][indexPath.row]["shift_date"])
         }
         return cell
     }
