@@ -31,13 +31,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo1" translatesAutoresizingMaskIntoConstraints="NO" id="UYd-bg-HFh">
-                                <rect key="frame" x="172" y="56" width="70" height="326"/>
+                                <rect key="frame" x="172" y="56" width="70" height="277"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="5yR-u6-i4J"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not yet Registered ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9G4-wR-taw">
-                                <rect key="frame" x="129" y="592" width="156" height="21"/>
+                                <rect key="frame" x="129" y="543" width="156" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="W3t-1A-7ZX"/>
                                 </constraints>
@@ -46,7 +46,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ms6-QI-5HB">
-                                <rect key="frame" x="54" y="621" width="306" height="40"/>
+                                <rect key="frame" x="54" y="572" width="306" height="40"/>
                                 <color key="backgroundColor" red="0.22352941176470587" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ff4-ah-vym"/>
@@ -59,7 +59,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkw-pg-8kA">
-                                <rect key="frame" x="54" y="476" width="306" height="40"/>
+                                <rect key="frame" x="54" y="427" width="306" height="40"/>
                                 <color key="backgroundColor" red="0.82745098039215681" green="0.28235294117647058" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="G3V-dQ-Ga5"/>
@@ -83,7 +83,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKg-Go-U8G">
-                                <rect key="frame" x="54" y="524" width="306" height="40"/>
+                                <rect key="frame" x="54" y="475" width="306" height="40"/>
                                 <color key="backgroundColor" red="0.22352941176470587" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="HKV-72-1CG"/>
@@ -96,7 +96,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUS-Ci-HWb">
-                                <rect key="frame" x="54" y="428" width="306" height="40"/>
+                                <rect key="frame" x="54" y="379" width="306" height="40"/>
                                 <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ahQ-B1-OJn"/>
@@ -109,7 +109,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xaz-Ow-QLq">
-                                <rect key="frame" x="54" y="390" width="306" height="29"/>
+                                <rect key="frame" x="54" y="341" width="306" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="pii-MU-msn"/>
                                 </constraints>
@@ -1633,7 +1633,7 @@
                 <navigationController title="Nurses" id="ZgH-aO-gyD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="List" image="inbox" id="Dzx-BF-5kH"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EAZ-Lh-9lJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EAZ-Lh-9lJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1671,7 +1671,7 @@
             <objects>
                 <navigationController id="jT5-Nm-vV6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Documents" image="inbox" id="XoH-TZ-yrP"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="W5N-AZ-drK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="W5N-AZ-drK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1696,7 +1696,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cX8-Y2-jrr">
-                                <rect key="frame" x="0.0" y="20" width="414" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outlet property="delegate" destination="ay4-ta-Sdq" id="0Xl-fU-l3b"/>
@@ -1815,16 +1815,16 @@
         <image name="user" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xLp-hE-HuP"/>
-        <segue reference="VKG-Yr-5Tm"/>
-        <segue reference="k44-kJ-D5P"/>
         <segue reference="7Pw-ZG-dXd"/>
-        <segue reference="pPD-kB-dPe"/>
+        <segue reference="P2z-RU-ZGw"/>
         <segue reference="N8O-lX-Imq"/>
-        <segue reference="BBS-SF-cZB"/>
-        <segue reference="Z6c-22-UjX"/>
-        <segue reference="wYL-cf-AjO"/>
-        <segue reference="mVY-J6-op8"/>
+        <segue reference="shi-9L-5zd"/>
+        <segue reference="lbO-IW-iiC"/>
+        <segue reference="uCu-st-Da9"/>
+        <segue reference="XB4-YS-0UI"/>
+        <segue reference="mSD-I2-bn6"/>
         <segue reference="kZB-CW-btJ"/>
+        <segue reference="mVY-J6-op8"/>
+        <segue reference="wYL-cf-AjO"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,7 +15,7 @@ import CoreLocation
 import SCLAlertView
 import SwiftyStarRatingView
 
-class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBarDelegate, CLLocationManagerDelegate {
+class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBarDelegate, CLLocationManagerDelegate, UITextViewDelegate {
 
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var image: UIImageView!
@@ -26,6 +26,7 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
     let available = DefaultsKey<Int>("availability")
     var locationManager = CLLocationManager()
     var distanceInMeters = CLLocationDistance()
+    var alert1: UIAlertController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,19 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         startShiftBtn.layer.cornerRadius = 8
         startLunchBreakAction.layer.cornerRadius = 8
         
-        rating()
+        // adding tap gesture
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        //Looks for single or multiple taps.
+        let tap1: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap1)
+        
+        rating2()
         
         label.text = "Tap to set Status"
         image.image = UIImage(named: "nurseDecline.png")
@@ -91,6 +104,22 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         
     }
     
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.alert1.view.frame.origin.y -= keyboardSize.height - 100
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.alert1.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         var coordinate: CLLocationCoordinate2D = getLocation()
 //        print ("latitude: ",coordinate.latitude)
@@ -140,6 +169,80 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         }
     }
     
+    func rating2() {
+        
+        // create the alert
+        alert1 = UIAlertController(title: "\n\nCall Light", message: "Rating\n\n\n\n\n\n\n\n", preferredStyle: UIAlertControllerStyle.alert)
+        
+        // getting alertview
+        
+        let x = (alert1.view.frame.width - 80) / 2
+        
+        // adding image
+        var imageView = UIImageView(frame: CGRect(x: x, y:10, width:36, height:54))
+        imageView.image = UIImage(named: "logo1")
+        
+        alert1.view.addSubview(imageView)
+        
+        // Ratings
+        let starRatingView = SwiftyStarRatingView()
+        
+        starRatingView.frame = CGRect(x: (x-70), y: imageView.frame.maxY + 40, width: 180, height:40)
+        
+        starRatingView.maximumValue = 5 		//default is 5
+        starRatingView.minimumValue = 0 		//default is 0
+        starRatingView.value = 3       		//default is 0
+        
+        starRatingView.tintColor = UIColor.yellow
+        
+        starRatingView.addTarget(self, action: #selector(ratingChanged), for: .valueChanged)
+        
+        alert1.view.addSubview(starRatingView)
+        
+        // Comments
+        // Add textfield 1
+        let textfield1 = UITextView(frame: CGRect(x: (x-90), y: starRatingView.frame.maxY + 10, width: 210, height: 85))
+        textfield1.delegate = self
+        textfield1.layer.borderColor = UIColor.lightGray.cgColor
+        textfield1.layer.borderWidth = 1
+        textfield1.layer.cornerRadius = 1
+        textfield1.placeholderText = "Comment..."
+        textfield1.text = "Comment..."
+        textfield1.textColor = UIColor.lightGray
+        textfield1.textAlignment = NSTextAlignment.left
+        alert1.view.addSubview(textfield1)
+
+        
+        // add the actions (buttons)
+        alert1.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: {action in
+            print ("Rated")
+        }))
+        
+        alert1.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        
+        // height
+//        let height:NSLayoutConstraint = NSLayoutConstraint(item: alert.view, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: self.view.frame.height * 0.80)
+//        alert.view.addConstraint(height)
+        
+        // show the alert
+        self.present(alert1, animated: true, completion: nil)
+    }
+    
+    // text area
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Comment..."
+            textView.textColor = UIColor.lightGray
+        }
+    }
+    
     func rating() {
         // Create the subview
         let appearance = SCLAlertView.SCLAppearance(
@@ -148,6 +251,8 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
             kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 14)!,
             showCloseButton: false
         )
+        
+        let alertViewIcon = UIImage(named: "logo1")
         
         // Initialize SCLAlertView using custom Appearance
         let alert = SCLAlertView(appearance: appearance)
@@ -173,11 +278,11 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         
         // Add textfield 1
         let textfield1 = UITextView(frame: CGRect(x: x, y: starRatingView.frame.maxY + 10, width: 180, height: 85))
-        textfield1.layer.borderColor = UIColor.purple.cgColor
-        textfield1.layer.borderWidth = 1.5
-        textfield1.layer.cornerRadius = 5
+        textfield1.layer.borderColor = UIColor.lightGray.cgColor
+        textfield1.layer.borderWidth = 1
+        textfield1.layer.cornerRadius = 1
         textfield1.placeholderText = "Comment..."
-        textfield1.textAlignment = NSTextAlignment.center
+        textfield1.textAlignment = NSTextAlignment.left
         subview.addSubview(textfield1)
         
 //        // Add textfield 2
@@ -193,11 +298,12 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         
         // Add the subview to the alert's UI property
         alert.customSubview = subview
-        alert.addButton("Rate") {
+        alert.addButton("OK", backgroundColor: UIColor.clear, textColor: UIColor.blue) {
             print("rated :",starRatingView.value)
         }
         
-        alert.showEdit("Rate & Comment", subTitle: "")
+        alert.showInfo("Call Light", subTitle: "RATING", circleIconImage: alertViewIcon)
+//        alert.showCustom("Call Light", subTitle: "RATING", color: UIColor.clear, icon: alertViewIcon!)
     }
     
     func ratingChanged() {
@@ -390,6 +496,12 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
             self.blur.isHidden = false
         }
         KVLoading.hide()
+    }
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     func availability() {
