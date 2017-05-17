@@ -55,7 +55,9 @@ PODS:
     - GTMSessionFetcher/Core (= 1.1.9)
   - IQKeyboardManagerSwift (4.0.9)
   - KVLoading (1.2)
+  - SCLAlertView (0.7.0)
   - SwiftyJSON (3.1.4)
+  - SwiftyStarRatingView (1.0.4)
   - SwiftyUserDefaults (3.0.0)
   - TwitterCore (2.8.0):
     - Fabric
@@ -73,7 +75,9 @@ DEPENDENCIES:
   - GoogleSignIn
   - IQKeyboardManagerSwift
   - KVLoading (~> 1.1)
+  - SCLAlertView
   - SwiftyJSON
+  - SwiftyStarRatingView
   - SwiftyUserDefaults
   - TwitterKit
 
@@ -95,11 +99,13 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   IQKeyboardManagerSwift: 2eefe6c429b86aa08bfbc1b5c891164d754adf91
   KVLoading: fcf0f90a74273ea6a8e397aa62abbe8cda9739c4
+  SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  SwiftyStarRatingView: a2b0057700e0adeb8e7442c55d99cb53b531d2f4
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
   TwitterCore: e959987be23c767004d29eb7fab8d85d8585a2e5
   TwitterKit: 3b6044a7320340326a4098f3e37aa1dbaeb94942
 
-PODFILE CHECKSUM: 116dcb3a132d20fd68e461eb032d70db5b2b5b76
+PODFILE CHECKSUM: ee02a958d28b39cf521f76b187eeafcd104747b7
 
 COCOAPODS: 1.1.1

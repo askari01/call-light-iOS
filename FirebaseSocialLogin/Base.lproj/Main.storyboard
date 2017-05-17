@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1815,16 +1815,16 @@
         <image name="user" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="xLp-hE-HuP"/>
+        <segue reference="VKG-Yr-5Tm"/>
+        <segue reference="k44-kJ-D5P"/>
+        <segue reference="7Pw-ZG-dXd"/>
+        <segue reference="pPD-kB-dPe"/>
+        <segue reference="N8O-lX-Imq"/>
+        <segue reference="BBS-SF-cZB"/>
         <segue reference="Z6c-22-UjX"/>
         <segue reference="wYL-cf-AjO"/>
         <segue reference="mVY-J6-op8"/>
         <segue reference="kZB-CW-btJ"/>
-        <segue reference="zGj-bZ-3OD"/>
-        <segue reference="k44-kJ-D5P"/>
-        <segue reference="VKG-Yr-5Tm"/>
-        <segue reference="xLp-hE-HuP"/>
-        <segue reference="BBS-SF-cZB"/>
-        <segue reference="pPD-kB-dPe"/>
-        <segue reference="N8O-lX-Imq"/>
     </inferredMetricsTieBreakers>
 </document>
