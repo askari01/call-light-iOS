@@ -216,6 +216,46 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         // add the actions (buttons)
         alert1.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: {action in
             print ("Rated")
+            KVLoading.show()
+            var json: JSON = []
+            let parameters: Parameters = [
+                "rater": UserDefaults.standard.string(forKey: "UserType"),
+                "rater_id" : 1,
+                "ratee":UserDefaults.standard.string(forKey: "UserType"),
+                "ratee_id": 1,
+                "rating": starRatingView.value,
+                "comment": textfield1.text
+            ]
+            
+            let headers: HTTPHeaders = [
+                "api_token": UserDefaults.standard.string(forKey: "apiToken")!
+            ]
+            
+            let url = "http://thenerdcamp.com/calllight/public/api/v1/profile/ratings?api_token=" + UserDefaults.standard.string(forKey: "apiToken")!
+            let completeUrl = URL(string:url)!
+            
+            Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
+                print(response.request as Any)  // original URL request
+                print(response.response as Any) // URL response
+                print(response.result.value as Any)   // result of response serialization
+                switch response.result {
+                case .success:
+                                    print(response)
+                    if let value = response.result.value {
+                        json = JSON(value)
+                                            print(json)
+                                            print(json[0])
+                        KVLoading.hide()
+                    }
+                    
+                    break
+                case .failure(let error):
+                    print(error)
+                    KVLoading.hide()
+                }
+                
+            }
+            
         }))
         
         alert1.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))

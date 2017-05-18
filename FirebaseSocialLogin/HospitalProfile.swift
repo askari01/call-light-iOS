@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 import SwiftyUserDefaults
 import KVLoading
+import MapKit
 
 class HospitalProfile: UIViewController {
     
@@ -28,6 +29,9 @@ class HospitalProfile: UIViewController {
 //    var avatarUrl: String!
     
     @IBOutlet weak var hospitalLbl: UILabel!
+    @IBOutlet weak var numberLbl: UILabel!
+    @IBOutlet weak var addressLbl: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
     
     @IBAction func logOut(_ sender: Any) {
         var a = Logout.logOut()
