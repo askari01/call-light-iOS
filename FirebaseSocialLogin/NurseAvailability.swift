@@ -46,8 +46,6 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         
         view.addGestureRecognizer(tap1)
         
-        rating2()
-        
         label.text = "Tap to set Status"
         image.image = UIImage(named: "nurseDecline.png")
         
@@ -140,7 +138,7 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         //Display the result in m
         print(String(format: "The distance to my buddy is %.01fmeters", distance))
         
-        if distance < 50000 {
+        if distance < 500000 {
             
             DispatchQueue.main.async {
 //                self.startShiftBtn.isHidden = false
@@ -400,6 +398,7 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
                         self.startShiftBtn.isEnabled = false
                         self.startShiftBtn.isHidden = true
                         self.startLunchBreakAction.isHidden = true
+                        self.rating2()
                         Defaults.set(0.0, forKey: "HospitalLat")
                     }
                 }
