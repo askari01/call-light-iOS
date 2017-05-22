@@ -26,6 +26,7 @@ class HospitalProfile: UIViewController, MKMapViewDelegate {
     var shiftStartTime: String!
     var shiftEndTime: String!
     var shiftDate: String!
+    var requestID: Int!
 //    var avatarUrl: String!
     
     @IBOutlet weak var hospitalLbl: UILabel!
@@ -46,7 +47,7 @@ class HospitalProfile: UIViewController, MKMapViewDelegate {
         KVLoading.show()
         var json: JSON = []
         let parameters: Parameters = [
-            "request_id": 110,
+            "request_id": requestID,
             "has_declined" : 1
         ]
         
@@ -96,7 +97,7 @@ class HospitalProfile: UIViewController, MKMapViewDelegate {
         KVLoading.show()
         var json: JSON = []
         let parameters: Parameters = [
-            "request_id": 110,
+            "request_id": requestID,
             "has_accepted" : 1
         ]
         

@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDel
 
     var window: UIWindow?
     var notif = UserDefaults.standard
+    var token = UserDefaults.standard
     
     var destinationController: UINavigationController!
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -68,14 +69,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDel
         for byte in bytes{
             token += String(format: "%02x",byte)
         }
+        self.token.set(token, forKey: "deviceToken")
         Defaults.set(token, forKey: "deviceToken")
         return token
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         // will add token later to deal with
-//        print("Successful registration. Token is:")
-//        print(tokenString(deviceToken))
+        print("Successful registration. Token is:")
+//        print ("device token is",UserDefaults.standard.string(forKey: "deviceToken")!)
+        print(tokenString(deviceToken))
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -95,7 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDel
         application.applicationIconBadgeNumber + 1
 //        print("Data is as follow: ",userInfo)
         let json = JSON(userInfo)
-//        print ("json1: ", json)
+        print ("json1: ", json)
 //        print ("res1: ", json["aps"])
 //        print ("res2: ", json["hospital"])
 //        print ("res3: ", json["hospital_request"])
@@ -113,6 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDel
         if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HospitalProfileView") as? HospitalProfile {
             if let window = self.window, let rootViewController = window.rootViewController {
                 var currentController = rootViewController
+                controller.requestID = json["request_id"].int
                 controller.latitude = json["hospital"]["latitude"].double
                 controller.longitude = json["hospital"]["longitude"].double
                 Defaults.set(json["hospital"]["latitude"].double, forKey: "HospitalLat")
