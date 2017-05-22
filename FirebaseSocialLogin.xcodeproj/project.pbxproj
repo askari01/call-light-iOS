@@ -20,14 +20,9 @@
 		3634A0571E76798C002816B2 /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3634A0561E76798C002816B2 /* ChangePassword.swift */; };
 		3668D2D91E9E31310006767F /* HospitalProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3668D2D81E9E31310006767F /* HospitalProfile.swift */; };
 		36AA03651E96705F00571731 /* NursesMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AA03641E96705F00571731 /* NursesMaps.swift */; };
+		36AF4A771ED1E2390033E319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36AF4A761ED1E2390033E319 /* Assets.xcassets */; };
 		36B71D1B1EB095B500AA0F00 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B71D1A1EB095B500AA0F00 /* Requests.swift */; };
 		36C0A08E1E826C460082B058 /* AddDocumentsHospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0A08D1E826C460082B058 /* AddDocumentsHospital.swift */; };
-		36C431E11ECDE21700EC7C4B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C431E01ECDE21700EC7C4B /* Accelerate.framework */; };
-		36C431E31ECDE21F00EC7C4B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C431E21ECDE21F00EC7C4B /* AVFoundation.framework */; };
-		36C431E51ECDE22900EC7C4B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C431E41ECDE22900EC7C4B /* AudioToolbox.framework */; };
-		36C431E71ECDE23300EC7C4B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C431E61ECDE23300EC7C4B /* CoreMedia.framework */; };
-		36C431E91ECDE23F00EC7C4B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C431E81ECDE23F00EC7C4B /* MobileCoreServices.framework */; };
-		36C431EC1ECDE41400EC7C4B /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C431EB1ECDE41400EC7C4B /* Payment.swift */; };
 		36F0DBE21E7A696100B17C9F /* SignUpLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F0DBE11E7A696100B17C9F /* SignUpLocation.swift */; };
 		36F0DBE81E7A85E400B17C9F /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F0DBE71E7A85E400B17C9F /* LocationSearchTable.swift */; };
 		36F280101E9B471600EB2239 /* Logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F2800F1E9B471600EB2239 /* Logout.swift */; };
@@ -37,7 +32,6 @@
 		C7BE77FA1DBB3A70005E6090 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BE77F91DBB3A70005E6090 /* AppDelegate.swift */; };
 		C7BE77FC1DBB3A70005E6090 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BE77FB1DBB3A70005E6090 /* ViewController.swift */; };
 		C7BE77FF1DBB3A70005E6090 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7BE77FD1DBB3A70005E6090 /* Main.storyboard */; };
-		C7BE78011DBB3A70005E6090 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7BE78001DBB3A70005E6090 /* Assets.xcassets */; };
 		C7BE78041DBB3A70005E6090 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7BE78021DBB3A70005E6090 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +50,7 @@
 		3634A0561E76798C002816B2 /* ChangePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
 		3668D2D81E9E31310006767F /* HospitalProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalProfile.swift; sourceTree = "<group>"; };
 		36AA03641E96705F00571731 /* NursesMaps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NursesMaps.swift; sourceTree = "<group>"; };
+		36AF4A761ED1E2390033E319 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36B71D1A1EB095B500AA0F00 /* Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		36C0A08D1E826C460082B058 /* AddDocumentsHospital.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDocumentsHospital.swift; sourceTree = "<group>"; };
 		36C431E01ECDE21700EC7C4B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -63,8 +58,6 @@
 		36C431E41ECDE22900EC7C4B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		36C431E61ECDE23300EC7C4B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		36C431E81ECDE23F00EC7C4B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		36C431EA1ECDE29500EC7C4B /* FirebaseSocialLogin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FirebaseSocialLogin-Bridging-Header.h"; sourceTree = "<group>"; };
-		36C431EB1ECDE41400EC7C4B /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		36EF108C1E8A43B1008A4B65 /* FirebaseSocialLogin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FirebaseSocialLogin.entitlements; sourceTree = "<group>"; };
 		36F0DBE11E7A696100B17C9F /* SignUpLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpLocation.swift; sourceTree = "<group>"; };
 		36F0DBE71E7A85E400B17C9F /* LocationSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
@@ -76,7 +69,6 @@
 		C7BE77F91DBB3A70005E6090 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7BE77FB1DBB3A70005E6090 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C7BE77FE1DBB3A70005E6090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C7BE78001DBB3A70005E6090 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7BE78031DBB3A70005E6090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7BE78051DBB3A70005E6090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F24A93C91C2D6D7AAE0CCF2B /* Pods-FirebaseSocialLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseSocialLogin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseSocialLogin/Pods-FirebaseSocialLogin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,11 +79,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36C431E91ECDE23F00EC7C4B /* MobileCoreServices.framework in Frameworks */,
-				36C431E71ECDE23300EC7C4B /* CoreMedia.framework in Frameworks */,
-				36C431E51ECDE22900EC7C4B /* AudioToolbox.framework in Frameworks */,
-				36C431E31ECDE21F00EC7C4B /* AVFoundation.framework in Frameworks */,
-				36C431E11ECDE21700EC7C4B /* Accelerate.framework in Frameworks */,
 				3BB11F5A22C3F1D8EF7DEB6A /* Pods_FirebaseSocialLogin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,7 +133,6 @@
 				C7BE77F91DBB3A70005E6090 /* AppDelegate.swift */,
 				C7BE77FB1DBB3A70005E6090 /* ViewController.swift */,
 				C7BE77FD1DBB3A70005E6090 /* Main.storyboard */,
-				C7BE78001DBB3A70005E6090 /* Assets.xcassets */,
 				C7BE78021DBB3A70005E6090 /* LaunchScreen.storyboard */,
 				C7BE78051DBB3A70005E6090 /* Info.plist */,
 				361E36121E6D4F82004EC88E /* GoogleService-Info.plist */,
@@ -169,8 +155,7 @@
 				3668D2D81E9E31310006767F /* HospitalProfile.swift */,
 				36B71D1A1EB095B500AA0F00 /* Requests.swift */,
 				3616A5941EC59FBD00F10711 /* CustomCell.swift */,
-				36C431EA1ECDE29500EC7C4B /* FirebaseSocialLogin-Bridging-Header.h */,
-				36C431EB1ECDE41400EC7C4B /* Payment.swift */,
+				36AF4A761ED1E2390033E319 /* Assets.xcassets */,
 			);
 			path = FirebaseSocialLogin;
 			sourceTree = "<group>";
@@ -254,10 +239,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7BE78041DBB3A70005E6090 /* LaunchScreen.storyboard in Resources */,
-				C7BE78011DBB3A70005E6090 /* Assets.xcassets in Resources */,
 				361E36131E6D4F82004EC88E /* GoogleService-Info.plist in Resources */,
 				36FCF90B1E9CAAC0001F8884 /* TimePickerView.xib in Resources */,
 				C7BE77FF1DBB3A70005E6090 /* Main.storyboard in Resources */,
+				36AF4A771ED1E2390033E319 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +330,6 @@
 				36B71D1B1EB095B500AA0F00 /* Requests.swift in Sources */,
 				C7BE77FA1DBB3A70005E6090 /* AppDelegate.swift in Sources */,
 				3634A0531E766BE2002816B2 /* ForgotPassword.swift in Sources */,
-				36C431EC1ECDE41400EC7C4B /* Payment.swift in Sources */,
 				36AA03651E96705F00571731 /* NursesMaps.swift in Sources */,
 				3668D2D91E9E31310006767F /* HospitalProfile.swift in Sources */,
 				36F0DBE21E7A696100B17C9F /* SignUpLocation.swift in Sources */,
@@ -482,7 +466,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.techease.calllight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "FirebaseSocialLogin/FirebaseSocialLogin-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -499,7 +483,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.techease.calllight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "FirebaseSocialLogin/FirebaseSocialLogin-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

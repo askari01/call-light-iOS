@@ -12,7 +12,6 @@ import SwiftyJSON
 import KVLoading
 import SwiftyUserDefaults
 import CoreLocation
-import SCLAlertView
 import SwiftyStarRatingView
 
 class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBarDelegate, CLLocationManagerDelegate, UITextViewDelegate {
@@ -279,69 +278,6 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
             textView.text = "Comment..."
             textView.textColor = UIColor.lightGray
         }
-    }
-    
-    func rating() {
-        // Create the subview
-        let appearance = SCLAlertView.SCLAppearance(
-            kTitleFont: UIFont(name: "HelveticaNeue", size: 20)!,
-            kTextFont: UIFont(name: "HelveticaNeue", size: 14)!,
-            kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 14)!,
-            showCloseButton: false
-        )
-        
-        let alertViewIcon = UIImage(named: "logo1")
-        
-        // Initialize SCLAlertView using custom Appearance
-        let alert = SCLAlertView(appearance: appearance)
-        
-        // Creat the subview
-        let subview = UIView(frame: CGRect(x:0,y:0,width:216,height:150))
-        let x = (subview.frame.width - 180) / 2
-        
-        // Ratings
-        let starRatingView = SwiftyStarRatingView()
-        
-        starRatingView.frame = CGRect(x: x,y: 10,width: 180, height:40)
-        
-        starRatingView.maximumValue = 5 		//default is 5
-        starRatingView.minimumValue = 0 		//default is 0
-        starRatingView.value = 3       		//default is 0
-        
-        starRatingView.tintColor = UIColor.yellow
-        
-        starRatingView.addTarget(self, action: #selector(ratingChanged), for: .valueChanged)
-        
-        subview.addSubview(starRatingView)
-        
-        // Add textfield 1
-        let textfield1 = UITextView(frame: CGRect(x: x, y: starRatingView.frame.maxY + 10, width: 180, height: 85))
-        textfield1.layer.borderColor = UIColor.lightGray.cgColor
-        textfield1.layer.borderWidth = 1
-        textfield1.layer.cornerRadius = 1
-        textfield1.placeholderText = "Comment..."
-        textfield1.textAlignment = NSTextAlignment.left
-        subview.addSubview(textfield1)
-        
-//        // Add textfield 2
-//        let textfield2 = UITextField(frame: CGRect(x: x, y: textfield1.frame.maxY + 10, width:180, height:25))
-//        textfield2.isSecureTextEntry = true
-//        textfield2.layer.borderColor = UIColor.blue.cgColor
-//        textfield2.layer.borderWidth = 1.5
-//        textfield2.layer.cornerRadius = 5
-//        textfield1.layer.borderColor = UIColor.blue.cgColor
-//        textfield2.placeholder = "Password"
-//        textfield2.textAlignment = NSTextAlignment.center
-//        subview.addSubview(textfield2)
-        
-        // Add the subview to the alert's UI property
-        alert.customSubview = subview
-        alert.addButton("OK", backgroundColor: UIColor.clear, textColor: UIColor.blue) {
-            print("rated :",starRatingView.value)
-        }
-        
-        alert.showInfo("Call Light", subTitle: "RATING", circleIconImage: alertViewIcon)
-//        alert.showCustom("Call Light", subTitle: "RATING", color: UIColor.clear, icon: alertViewIcon!)
     }
     
     func ratingChanged() {

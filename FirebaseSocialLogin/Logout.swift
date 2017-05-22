@@ -17,6 +17,8 @@ class Logout {
             Defaults.set("", forKey: "apiToken")
             Defaults.set("", forKey: "ProfileComplete")
             Defaults.set("", forKey: "profileVerified")
+            Defaults.set("", forKey: "UserName")
+            Defaults.set("", forKey: "userNumber")
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
             return true
         } else {

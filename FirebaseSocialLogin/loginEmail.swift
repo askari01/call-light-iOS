@@ -21,6 +21,8 @@ class loginEmail: UIViewController {
     @IBOutlet weak var signUpbutton: UIButton!
     
     var token = UserDefaults.standard
+    var userName = UserDefaults.standard
+    var userNumber = UserDefaults.standard
     var profileComplete = UserDefaults.standard
     var profileVerified = UserDefaults.standard
     var userType = UserDefaults.standard
@@ -78,8 +80,21 @@ class loginEmail: UIViewController {
                             Defaults.set(tok, forKey: "apiToken")
                             var userID = String(describing: self.json["data"]["id"])
 //                            print(userID)
-                            self.token.set(userID, forKey: "userID")
+                            var name = String(describing: self.json["data"]["name"])
+                            var number = String(describing: self.json["data"]["phone"])
+                            
+                            self.userID.set(userID, forKey: "userID")
                             Defaults.set(userID, forKey: "userID")
+                            
+                            
+                            self.userName.set(name, forKey: "userName")
+                            Defaults.set(name, forKey: "userName")
+                            
+                            self.userNumber.set(number, forKey: "userNumber")
+                            Defaults.set(number, forKey: "userNumber")
+                            
+//                            print (UserDefaults.standard.string(forKey: "userNumber"))
+//                            print (UserDefaults.standard.string(forKey: "userName"))
                             
         //                    var def = Defaults[.api_token].string
 //                            print (Defaults.value(forKey: "apiToken"))

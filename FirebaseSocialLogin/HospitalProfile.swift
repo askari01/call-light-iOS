@@ -13,7 +13,7 @@ import SwiftyUserDefaults
 import KVLoading
 import MapKit
 
-class HospitalProfile: UIViewController {
+class HospitalProfile: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var logoutBtn: UIButton!
     @IBOutlet weak var acceptbtn: UIButton!
@@ -82,6 +82,15 @@ class HospitalProfile: UIViewController {
         }
     }
     
+    func addAnnotations() {
+        
+            let annotation = MKPointAnnotation()
+            let annotaoinView = MKAnnotationView()
+            var lat = latitude
+            var lng = longitude
+            annotation.coordinate = CLLocationCoordinate2D(latitude: lat!, longitude: lng!)
+            mapView.addAnnotation(annotation)
+    }
     
     @IBAction func acceptAction(_ sender: Any) {
         KVLoading.show()
@@ -130,25 +139,33 @@ class HospitalProfile: UIViewController {
         logoutBtn.layer.cornerRadius = 8
 //        print("response @% @% @% @%",shiftDate, shiftEndTime, shiftEndTime, latitude, longitude)
         
+        
+        mapView.delegate = self
+        
+        
         if String(describing: Defaults.value(forKey: "UserType")) == "Nurse" {
             logoutBtn.isHidden = true
             logoutBtn.isEnabled = false
+            addAnnotations()
+            if name != "" {
+                hospitalLbl.text = name
+            }
         } else {
             acceptbtn.isEnabled = false
             acceptbtn.isHidden = true
             declineBtn.isHidden = true
             declineBtn.isEnabled = false
+            hospitalLbl.text = UserDefaults.standard.string(forKey: "userName")
+            numberLbl.text = UserDefaults.standard.string(forKey: "userNumber")
+            getData()
         }
         
         self.hospitalImage.layer.cornerRadius = self.hospitalImage.frame.size.width/2
         self.hospitalImage.clipsToBounds = true
         
-        if name != "" {
-            hospitalLbl.text = name
-        }
+        
         
 //        let url = NSURL(string: avatarUrl)
-
     }
     
     func phone(phoneNum: String) {
@@ -158,6 +175,47 @@ class HospitalProfile: UIViewController {
             } else {
                 UIApplication.shared.openURL(url as URL)
             }
+        }
+    }
+    
+    func getData() {
+        var json1: JSON = []
+        let url = "http://thenerdcamp.com/calllight/public/api/v1/profile/hospitals?api_token=" + UserDefaults.standard.string(forKey: "apiToken")!
+        let completeUrl = URL(string:url)!
+        print (completeUrl)
+        let headers: HTTPHeaders = [
+            "api_token": UserDefaults.standard.string(forKey: "apiToken")!,
+            "Accept": "application/json"
+        ]
+        
+        Alamofire.request(completeUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
+                        print(response.request as Any)  // original URL request
+                        print(response.response as Any) // URL response
+                        print(response.result.value as Any)   // result of response serialization
+            switch response.result {
+            case .success:
+                                print(response)
+                if let value = response.result.value {
+                    json1 = JSON(value)
+                                        print(json1)
+                    //                    print(json["data"]["available"])
+                    if (json1["data"]["latitude"] != nil) {
+                        self.latitude = json1["data"]["latitude"].double
+                        self.longitude = json1["data"]["longitude"].double
+                        self.addAnnotations()
+                        var address = String("\(json1["data"]["address"]), \(json1["data"]["city"]), \(json1["data"]["zip_code"]), \(json1["data"]["state"]), \(json1["data"]["country"])")
+                        print (address)
+                        if json1["data"]["country"].string != "empty" {
+                            self.addressLbl.text = address
+                        }
+                    }
+                }
+                
+                break
+            case .failure(let error):
+                print(error)
+            }
+            
         }
     }
     
