@@ -137,16 +137,18 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         //Display the result in m
         print(String(format: "The distance to my buddy is %.01fmeters", distance))
         
-        if distance < 500000 {
+        if distance < 50 {
             
             DispatchQueue.main.async {
 //                self.startShiftBtn.isHidden = false
 //                self.startLunchBreakAction.isHidden = false
+                
                 self.startShiftBtn.isEnabled = true
                 self.startLunchBreakAction.isEnabled = true
                 self.locationManager.stopUpdatingLocation()
             }
-            
+            self.label.text = "You are now in vicinity"
+            self.image.isHidden = true
 //            self.startShiftBtn.isHidden = false
 //            self.startLunchBreakAction.isHidden = false
             self.startShiftBtn.isEnabled = true
@@ -330,10 +332,14 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
                         self.startShiftBtn.titleLabel?.text = "End Shift"
                         self.startShiftBtn.tintColor = UIColor.red
                         self.startShiftBtn.setTitle("End Shift", for: .normal)
+                        self.label.text = "Your Shift has started"
+                        self.image.isHidden = true
                     } else {
                         self.startShiftBtn.isEnabled = false
                         self.startShiftBtn.isHidden = true
                         self.startLunchBreakAction.isHidden = true
+                        self.label.text = "Tap to set availability"
+                        self.image.isHidden = false
                         self.rating2()
                         Defaults.set(0.0, forKey: "HospitalLat")
                     }
@@ -386,6 +392,8 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
 //                    print(json)
                     self.startLunchBreakAction.isEnabled = false
                     self.startLunchBreakAction.isHidden = true
+                    self.label.text = "You have availed the break."
+                    self.image.isHidden = true
                 }
                 KVLoading.hide()
                 break

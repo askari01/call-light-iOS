@@ -15,6 +15,7 @@ class CustomCell: UITableViewCell {
     @IBOutlet weak var hospitalLocation: UILabel!
     @IBOutlet weak var nurseName: UILabel!
     @IBOutlet weak var nurseSpecialityAndType: UILabel!
+    @IBOutlet weak var balance: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

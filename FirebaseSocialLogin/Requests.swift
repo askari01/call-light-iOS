@@ -15,6 +15,9 @@ import KVLoading
 class Requests: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var availableBalance: UILabel!
+    @IBOutlet weak var totalBalance: UILabel!
+    @IBOutlet weak var withdrawn: UILabel!
     
     var json: JSON!
     var row = 0
@@ -26,6 +29,7 @@ class Requests: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
+        loadBalance()
         loadRequest()
         KVLoading.show()
     }
@@ -72,6 +76,7 @@ class Requests: UIViewController, UITableViewDelegate, UITableViewDataSource {
             cell.hospitalLocation.text = String(describing: self.json["data"][indexPath.row]["hospital"]["address"])
             cell.nurseName.text = String(describing: self.json["data"][indexPath.row]["nurse"]["user"]["name"])
             cell.nurseSpecialityAndType.text = String(describing: self.json["data"][indexPath.row]["nurse"]["speciality"]) + " - " + String(describing: self.json["data"][indexPath.row]["nurse"]["type"])
+            cell.balance.text = "$\(indexPath.row)"
             
         } else {
             
@@ -91,6 +96,42 @@ class Requests: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+            return "History"
+    }
+    
+    func loadBalance() {
+        let url = "http://thenerdcamp.com/calllight/public/api/v1/profile/payments?api_token=" + UserDefaults.standard.string(forKey: "apiToken")! + "&nurse_id=" + UserDefaults.standard.string(forKey: "userID")!
+        let completeUrl = URL(string:url)!
+        
+        
+        let headers: HTTPHeaders = [
+            "api_token": UserDefaults.standard.string(forKey: "apiToken")!
+        ]
+        
+        Alamofire.request(completeUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
+            //            print(response.request as Any)  // original URL request
+            //            print(response.response as Any) // URL response
+            //            print(response.result.value as Any)   // result of response serialization
+            switch response.result {
+            case .success:
+                if let value = response.result.value {
+                    self.json = JSON(value)
+                    //                    print(self.json)
+                    
+                    //                    print(self.row)
+//                    KVLoading.hide()
+                    self.availableBalance.text = "$350"
+                    self.totalBalance.text = "$400"
+                    self.withdrawn.text = "$150"
+                }
+                break
+            case .failure(let error):
+                KVLoading.hide()
+                print(error)
+            }
+        }
+    }
     
     func loadRequest() {
         let url = "http://thenerdcamp.com/calllight/public/api/v1/hospital/request?api_token=" + UserDefaults.standard.string(forKey: "apiToken")!

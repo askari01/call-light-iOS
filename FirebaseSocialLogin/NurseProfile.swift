@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import SwiftyUserDefaults
+import SwiftyStarRatingView
 import KVLoading
 
 class NurseProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -31,6 +32,7 @@ class NurseProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var request: UIButton!
     @IBOutlet weak var close: UIButton!
+    @IBOutlet weak var ratings: SwiftyStarRatingView!
     
     var id: Int!
     var hospitalID: Int!
@@ -103,13 +105,45 @@ class NurseProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
             case .success:
                 if let value = response.result.value {
                     json = JSON(value)
-//                    print(json)
+                    print(json)
                     
-                    if json["data"]["gender"].string! == "0" {
-                        self.name.text = json["data"]["name"].string! + " (M)"
-                    } else {
-                        self.name.text = json["data"]["name"].string! + " (F)"
+                    var json1: JSON = []
+
+                    let url1 = "http://thenerdcamp.com/calllight/public/api/v1/profile/ratings?api_token=\(UserDefaults.standard.string(forKey: "apiToken")!)&id=1&type=nurse"
+                    let completeUrl1 = URL(string:url1)!
+                    print (completeUrl1)
+                    let headers1: HTTPHeaders = [
+                        "api_token": UserDefaults.standard.string(forKey: "apiToken")!
+                    ]
+                    
+                    Alamofire.request(completeUrl1, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil ).responseJSON{ response in
+                        //            print(response.request as Any)  // original URL request
+                        //            print(response.response as Any) // URL response
+                        //            print(response.result.value as Any)   // result of response serialization
+                        switch response.result {
+                        case .success:
+                            print(response)
+                            if let value = response.result.value {
+                                json1 = JSON(value)
+                                let rating = json1["data"]["rating"].double
+                                print (rating)
+                                self.ratings.isHidden = false
+                                self.ratings.value = CGFloat(rating!)
+                            }
+                            
+                            break
+                        case .failure(let error):
+                            print(error)
+                        }
+                        
                     }
+                    
+                    self.name.text = json["data"]["name"].string!
+//                    if json["data"]["gender"].string! == "0" {
+//                        self.name.text = json["data"]["name"].string! + " (M)"
+//                    } else {
+//                        self.name.text = json["data"]["name"].string! + " (F)"
+//                    }
                     if json["data"]["shift"].string! == "0" {
                         self.shift.text = "7 am to 7 pm"
                     } else if json["data"]["shift"].string! == "1" {

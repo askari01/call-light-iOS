@@ -19,6 +19,8 @@ class Logout {
             Defaults.set("", forKey: "profileVerified")
             Defaults.set("", forKey: "UserName")
             Defaults.set("", forKey: "userNumber")
+            Defaults.set("", forKey: "HospitalLat")
+            Defaults.set("", forKey: "HospitalLong")
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
             return true
         } else {

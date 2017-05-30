@@ -121,6 +121,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDel
                 controller.longitude = json["hospital"]["longitude"].double
                 Defaults.set(json["hospital"]["latitude"].double, forKey: "HospitalLat")
                 Defaults.set(json["hospital"]["longitude"].double, forKey: "HospitalLong")
+                print ("latitude: ",json["hospital"]["latitude"].double)
+                print ("longitude: ",json["hospital"]["longitude"].double)
                 controller.name = json["hospital"]["name"].string
                 controller.shiftStartTime = json["hospital_request"]["shift_start_time"].string
                 controller.shiftEndTime = json["hospital_request"]["shift_end_time"].string

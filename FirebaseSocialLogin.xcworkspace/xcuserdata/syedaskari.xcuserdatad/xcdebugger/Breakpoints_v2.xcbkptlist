@@ -26,7 +26,7 @@
                   moduleName = "FirebaseSocialLogin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/syedaskari/Downloads/Projects/call-light-iOS/FirebaseSocialLogin/loginEmail.swift"
-                  timestampString = "517144437.426694"
+                  timestampString = "517311555.583089"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "64"
@@ -41,7 +41,7 @@
                   moduleName = "FirebaseSocialLogin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/syedaskari/Downloads/Projects/call-light-iOS/FirebaseSocialLogin/loginEmail.swift"
-                  timestampString = "517144437.430405"
+                  timestampString = "517311555.585356"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "65"
@@ -177,6 +177,86 @@
             endingLineNumber = "49"
             landmarkName = "signInAction(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseSocialLogin/NurseProfile.swift"
+            timestampString = "517309775.14792"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseSocialLogin/NurseProfile.swift"
+            timestampString = "517309823.161063"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseSocialLogin/NurseProfile.swift"
+            timestampString = "517309824.135897"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FirebaseSocialLogin.NurseProfile.(viewWillAppear (Swift.Bool) -&gt; ()).(closure #1)"
+                  moduleName = "FirebaseSocialLogin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/syedaskari/Downloads/Projects/call-light-iOS/FirebaseSocialLogin/NurseProfile.swift"
+                  timestampString = "517311555.625793"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "1216">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FirebaseSocialLogin.NurseProfile.(viewWillAppear (Swift.Bool) -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "FirebaseSocialLogin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/syedaskari/Downloads/Projects/call-light-iOS/FirebaseSocialLogin/NurseProfile.swift"
+                  timestampString = "517311555.627272"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
