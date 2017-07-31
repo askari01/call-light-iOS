@@ -25,7 +25,7 @@ class AddDocumentsHospital: UITableViewController, UIGestureRecognizerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        KVLoading.show()
+//        KVLoading.show()
         self.getAllDocs()
         self.refreshControl?.addTarget(self, action: #selector(self.getAllDocs), for: UIControlEvents.valueChanged)
         // Uncomment the following line to preserve selection between presentations
@@ -42,7 +42,7 @@ class AddDocumentsHospital: UITableViewController, UIGestureRecognizerDelegate, 
         } else {
             self.done.isEnabled = true
         }
-        self.getAllDocs()
+//        self.getAllDocs()
 
     }
 
@@ -92,8 +92,9 @@ class AddDocumentsHospital: UITableViewController, UIGestureRecognizerDelegate, 
                         self.row = self.json["data"].count
 //                        print(self.row)
                         //print(self.json[0]["facilityPictures"])
-                        KVLoading.hide()
+                        
                         self.documentsTableView.reloadData()
+                        KVLoading.hide()
                     }
                     break
                 case .failure(let error):
@@ -224,10 +225,6 @@ class AddDocumentsHospital: UITableViewController, UIGestureRecognizerDelegate, 
         
         self.chosenImage = (info[UIImagePickerControllerEditedImage] as! UIImage?)!
 //        profileImage.image = chosenImage
-        
-        
-        
-        
         picker.dismiss(animated: true, completion: { _ in
 //            self.DocName()
             KVLoading.show()

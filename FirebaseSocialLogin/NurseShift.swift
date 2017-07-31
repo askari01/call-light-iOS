@@ -26,7 +26,7 @@ class NurseShift: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     var nurseSexSelect = 0
     var NurseSpecilitySelect = ""
     
-    var pickerData = ["ER", "ICU", "Labor &amp; Delivery", "Med/Surgical", "Cath. Lab"]
+    var pickerData = ["ER", "ICU", "Labor & Delivery", "Med/Surgical", "Cath. Lab"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
