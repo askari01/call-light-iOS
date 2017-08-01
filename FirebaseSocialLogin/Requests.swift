@@ -29,7 +29,7 @@ class Requests: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
-        loadBalance()
+//        loadBalance()
         loadRequest()
         KVLoading.show()
     }

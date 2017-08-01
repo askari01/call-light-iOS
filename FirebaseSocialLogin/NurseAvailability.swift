@@ -30,6 +30,10 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // check availability
+        availability()
+        
+        
         startShiftBtn.layer.cornerRadius = 8
         startLunchBreakAction.layer.cornerRadius = 8
         
@@ -178,7 +182,7 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         let x = (alert1.view.frame.width - 80) / 2
         
         // adding image
-        var imageView = UIImageView(frame: CGRect(x: x, y:10, width:36, height:54))
+        var imageView = UIImageView(frame: CGRect(x: (x-30), y:10, width:36, height:54))
         imageView.image = UIImage(named: "logo1")
         
         alert1.view.addSubview(imageView)
@@ -186,7 +190,7 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         // Ratings
         let starRatingView = SwiftyStarRatingView()
         
-        starRatingView.frame = CGRect(x: (x-70), y: imageView.frame.maxY + 40, width: 180, height:40)
+        starRatingView.frame = CGRect(x: (x-100), y: imageView.frame.maxY + 40, width: 180, height:40)
         
         starRatingView.maximumValue = 5 		//default is 5
         starRatingView.minimumValue = 0 		//default is 0
@@ -200,7 +204,7 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         
         // Comments
         // Add textfield 1
-        let textfield1 = UITextView(frame: CGRect(x: (x-90), y: starRatingView.frame.maxY + 10, width: 210, height: 85))
+        let textfield1 = UITextView(frame: CGRect(x: (x-120), y: starRatingView.frame.maxY + 10, width: 210, height: 85))
         textfield1.delegate = self
         textfield1.layer.borderColor = UIColor.lightGray.cgColor
         textfield1.layer.borderWidth = 1

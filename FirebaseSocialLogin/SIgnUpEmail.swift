@@ -92,6 +92,10 @@ class SignUpEmail: UIViewController, UIGestureRecognizerDelegate, UIImagePickerC
         #else
                 deviceToken = UserDefaults.standard.string(forKey: "deviceToken")!
         #endif
+        
+        if deviceToken == nil {
+            deviceToken = "-1"
+        }
     
         let parameters: Parameters = [
             "name": name.text,
@@ -102,7 +106,7 @@ class SignUpEmail: UIViewController, UIGestureRecognizerDelegate, UIImagePickerC
             "device_token": deviceToken
         ]
 
-//        print(parameters)
+        print(parameters)
         
         Alamofire.request("http://thenerdcamp.com/calllight/public/api/v1/user/register", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil ).responseJSON{ response in
 //            print(response.request as Any)  // original URL request
