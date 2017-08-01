@@ -42,8 +42,14 @@ class ChangePassword: UIViewController {
 //                    print(response)
                     if let value = response.result.value {
                         json = JSON(value)
-//                        print(json)
-//                        print(json[0])
+                        print(json)
+                        print(json[0])
+                        var a = Logout.logOut()
+                        if a {
+                            self.performSegue(withIdentifier: "logOut", sender: self)
+                        } else {
+                            print ("logout issue")
+                        }
                     }
                     
                     break

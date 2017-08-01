@@ -158,7 +158,8 @@ class NurseProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
                     }
                     
                     if json["data"]["address"].string! != nil && json["data"]["city"].string! != nil &&
-                      json["data"]["country"].string! != nil && json["data"]["zip_code"].string! != nil {
+                        json["data"]["country"].string! != nil && json["data"]["zip_code"].string! != nil && json["data"]["address"].string! != "empty" && json["data"]["city"].string! != "empty" &&
+                        json["data"]["country"].string! != "empty" && json["data"]["zip_code"].string! != "empty" {
                         self.address.text = "\(json["data"]["address"].string!) \(json["data"]["city"].string!)  \(json["data"]["country"].string!)  \(json["data"]["zip_code"].string!)"
                     }
                     

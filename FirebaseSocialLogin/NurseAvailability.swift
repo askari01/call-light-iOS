@@ -31,7 +31,8 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         super.viewDidLoad()
         
         // check availability
-        availability()
+//        availability()
+        print("I am: \(Defaults[self.available])")
         
         
         startShiftBtn.layer.cornerRadius = 8
@@ -50,13 +51,13 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         view.addGestureRecognizer(tap1)
         
         label.text = "Tap to set Status"
-        image.image = UIImage(named: "nurseDecline.png")
+        image.image = UIImage(named: "red_720.png")
         
         if UserDefaults.standard.bool(forKey: "profileVerified") == false {
-            let alert = UIAlertController(title: "Profile Status", message: "Your Account Verificatoin Request is pending approval", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Profile Status", message: "Your Account Verification Request is pending approval", preferredStyle: UIAlertControllerStyle.alert)
             // add the actions (buttons)
             
-            alert.addAction(UIAlertAction(title: "Log Out", style: UIAlertActionStyle.default, handler: { action in
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { action in
                 var a = Logout.logOut()
                 if a {
                     self.performSegue(withIdentifier: "logOut", sender: self)
@@ -123,11 +124,16 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         var coordinate: CLLocationCoordinate2D = getLocation()
+        
+        if coordinate.latitude == nil {
+            return
+        }
 //        print ("latitude: ",coordinate.latitude)
 //        print ("longitude: ",coordinate.longitude)
 //        
 //        print ("hospital latitude: ", UserDefaults.standard.double(forKey: "HospitalLat"))
 //        print ("hospital longitude: ", UserDefaults.standard.double(forKey: "HospitalLong"))
+        
         
         //My location
         var myLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
@@ -139,7 +145,7 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         var distance = myLocation.distance(from: myBuddysLocation)
         
         //Display the result in m
-        print(String(format: "The distance to my buddy is %.01fmeters", distance))
+        print(String(format: "The distance to my hospital is %.01fmeters", distance))
         
         if distance < 50 {
             
@@ -418,7 +424,12 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         locationManager.startUpdatingLocation()
         let location: CLLocation? = locationManager.location
 //        altitude = Int(location?.altitude)
-        let coordinate: CLLocationCoordinate2D? = location?.coordinate
+        var coordinate: CLLocationCoordinate2D? = location?.coordinate
+//        if coordinate?.latitude == nil {
+//            coordinate?.latitude = -1
+//            coordinate?.longitude = -1
+//            return coordinate!
+//        }
         return coordinate!
     }
     
@@ -473,10 +484,10 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
     func availabilitySet() {
         if (Defaults[available] == 1 ) {
             label.text = "Available"
-            image.image = UIImage(named: "nurseAccept.png")
+            image.image = UIImage(named: "green_720.png")
         } else if (Defaults[available] == 0) {
             label.text = "Not Available"
-            image.image = UIImage(named: "nurseDecline.png")
+            image.image = UIImage(named: "red_720.png")
         } else {
             label.text = "Your Account is Pending Approval"
             image.image = UIImage(named: "nurseDecline.png")

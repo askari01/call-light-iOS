@@ -52,6 +52,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDel
         
         application.applicationIconBadgeNumber + 1
         
+        Defaults.set("Nurse", forKey: "UserType")
+        Defaults.set("-1", forKey: "deviceToken")
+        
         return true
     }
     

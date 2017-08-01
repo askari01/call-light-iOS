@@ -71,7 +71,7 @@ class Requests: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //            
 //            cell.textLabel?.text = String(describing: self.json["data"][indexPath.row]["nurse"]["user"]["name"])
 //            cell.detailTextLabel?.text = String(describing: self.json["data"][indexPath.row]["shift_date"])
-            cell.date.text = String(describing: self.json["data"][indexPath.row]["shift_date"])
+            cell.date.text = String(describing: self.json["data"][indexPath.row]["shift_date"])+String(describing: self.json["data"][indexPath.row]["shift_started"])
             cell.hospitalName.text = String(describing: self.json["data"][indexPath.row]["hospital"]["user"]["name"])
             cell.hospitalLocation.text = String(describing: self.json["data"][indexPath.row]["hospital"]["address"])
             cell.nurseName.text = String(describing: self.json["data"][indexPath.row]["nurse"]["user"]["name"])

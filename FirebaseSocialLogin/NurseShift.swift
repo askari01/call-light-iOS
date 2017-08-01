@@ -20,11 +20,12 @@ class NurseShift: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     @IBOutlet weak var NurseSex: UISegmentedControl!
     @IBOutlet weak var logOut: UIButton!
     @IBOutlet weak var progressButton: UIButton!
+    @IBOutlet weak var changePassword: UIButton!
     
     var nurseShiftSelect = 0
     var nurseTypeSelect = 0
     var nurseSexSelect = 0
-    var NurseSpecilitySelect = ""
+    var NurseSpecilitySelect = "ER"
     
     var pickerData = ["ER", "ICU", "Labor & Delivery", "Med/Surgical", "Cath. Lab"]
     
@@ -35,6 +36,7 @@ class NurseShift: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         
         logOut.layer.cornerRadius = 8
         progressButton.layer.cornerRadius = 8
+        changePassword.layer.cornerRadius = 8
         
         // Connect data:
         self.nurseSpeciality.delegate = self
@@ -44,10 +46,14 @@ class NurseShift: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         if UserDefaults.standard.bool(forKey: "profileComplete") == true {
             self.logOut.isEnabled = true
             self.logOut.isHidden = false
+            self.changePassword.isEnabled = true
+            self.changePassword.isHidden = false
             self.progressButton.setTitle("Save", for: [])
         } else {
             self.logOut.isEnabled = false
             self.logOut.isHidden = true
+            self.changePassword.isEnabled = false
+            self.changePassword.isHidden = true
         }
         
 //        print (self.pickerData)
@@ -81,8 +87,10 @@ class NurseShift: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     @IBAction func ShiftChange(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             self.nurseShiftSelect = 0
-        } else {
+        } else if sender.selectedSegmentIndex == 1 {
             self.nurseShiftSelect = 1
+        } else {
+            self.nurseShiftSelect = 2
         }
     }
 

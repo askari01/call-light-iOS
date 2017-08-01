@@ -19,6 +19,7 @@ class HospitalProfile: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var acceptbtn: UIButton!
     @IBOutlet weak var declineBtn: UIButton!
     @IBOutlet weak var hospitalImage: UIImageView!
+    @IBOutlet weak var changePassword: UIButton!
     
     var latitude: Double!
     var longitude: Double!
@@ -45,6 +46,10 @@ class HospitalProfile: UIViewController, MKMapViewDelegate {
 
     @IBAction func declineActoin(_ sender: Any) {
         KVLoading.show()
+        
+        Defaults.set(0.0, forKey: "HospitalLat")
+        Defaults.set(0.0, forKey: "HospitalLong")
+        
         var json: JSON = []
         let parameters: Parameters = [
             "request_id": requestID,
@@ -138,6 +143,7 @@ class HospitalProfile: UIViewController, MKMapViewDelegate {
         
         // Do any additional setup after loading the view.
         logoutBtn.layer.cornerRadius = 8
+        changePassword.layer.cornerRadius = 8
 //        print("response @% @% @% @%",shiftDate, shiftEndTime, shiftEndTime, latitude, longitude)
         
         
@@ -147,6 +153,8 @@ class HospitalProfile: UIViewController, MKMapViewDelegate {
         if String(describing: Defaults.value(forKey: "UserType")) == "Nurse" {
             logoutBtn.isHidden = true
             logoutBtn.isEnabled = false
+            changePassword.isHidden = true
+            changePassword.isEnabled = false
             addAnnotations()
             if name != "" {
                 hospitalLbl.text = name
