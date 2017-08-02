@@ -81,7 +81,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>need to use your camera</string>
 	<key>NSHumanReadableCopyright</key>
-	<string></string>
+	<string>Call Light</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Need to use your location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

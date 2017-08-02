@@ -48,6 +48,39 @@ class Nurses: UITableViewController {
         }
     }
     
+    @IBAction func valueChange(_ sender: UISegmentedControl) {
+        print(sender.selectedSegmentIndex)
+        if sender.selectedSegmentIndex == 1 {
+            print(self.json["data"])
+        } else if sender.selectedSegmentIndex == 2 {
+            print(self.json)
+        } else {
+        
+        }
+    }
+    
+    @IBAction func specalityChange(_ sender: UISegmentedControl) {
+        print(sender.selectedSegmentIndex)
+        if sender.selectedSegmentIndex == 1 {
+            print(self.json["data"])
+        } else if sender.selectedSegmentIndex == 2 {
+            print(self.json)
+        } else {
+            
+        }
+    }
+    
+    @IBAction func timeChange(_ sender: UISegmentedControl) {
+        print(sender.selectedSegmentIndex)
+        if sender.selectedSegmentIndex == 1 {
+            print(self.json["data"])
+        } else if sender.selectedSegmentIndex == 2 {
+            print(self.json)
+        } else {
+            
+        }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
 //        getAllNurse()
     }

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -204,14 +204,14 @@
                                 <color key="backgroundColor" red="0.60392156860000001" green="0.78039215689999997" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BpI-YQ-O99">
                                 <rect key="frame" x="20" y="450" width="374" height="30"/>
                                 <color key="backgroundColor" red="0.60392156860000001" green="0.78039215689999997" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtd-ho-am5">
                                 <rect key="frame" x="20" y="512" width="374" height="30"/>
@@ -455,10 +455,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="xFc-fu-9Bx" userLabel="bg">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUR-8A-Tuu">
-                                <rect key="frame" x="20" y="504" width="374" height="30"/>
+                                <rect key="frame" x="20" y="455" width="374" height="30"/>
                                 <color key="backgroundColor" red="0.22352941179999999" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="wmD-rg-uZc"/>
@@ -471,7 +471,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm New Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FuG-S2-YAG">
-                                <rect key="frame" x="20" y="445" width="374" height="30"/>
+                                <rect key="frame" x="20" y="396" width="374" height="30"/>
                                 <color key="backgroundColor" red="0.60392156860000001" green="0.78039215689999997" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="fqa-eR-KUT"/>
@@ -481,7 +481,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter New Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bKU-qp-7He">
-                                <rect key="frame" x="20" y="407" width="374" height="30"/>
+                                <rect key="frame" x="20" y="358" width="374" height="30"/>
                                 <color key="backgroundColor" red="0.60392156860000001" green="0.78039215689999997" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Efn-7D-P5r"/>
@@ -954,9 +954,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="1gM-6e-9pb">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="112"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KyM-dG-0MT">
+                                    <rect key="frame" x="97" y="8" width="221" height="29"/>
+                                    <segments>
+                                        <segment title="All"/>
+                                        <segment title="Speciality"/>
+                                        <segment title="Time"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="valueChange:" destination="oub-ZI-iTI" eventType="valueChanged" id="9Rp-1b-wRt"/>
+                                    </connections>
+                                </segmentedControl>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ysa-VJ-ROw">
+                                    <rect key="frame" x="57" y="81" width="301" height="29"/>
+                                    <segments>
+                                        <segment title="7 am to 7 pm"/>
+                                        <segment title="7 pm to 7 am"/>
+                                        <segment title="Any"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="timeChange:" destination="oub-ZI-iTI" eventType="valueChanged" id="5Iu-4k-eTv"/>
+                                    </connections>
+                                </segmentedControl>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cQo-Ky-cIJ">
+                                    <rect key="frame" x="57" y="44" width="301" height="29"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="301" id="biO-NQ-1fT"/>
+                                    </constraints>
+                                    <segments>
+                                        <segment title="RN"/>
+                                        <segment title="LPN\LVN"/>
+                                        <segment title="Any"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="specalityChange:" destination="oub-ZI-iTI" eventType="valueChanged" id="W7S-Cw-32c"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="KyM-dG-0MT" firstAttribute="centerX" secondItem="1gM-6e-9pb" secondAttribute="centerX" id="4nz-Rc-5L1"/>
+                                <constraint firstItem="cQo-Ky-cIJ" firstAttribute="top" secondItem="KyM-dG-0MT" secondAttribute="bottom" constant="8" symbolic="YES" id="8B3-cP-Qgw"/>
+                                <constraint firstItem="KyM-dG-0MT" firstAttribute="centerX" secondItem="cQo-Ky-cIJ" secondAttribute="centerX" id="Is7-He-Ww8"/>
+                                <constraint firstItem="ysa-VJ-ROw" firstAttribute="top" secondItem="cQo-Ky-cIJ" secondAttribute="bottom" constant="9" id="UAg-p3-nMr"/>
+                                <constraint firstItem="KyM-dG-0MT" firstAttribute="top" secondItem="1gM-6e-9pb" secondAttribute="topMargin" id="Yk4-SL-mtb"/>
+                                <constraint firstItem="ysa-VJ-ROw" firstAttribute="leading" secondItem="1gM-6e-9pb" secondAttribute="leading" constant="57" id="fej-jK-idJ"/>
+                                <constraint firstItem="cQo-Ky-cIJ" firstAttribute="centerX" secondItem="ysa-VJ-ROw" secondAttribute="centerX" id="s3m-3d-rPS"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NurseCell" id="ZVi-9x-2ZC">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZVi-9x-2ZC" id="rao-kZ-AJW">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -981,26 +1033,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="6Zi-dI-5yA">
-                        <rightBarButtonItems>
-                            <barButtonItem enabled="NO" title="Map" id="hKt-Tx-EA8">
-                                <connections>
-                                    <segue destination="gqL-dq-KWo" kind="show" id="XgM-UY-WKo"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem style="plain" id="v7v-Pe-M3Z">
-                                <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="bar" selectedSegmentIndex="0" id="HQ0-Kr-XNP">
-                                    <rect key="frame" x="131" y="7" width="221" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <segments>
-                                        <segment title="None"/>
-                                        <segment title="Speciality"/>
-                                        <segment title="Time"/>
-                                    </segments>
-                                </segmentedControl>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="NURSES" id="6Zi-dI-5yA"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="nurseTable" destination="XQ2-mK-J1x" id="hRu-h0-3jO"/>
@@ -1009,7 +1042,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Da5-Bl-ftl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1438" y="2599"/>
+            <point key="canvasLocation" x="1437.68115942029" y="2598.913043478261"/>
         </scene>
         <!--Map-->
         <scene sceneID="fDy-tp-tlm">
@@ -1024,10 +1057,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PzY-hP-uyO">
-                                <rect key="frame" x="0.0" y="108" width="414" height="579"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                             </mapView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1k-Dz-rRj">
-                                <rect key="frame" x="0.0" y="64" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="NURSES" id="yXk-BO-cmd"/>
                                 </items>
@@ -1712,7 +1745,7 @@
         <scene sceneID="XpO-CD-c7P">
             <objects>
                 <navigationController id="vXr-p3-h7T" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2yk-78-PCM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2yk-78-PCM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2046,7 +2079,7 @@
                 <navigationController title="Nurses" id="ZgH-aO-gyD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="List" image="inbox" id="Dzx-BF-5kH"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EAZ-Lh-9lJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EAZ-Lh-9lJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2084,7 +2117,7 @@
             <objects>
                 <navigationController id="jT5-Nm-vV6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Documents" image="inbox" id="XoH-TZ-yrP"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="W5N-AZ-drK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="W5N-AZ-drK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2183,14 +2216,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DAE-Cx-bEZ">
-                                            <rect key="frame" x="20.000000000000004" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                            <rect key="frame" x="15" y="5" width="33.333333333333336" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CoL-IZ-69c">
-                                            <rect key="frame" x="19.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <rect key="frame" x="14.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -2237,17 +2270,16 @@
         <image name="user" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BBS-SF-cZB"/>
-        <segue reference="KKJ-xf-1U6"/>
-        <segue reference="hLg-oF-idT"/>
-        <segue reference="MX9-y5-C08"/>
-        <segue reference="ZuZ-l6-VIC"/>
         <segue reference="k44-kJ-D5P"/>
+        <segue reference="QHO-6Q-ZhC"/>
+        <segue reference="ZuZ-l6-VIC"/>
+        <segue reference="hLg-oF-idT"/>
         <segue reference="mVY-J6-op8"/>
-        <segue reference="XgM-UY-WKo"/>
         <segue reference="wYL-cf-AjO"/>
         <segue reference="N8O-lX-Imq"/>
-        <segue reference="xLp-hE-HuP"/>
+        <segue reference="VKG-Yr-5Tm"/>
+        <segue reference="Aqf-Jj-MDa"/>
+        <segue reference="BBS-SF-cZB"/>
         <segue reference="Pqp-jC-GIo"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -78,7 +78,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Fabric.with([Twitter.self])
+//        Fabric.with([Twitter.self])
         GIDSignIn.sharedInstance().delegate = self
         
         facebookButton.layer.cornerRadius = 8
