@@ -156,6 +156,8 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
                 self.startShiftBtn.isEnabled = true
                 self.startLunchBreakAction.isEnabled = true
                 self.locationManager.stopUpdatingLocation()
+                self.locationManager.stopMonitoringSignificantLocationChanges()
+                self.locationManager.delegate = nil
             }
             self.label.text = "You are now in vicinity"
             self.image.isHidden = true
@@ -175,6 +177,12 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
             
             // show the alert
             self.present(alert, animated: true, completion: nil)
+        }
+        
+        if distance > 40000 {
+            self.locationManager.stopUpdatingLocation()
+            self.locationManager.stopMonitoringSignificantLocationChanges()
+            self.locationManager.delegate = nil
         }
     }
     

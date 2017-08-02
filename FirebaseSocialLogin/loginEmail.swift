@@ -43,16 +43,19 @@ class loginEmail: UIViewController {
     }
     
     @IBAction func signInAction(_ sender: Any) {
-        KVLoading.show()
-        print ("device token is",UserDefaults.standard.string(forKey: "deviceToken")!)
+        
         var deviceToken: String
-        if UserDefaults.standard.string(forKey: "deviceToken")! == "0" {
+        if UserDefaults.standard.string(forKey: "deviceToken")! == nil {
             deviceToken = "-1"
         } else {
             deviceToken = UserDefaults.standard.string(forKey: "deviceToken")!
+            print("Token: \(deviceToken)")
 //            deviceToken = "-1"
         }
+        
+        
         if email.text != "" && password.text != "" {
+            KVLoading.show()
             let parameters: Parameters = [
                 "email": email.text! ,
                 "password": password.text! ,

@@ -44,16 +44,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDel
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {
             (granted,error) in
             if granted{
-                application.registerForRemoteNotifications()
+                DispatchQueue.main.async {
+                    application.registerForRemoteNotifications()
+                }
             } else {
                 print("User Notification permission denied: \(String(describing: error?.localizedDescription))")
+                Defaults.set("-1", forKey: "deviceToken")
             }
         })
         
         application.applicationIconBadgeNumber + 1
         
-        Defaults.set("Nurse", forKey: "UserType")
-        Defaults.set("-1", forKey: "deviceToken")
+//        Defaults.set("Nurse", forKey: "UserType")
+//        Defaults.set("-1", forKey: "deviceToken")
         
         return true
     }
@@ -80,12 +83,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDel
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         // will add token later to deal with
         print("Successful registration. Token is:")
-//        print ("device token is",UserDefaults.standard.string(forKey: "deviceToken")!)
         print(tokenString(deviceToken))
+        print ("device token is",UserDefaults.standard.string(forKey: "deviceToken")!)
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("failed to register for remote notifications")
+        Defaults.set("-1", forKey: "deviceToken")
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {

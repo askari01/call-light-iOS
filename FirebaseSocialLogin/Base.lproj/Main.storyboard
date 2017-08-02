@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -980,13 +980,28 @@
                             <outlet property="delegate" destination="oub-ZI-iTI" id="5pQ-9H-HYZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Nurses" id="6Zi-dI-5yA">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Map" id="hKt-Tx-EA8">
-                            <connections>
-                                <segue destination="gqL-dq-KWo" kind="show" id="XgM-UY-WKo"/>
-                            </connections>
-                        </barButtonItem>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="6Zi-dI-5yA">
+                        <rightBarButtonItems>
+                            <barButtonItem enabled="NO" title="Map" id="hKt-Tx-EA8">
+                                <connections>
+                                    <segue destination="gqL-dq-KWo" kind="show" id="XgM-UY-WKo"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="v7v-Pe-M3Z">
+                                <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="bar" selectedSegmentIndex="0" id="HQ0-Kr-XNP">
+                                    <rect key="frame" x="131" y="7" width="221" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <segments>
+                                        <segment title="None"/>
+                                        <segment title="Speciality"/>
+                                        <segment title="Time"/>
+                                    </segments>
+                                </segmentedControl>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="nurseTable" destination="XQ2-mK-J1x" id="hRu-h0-3jO"/>
                         <segue destination="lhh-mp-cv3" kind="showDetail" identifier="NurseProfileSegue" id="wYL-cf-AjO"/>
@@ -1697,7 +1712,7 @@
         <scene sceneID="XpO-CD-c7P">
             <objects>
                 <navigationController id="vXr-p3-h7T" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2yk-78-PCM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2yk-78-PCM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2031,7 +2046,7 @@
                 <navigationController title="Nurses" id="ZgH-aO-gyD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="List" image="inbox" id="Dzx-BF-5kH"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EAZ-Lh-9lJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EAZ-Lh-9lJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2069,7 +2084,7 @@
             <objects>
                 <navigationController id="jT5-Nm-vV6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Documents" image="inbox" id="XoH-TZ-yrP"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="W5N-AZ-drK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="W5N-AZ-drK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2168,14 +2183,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DAE-Cx-bEZ">
-                                            <rect key="frame" x="15" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                            <rect key="frame" x="20.000000000000004" y="5" width="33.333333333333336" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CoL-IZ-69c">
-                                            <rect key="frame" x="14.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <rect key="frame" x="19.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -2222,17 +2237,17 @@
         <image name="user" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wYL-cf-AjO"/>
-        <segue reference="mVY-J6-op8"/>
-        <segue reference="Z6c-22-UjX"/>
-        <segue reference="Qdd-UI-XKn"/>
-        <segue reference="N8O-lX-Imq"/>
-        <segue reference="KKJ-xf-1U6"/>
         <segue reference="BBS-SF-cZB"/>
-        <segue reference="Pqp-jC-GIo"/>
+        <segue reference="KKJ-xf-1U6"/>
+        <segue reference="hLg-oF-idT"/>
         <segue reference="MX9-y5-C08"/>
-        <segue reference="xLp-hE-HuP"/>
-        <segue reference="lbO-IW-iiC"/>
+        <segue reference="ZuZ-l6-VIC"/>
+        <segue reference="k44-kJ-D5P"/>
+        <segue reference="mVY-J6-op8"/>
         <segue reference="XgM-UY-WKo"/>
+        <segue reference="wYL-cf-AjO"/>
+        <segue reference="N8O-lX-Imq"/>
+        <segue reference="xLp-hE-HuP"/>
+        <segue reference="Pqp-jC-GIo"/>
     </inferredMetricsTieBreakers>
 </document>

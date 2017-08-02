@@ -6,20 +6,20 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/loginEmail.swift"
-            timestampString = "517143277.734112"
+            timestampString = "523361117.576254"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "signInAction(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "FirebaseSocialLogin.loginEmail.signInAction (Any) -&gt; ()"
@@ -34,7 +34,7 @@
                   offsetFromSymbolStart = "3800">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "FirebaseSocialLogin.loginEmail.(signInAction (Any) -&gt; ()).(closure #1)"
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/loginEmail.swift"
-            timestampString = "517143283.224812"
+            timestampString = "523361117.576329"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "signInAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/loginEmail.swift"
-            timestampString = "517143298.726432"
+            timestampString = "523361117.576384"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "signInAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseSocialLogin/loginEmail.swift"
+            timestampString = "523361117.576434"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "signInAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,71 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/loginEmail.swift"
-            timestampString = "517143299.988286"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "signInAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FirebaseSocialLogin/loginEmail.swift"
-            timestampString = "517143303.936872"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "signInAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FirebaseSocialLogin/loginEmail.swift"
-            timestampString = "517143308.812432"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "signInAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FirebaseSocialLogin/loginEmail.swift"
-            timestampString = "517143502.071192"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "signInAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FirebaseSocialLogin/loginEmail.swift"
-            timestampString = "517143503.199673"
+            timestampString = "523361117.576483"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -169,24 +121,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FirebaseSocialLogin/loginEmail.swift"
-            timestampString = "517143503.989561"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "signInAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/NurseProfile.swift"
-            timestampString = "517309775.14792"
+            timestampString = "523360484.699052"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
@@ -202,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/NurseProfile.swift"
-            timestampString = "517309823.161063"
+            timestampString = "523360484.701475"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "108"
@@ -218,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/NurseProfile.swift"
-            timestampString = "517309824.135897"
+            timestampString = "523360484.702137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
@@ -230,26 +166,26 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FirebaseSocialLogin.NurseProfile.(viewWillAppear (Swift.Bool) -&gt; ()).(closure #1)"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in FirebaseSocialLogin.NurseProfile.viewWillAppear(Swift.Bool) -&gt; ()"
                   moduleName = "FirebaseSocialLogin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/syedaskari/Projects/call-light-iOS/FirebaseSocialLogin/NurseProfile.swift"
-                  timestampString = "523282926.918272"
+                  timestampString = "523361117.863225"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "110"
                   endingLineNumber = "110"
-                  offsetFromSymbolStart = "1216">
+                  offsetFromSymbolStart = "1464">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FirebaseSocialLogin.NurseProfile.(viewWillAppear (Swift.Bool) -&gt; ()).(closure #1).(closure #1)"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in FirebaseSocialLogin.NurseProfile.viewWillAppear(Swift.Bool) -&gt; ()"
                   moduleName = "FirebaseSocialLogin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/syedaskari/Projects/call-light-iOS/FirebaseSocialLogin/NurseProfile.swift"
-                  timestampString = "523282926.919696"
+                  timestampString = "523361117.865176"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "110"
@@ -266,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/AddDocumentsHospital.swift"
-            timestampString = "523177303.082644"
+            timestampString = "523360617.92498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "276"
@@ -282,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/AddDocumentsHospital.swift"
-            timestampString = "523176471.097465"
+            timestampString = "523360617.925032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "97"
@@ -298,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/AddDocumentsHospital.swift"
-            timestampString = "523177303.082644"
+            timestampString = "523360617.925077"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "230"
@@ -314,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/AddDocumentsHospital.swift"
-            timestampString = "523177303.082644"
+            timestampString = "523360617.925119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "237"
@@ -330,7 +266,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/AddDocumentsHospital.swift"
-            timestampString = "523176489.148314"
+            timestampString = "523360617.925161"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -346,7 +282,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/AddDocumentsHospital.swift"
-            timestampString = "523176491.982755"
+            timestampString = "523360617.925204"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
@@ -362,7 +298,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/AddDocumentsHospital.swift"
-            timestampString = "523177376.40632"
+            timestampString = "523360617.925243"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
@@ -378,7 +314,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/AddDocumentsHospital.swift"
-            timestampString = "523177381.335516"
+            timestampString = "523360617.925284"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -394,7 +330,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/AddDocumentsHospital.swift"
-            timestampString = "523177385.368886"
+            timestampString = "523360617.925324"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -410,7 +346,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/AddDocumentsHospital.swift"
-            timestampString = "523177389.588346"
+            timestampString = "523360617.925364"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -474,11 +410,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/NurseAvailability.swift"
-            timestampString = "523278857.688435"
+            timestampString = "523351766.123129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
             landmarkName = "rating2()"
             landmarkType = "7">
          </BreakpointContent>
@@ -490,11 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/NurseAvailability.swift"
-            timestampString = "523278857.688435"
+            timestampString = "523351766.123129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
             landmarkName = "rating2()"
             landmarkType = "7">
             <Locations>
@@ -502,30 +438,30 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FirebaseSocialLogin.NurseAvailability.rating2 () -&gt; ()"
+                  symbolName = "FirebaseSocialLogin.NurseAvailability.rating2() -&gt; ()"
                   moduleName = "FirebaseSocialLogin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/syedaskari/Projects/call-light-iOS/FirebaseSocialLogin/NurseAvailability.swift"
-                  timestampString = "523282926.959446"
+                  timestampString = "523361117.923808"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "226"
-                  endingLineNumber = "226"
-                  offsetFromSymbolStart = "3952">
+                  startingLineNumber = "234"
+                  endingLineNumber = "234"
+                  offsetFromSymbolStart = "3912">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FirebaseSocialLogin.NurseAvailability.(rating2 () -&gt; ()).(closure #1)"
+                  symbolName = "closure #1 (__ObjC.UIAlertAction) -&gt; () in FirebaseSocialLogin.NurseAvailability.rating2() -&gt; ()"
                   moduleName = "FirebaseSocialLogin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/syedaskari/Projects/call-light-iOS/FirebaseSocialLogin/NurseAvailability.swift"
-                  timestampString = "523282926.960855"
+                  timestampString = "523361117.92573"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "227"
-                  endingLineNumber = "227"
+                  startingLineNumber = "235"
+                  endingLineNumber = "235"
                   offsetFromSymbolStart = "28">
                </Location>
             </Locations>
@@ -538,11 +474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/NurseAvailability.swift"
-            timestampString = "523278857.688435"
+            timestampString = "523351766.123129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
             landmarkName = "rating2()"
             landmarkType = "7">
          </BreakpointContent>
@@ -554,11 +490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/NurseAvailability.swift"
-            timestampString = "523278857.688435"
+            timestampString = "523351766.123129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
             landmarkName = "rating2()"
             landmarkType = "7">
          </BreakpointContent>
@@ -570,11 +506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/NurseAvailability.swift"
-            timestampString = "523278857.688435"
+            timestampString = "523351766.123129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "rating2()"
             landmarkType = "7">
          </BreakpointContent>
@@ -586,11 +522,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/NurseAvailability.swift"
-            timestampString = "523278857.688435"
+            timestampString = "523351766.123129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
             landmarkName = "rating2()"
             landmarkType = "7">
          </BreakpointContent>
@@ -602,11 +538,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/NurseAvailability.swift"
-            timestampString = "523278857.688435"
+            timestampString = "523351766.123129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
             landmarkName = "rating2()"
             landmarkType = "7">
          </BreakpointContent>
@@ -618,11 +554,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/NurseAvailability.swift"
-            timestampString = "523278857.688435"
+            timestampString = "523351766.123129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "243"
-            endingLineNumber = "243"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
             landmarkName = "rating2()"
             landmarkType = "7">
          </BreakpointContent>
@@ -646,26 +582,26 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FirebaseSocialLogin.ChangePassword.changePassAction (Any) -&gt; ()"
+                  symbolName = "FirebaseSocialLogin.ChangePassword.changePassAction(Any) -&gt; ()"
                   moduleName = "FirebaseSocialLogin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/syedaskari/Projects/call-light-iOS/FirebaseSocialLogin/ChangePassword.swift"
-                  timestampString = "523282926.981507"
+                  timestampString = "523361117.953589"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "23"
                   endingLineNumber = "23"
-                  offsetFromSymbolStart = "740">
+                  offsetFromSymbolStart = "780">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FirebaseSocialLogin.ChangePassword.(changePassAction (Any) -&gt; ()).(closure #1)"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in FirebaseSocialLogin.ChangePassword.changePassAction(Any) -&gt; ()"
                   moduleName = "FirebaseSocialLogin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/syedaskari/Projects/call-light-iOS/FirebaseSocialLogin/ChangePassword.swift"
-                  timestampString = "523282926.982925"
+                  timestampString = "523361117.955574"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "23"
@@ -726,26 +662,26 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FirebaseSocialLogin.ChangePassword.changePassAction (Any) -&gt; ()"
+                  symbolName = "FirebaseSocialLogin.ChangePassword.changePassAction(Any) -&gt; ()"
                   moduleName = "FirebaseSocialLogin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/syedaskari/Projects/call-light-iOS/FirebaseSocialLogin/ChangePassword.swift"
-                  timestampString = "523282926.991867"
+                  timestampString = "523361117.968121"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "36"
                   endingLineNumber = "36"
-                  offsetFromSymbolStart = "3036">
+                  offsetFromSymbolStart = "3268">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FirebaseSocialLogin.ChangePassword.(changePassAction (Any) -&gt; ()).(closure #1)"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in FirebaseSocialLogin.ChangePassword.changePassAction(Any) -&gt; ()"
                   moduleName = "FirebaseSocialLogin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/syedaskari/Projects/call-light-iOS/FirebaseSocialLogin/ChangePassword.swift"
-                  timestampString = "523282926.993275"
+                  timestampString = "523361117.97039"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "23"
@@ -826,11 +762,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/NurseAvailability.swift"
-            timestampString = "523278857.688435"
+            timestampString = "523351766.123129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "420"
-            endingLineNumber = "420"
+            startingLineNumber = "428"
+            endingLineNumber = "428"
             landmarkName = "getLocation()"
             landmarkType = "7">
          </BreakpointContent>
@@ -842,12 +778,188 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseSocialLogin/NurseAvailability.swift"
-            timestampString = "523279240.290365"
+            timestampString = "523351766.123129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "433"
-            endingLineNumber = "433"
+            startingLineNumber = "441"
+            endingLineNumber = "441"
             landmarkName = "getLocation()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseSocialLogin/NurseAvailability.swift"
+            timestampString = "523351766.123129"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "locationManager(_:didUpdateLocations:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseSocialLogin/AppDelegate.swift"
+            timestampString = "523361117.576921"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseSocialLogin/AppDelegate.swift"
+            timestampString = "523361117.576976"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "application(_:didFailToRegisterForRemoteNotificationsWithError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseSocialLogin/AppDelegate.swift"
+            timestampString = "523361117.577025"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "application(_:didReceiveRemoteNotification:fetchCompletionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseSocialLogin/AppDelegate.swift"
+            timestampString = "523361117.577074"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "application(_:open:options:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseSocialLogin/AppDelegate.swift"
+            timestampString = "523361117.577123"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "tokenString(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseSocialLogin/AppDelegate.swift"
+            timestampString = "523361117.577172"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "userNotificationCenter(_:willPresent:withCompletionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseSocialLogin/loginEmail.swift"
+            timestampString = "523361117.577219"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "signInAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseSocialLogin/AppDelegate.swift"
+            timestampString = "523361117.577268"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "tokenString(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseSocialLogin/AppDelegate.swift"
+            timestampString = "523361117.577313"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "application(_:didRegisterForRemoteNotificationsWithDeviceToken:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseSocialLogin/SIgnUpEmail.swift"
+            timestampString = "523361117.577359"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "SignUp(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

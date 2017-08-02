@@ -83,18 +83,20 @@ class SignUpEmail: UIViewController, UIGestureRecognizerDelegate, UIImagePickerC
     @IBAction func SignUp(_ sender: Any) {
         KVLoading.show()
 //        print("hello sexy")
-        var deviceToken: String = "-1"
-        #if (arch(i386) || arch(x86_64)) && os(iOS)
-            print("It's an iOS Simulator")
-        if UserDefaults.standard.string(forKey: "deviceToken") == "0" {
-            deviceToken = "-1"
-            }
-        #else
-                deviceToken = UserDefaults.standard.string(forKey: "deviceToken")!
-        #endif
+        var deviceToken: String?
+//        #if (arch(i386) || arch(x86_64)) && os(iOS)
+//            print("It's an iOS Simulator")
+//        if UserDefaults.standard.string(forKey: "deviceToken") == nil {
+//            deviceToken = "-1"
+//            }
+//        #else
+//                deviceToken = UserDefaults.standard.string(forKey: "deviceToken")!
+//        #endif
         
-        if deviceToken == nil {
+        if UserDefaults.standard.string(forKey: "deviceToken")! == nil {
             deviceToken = "-1"
+        } else {
+            deviceToken = UserDefaults.standard.string(forKey: "deviceToken")!
         }
     
         let parameters: Parameters = [
