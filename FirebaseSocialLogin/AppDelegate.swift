@@ -46,6 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDel
             if granted{
                 DispatchQueue.main.async {
                     application.registerForRemoteNotifications()
+                    Defaults.set("-1", forKey: "avail")
                 }
             } else {
                 print("User Notification permission denied: \(String(describing: error?.localizedDescription))")

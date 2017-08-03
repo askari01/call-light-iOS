@@ -164,6 +164,7 @@ class NurseShift: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
 //                        print(json)
                     }
                     KVLoading.hide()
+                    print (UserDefaults.standard.bool(forKey: "profileComplete"))
                     if UserDefaults.standard.bool(forKey: "profileComplete") != true {
                         self.performSegue(withIdentifier: "NurseDocsSegue", sender: self)
                     } else {

@@ -57,10 +57,17 @@ class Requests: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = self.tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomCell
-        if self.json["data"][indexPath.row]["has_expired"].bool == false {
-//            cell.textLabel?.textColor = UIColor.blue
-        } else {
-//            cell.textLabel?.textColor = UIColor.black
+        if self.json["data"][indexPath.row]["has_accepted"].bool == true {
+            cell.balance.isHidden = false
+        }
+        if self.json["data"][indexPath.row]["has_confirmed"].bool == true {
+            cell.confirmed.isHidden = false
+        }
+        if self.json["data"][indexPath.row]["has_declined"].bool == true && self.json["data"][indexPath.row]["has_expired"].bool == false {
+            cell.declined.isHidden = false
+        }
+        if self.json["data"][indexPath.row]["has_declined"].bool == false && self.json["data"][indexPath.row]["has_expired"].bool == true {
+            cell.expired.isHidden = false
         }
         
         if String(describing: Defaults.value(forKey: "UserType")!) == "Hospital" {
@@ -110,14 +117,14 @@ class Requests: UIViewController, UITableViewDelegate, UITableViewDataSource {
         ]
         
         Alamofire.request(completeUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
-            //            print(response.request as Any)  // original URL request
-            //            print(response.response as Any) // URL response
-            //            print(response.result.value as Any)   // result of response serialization
+            print(response.request as Any)  // original URL request
+            print(response.response as Any) // URL response
+            print(response.result.value as Any)   // result of response serialization
             switch response.result {
             case .success:
                 if let value = response.result.value {
                     self.json = JSON(value)
-                    //                    print(self.json)
+                    print(self.json)
                     
                     //                    print(self.row)
 //                    KVLoading.hide()
@@ -150,7 +157,7 @@ class Requests: UIViewController, UITableViewDelegate, UITableViewDataSource {
             case .success:
                 if let value = response.result.value {
                     self.json = JSON(value)
-//                    print(self.json)
+                    print(self.json)
                     self.row = self.json["data"].count
 //                    print(self.row)
                     KVLoading.hide()

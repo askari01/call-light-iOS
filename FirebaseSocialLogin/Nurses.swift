@@ -52,6 +52,9 @@ class Nurses: UITableViewController {
         print(sender.selectedSegmentIndex)
         if sender.selectedSegmentIndex == 1 {
             print(self.json["data"])
+            for result in self.json["data"] {
+                print (result)
+            }
         } else if sender.selectedSegmentIndex == 2 {
             print(self.json)
         } else {

@@ -31,16 +31,16 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         super.viewDidLoad()
         
         // check availability
-//        availability()
+//        check()
         print("I am: \(Defaults[self.available])")
         
         
         startShiftBtn.layer.cornerRadius = 8
         startLunchBreakAction.layer.cornerRadius = 8
         
-        // adding tap gesture
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+//        // adding tap gesture
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         //Looks for single or multiple taps.
         let tap1: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -105,22 +105,22 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         }
         
     }
-    
-    func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0{
-                self.alert1.view.frame.origin.y -= keyboardSize.height - 100
-            }
-        }
-    }
-    
-    func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y != 0{
-                self.alert1.view.frame.origin.y += keyboardSize.height
-            }
-        }
-    }
+//
+//    func keyboardWillShow(notification: NSNotification) {
+//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+//            if self.view.frame.origin.y == 0{
+//                self.alert1.view.frame.origin.y -= keyboardSize.height - 100
+//            }
+//        }
+//    }
+//
+//    func keyboardWillHide(notification: NSNotification) {
+//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+//            if self.view.frame.origin.y != 0{
+//                self.alert1.view.frame.origin.y += keyboardSize.height
+//            }
+//        }
+//    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         var coordinate: CLLocationCoordinate2D = getLocation()
@@ -284,6 +284,28 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         // show the alert
         self.present(alert1, animated: true, completion: nil)
     }
+    
+//    func check () {
+//        if let UserDefaults.standard.string(forKey: "avail")
+//       if UserDefaults.standard.string(forKey: "avail") != "-1" {
+//        if (UserDefaults.standard.string(forKey: "avail") == "1" ) {
+//            label.text = "Available"
+//            image.image = UIImage(named: "green_720.png")
+//            Defaults.setValue("1", forKey: "avail")
+//        } else if (UserDefaults.standard.string(forKey: "avail") == "0") {
+//            label.text = "Not Available"
+//            image.image = UIImage(named: "red_720.png")
+//            Defaults.setValue("0", forKey: "avail")
+//        } else {
+//            label.text = "Your Account is Pending Approval"
+//            image.image = UIImage(named: "nurseDecline.png")
+//            Defaults.setValue("-1", forKey: "avail")
+//            self.blur.isHidden = false
+//        }        } else {
+//        print ("else")
+////        Defaults.setValue("-1", forKey: "avail")
+//        }
+//    }
     
     // text area
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -493,12 +515,15 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         if (Defaults[available] == 1 ) {
             label.text = "Available"
             image.image = UIImage(named: "green_720.png")
+            Defaults.setValue("1", forKey: "avail")
         } else if (Defaults[available] == 0) {
             label.text = "Not Available"
             image.image = UIImage(named: "red_720.png")
+            Defaults.setValue("0", forKey: "avail")
         } else {
             label.text = "Your Account is Pending Approval"
             image.image = UIImage(named: "nurseDecline.png")
+            Defaults.setValue("-1", forKey: "avail")
             self.blur.isHidden = false
         }
         KVLoading.hide()

@@ -16,6 +16,10 @@ class CustomCell: UITableViewCell {
     @IBOutlet weak var nurseName: UILabel!
     @IBOutlet weak var nurseSpecialityAndType: UILabel!
     @IBOutlet weak var balance: UILabel!
+    @IBOutlet weak var confirmed: UILabel!
+    @IBOutlet weak var declined: UILabel!
+    @IBOutlet weak var expired: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

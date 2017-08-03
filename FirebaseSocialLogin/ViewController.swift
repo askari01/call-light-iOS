@@ -258,9 +258,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
                 "email" : self.email,
                 "device_token": deviceToken
             ]
-      
-        
-    
         
         let url = "http://thenerdcamp.com/calllight/public/api/v1/user/social-login"
         let completeUrl = URL(string:url)!

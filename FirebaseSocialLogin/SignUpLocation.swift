@@ -145,7 +145,7 @@ class signUpLocation: UIViewController, UIGestureRecognizerDelegate {
 //                        print(json)
                         
 //                        self.profileComplete.set(true, forKey: "profileComplete")
-                        Defaults.set(true, forKey: "profileComplete")
+//                        Defaults.set(true, forKey: "profileComplete")
                         
 //                        print (UserDefaults.standard.string(forKey: "UserType"))
                         KVLoading.hide()
