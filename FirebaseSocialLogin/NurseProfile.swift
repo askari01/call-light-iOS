@@ -62,15 +62,15 @@ class NurseProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         ]
         
         Alamofire.request(completeUrl1, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil ).responseJSON{ response in
-//            print(response.request as Any)  // original URL request
-//            print(response.response as Any) // URL response
-//            print(response.result.value as Any)   // result of response serialization
+            print(response.request as Any)  // original URL request
+            print(response.response as Any) // URL response
+            print(response.result.value as Any)   // result of response serialization
             switch response.result {
             case .success:
 //                print(response)
                 if let value = response.result.value {
                     json1 = JSON(value)
-//                    print(json1)
+                    print(json1)
                     self.hospitalID = json1["data"]["id"].int
 //                    print (self.hospitalID)
                 }
@@ -98,9 +98,9 @@ class NurseProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         ]
         
         Alamofire.request(completeUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
-//            print(response.request as Any)  // original URL request
-//            print(response.response as Any) // URL response
-//            print(response.result.value as Any)   // result of response serialization
+            print(response.request as Any)  // original URL request
+            print(response.response as Any) // URL response
+            print(response.result.value as Any)   // result of response serialization
             switch response.result {
             case .success:
                 if let value = response.result.value {
@@ -117,9 +117,9 @@ class NurseProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
                     ]
                     
                     Alamofire.request(completeUrl1, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil ).responseJSON{ response in
-                        //            print(response.request as Any)  // original URL request
-                        //            print(response.response as Any) // URL response
-                        //            print(response.result.value as Any)   // result of response serialization
+                        print(response.request as Any)  // original URL request
+                        print(response.response as Any) // URL response
+                        print(response.result.value as Any)   // result of response serialization
                         switch response.result {
                         case .success:
                             print(response)

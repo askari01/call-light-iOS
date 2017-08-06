@@ -15,6 +15,9 @@ class Nurses: UITableViewController {
 
     @IBOutlet var nurseTable: UITableView!
     var row = 0
+    var all = 0
+    var time = 0
+    var speciality = 0
     var json: JSON = []
     
     override func viewDidLoad() {
@@ -51,36 +54,51 @@ class Nurses: UITableViewController {
     @IBAction func valueChange(_ sender: UISegmentedControl) {
         print(sender.selectedSegmentIndex)
         if sender.selectedSegmentIndex == 1 {
-            print(self.json["data"])
-            for result in self.json["data"] {
-                print (result)
-            }
+            all = 1
+//            print(self.json["data"])
+//            for result in self.json["data"] {
+//                print (result)
+//            }
+            tableView.reloadData()
         } else if sender.selectedSegmentIndex == 2 {
-            print(self.json)
+            all = 2
+//            print(self.json)
+            tableView.reloadData()
         } else {
-        
+            all = 0
+            tableView.reloadData()
         }
     }
     
     @IBAction func specalityChange(_ sender: UISegmentedControl) {
         print(sender.selectedSegmentIndex)
         if sender.selectedSegmentIndex == 1 {
-            print(self.json["data"])
+            speciality = 1
+//            print(self.json["data"])
+            tableView.reloadData()
         } else if sender.selectedSegmentIndex == 2 {
-            print(self.json)
+            speciality = 2
+//            print(self.json)
+            tableView.reloadData()
         } else {
-            
+            speciality = 0
+            tableView.reloadData()
         }
     }
     
     @IBAction func timeChange(_ sender: UISegmentedControl) {
         print(sender.selectedSegmentIndex)
         if sender.selectedSegmentIndex == 1 {
-            print(self.json["data"])
+            time = 1
+            tableView.reloadData()
+//            print(self.json["data"])
         } else if sender.selectedSegmentIndex == 2 {
+            time = 2
             print(self.json)
+            tableView.reloadData()
         } else {
-            
+            time = 0
+            tableView.reloadData()
         }
     }
     
@@ -165,7 +183,8 @@ class Nurses: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NurseCell", for: indexPath)
 //        print(self.json["data"][indexPath.row]["id"])
-        cell.textLabel?.text = String(describing: self.json["data"][indexPath.row]["name"])
+        // Main selector
+            cell.textLabel?.text = String(describing: self.json["data"][indexPath.row]["name"])
         // Configure the cell...
 
         return cell

@@ -57,17 +57,30 @@ class Requests: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = self.tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomCell
+        print (indexPath.row)
         if self.json["data"][indexPath.row]["has_accepted"].bool == true {
             cell.balance.isHidden = false
-        }
+//            cell.confirmed.isHidden = true
+            cell.declined.isHidden = true
+            cell.expired.isHidden = true
+        } else
         if self.json["data"][indexPath.row]["has_confirmed"].bool == true {
             cell.confirmed.isHidden = false
+//            cell.balance.isHidden = true
+            cell.declined.isHidden = true
+            cell.expired.isHidden = true
         }
         if self.json["data"][indexPath.row]["has_declined"].bool == true && self.json["data"][indexPath.row]["has_expired"].bool == false {
             cell.declined.isHidden = false
+            cell.balance.isHidden = true
+            cell.confirmed.isHidden = true
+            cell.expired.isHidden = true
         }
         if self.json["data"][indexPath.row]["has_declined"].bool == false && self.json["data"][indexPath.row]["has_expired"].bool == true {
             cell.expired.isHidden = false
+            cell.balance.isHidden = true
+            cell.confirmed.isHidden = true
+            cell.declined.isHidden = true
         }
         
         if String(describing: Defaults.value(forKey: "UserType")!) == "Hospital" {
@@ -83,7 +96,7 @@ class Requests: UIViewController, UITableViewDelegate, UITableViewDataSource {
             cell.hospitalLocation.text = String(describing: self.json["data"][indexPath.row]["hospital"]["address"])
             cell.nurseName.text = String(describing: self.json["data"][indexPath.row]["nurse"]["user"]["name"])
             cell.nurseSpecialityAndType.text = String(describing: self.json["data"][indexPath.row]["nurse"]["speciality"]) + " - " + String(describing: self.json["data"][indexPath.row]["nurse"]["type"])
-            cell.balance.text = "$\(indexPath.row)"
+//            cell.balance.text = "$\(indexPath.row)"
             
         } else {
             
