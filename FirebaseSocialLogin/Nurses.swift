@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import SwiftyUserDefaults
+import KVLoading
 
 class Nurses: UITableViewController {
 
@@ -17,6 +18,9 @@ class Nurses: UITableViewController {
     var row = 0
     var all = 0
     var time = 0
+    var NurseShift = 0
+    var NurseType = 0
+    var NurseSpeciality = "ALL"
     var speciality = 0
     var json: JSON = []
     
@@ -51,53 +55,93 @@ class Nurses: UITableViewController {
         }
     }
     
+    // speciality
     @IBAction func valueChange(_ sender: UISegmentedControl) {
         print(sender.selectedSegmentIndex)
+        // ["ER", "ICU", "Labor & Delivery", "Med/Surgical", "Cath. Lab"]
         if sender.selectedSegmentIndex == 1 {
             all = 1
 //            print(self.json["data"])
 //            for result in self.json["data"] {
 //                print (result)
 //            }
+            NurseSpeciality = "ICU"
             tableView.reloadData()
+            getFilteredNurse()
         } else if sender.selectedSegmentIndex == 2 {
             all = 2
-//            print(self.json)
+//            print(self.json)Labor
+            NurseSpeciality = "Labor+&+Delivery"
             tableView.reloadData()
+            getFilteredNurse()
+        } else if sender.selectedSegmentIndex == 3 {
+            all = 3
+            //            print(self.json)Surgical
+            NurseSpeciality = "Med/Surgical"
+            tableView.reloadData()
+            getFilteredNurse()
+        } else if sender.selectedSegmentIndex == 4 {
+            all = 4
+            //            print(self.json)Cath. Lab
+            NurseSpeciality = "ER"
+            tableView.reloadData()
+            getFilteredNurse()
+        } else if sender.selectedSegmentIndex == 5 {
+            all = 5
+            //            print(self.json)
+            NurseSpeciality = "Cath.+Lab"
+            tableView.reloadData()
+            getFilteredNurse()
         } else {
             all = 0
+            NurseSpeciality = "ALL"
             tableView.reloadData()
+            getFilteredNurse()
         }
     }
     
+    // nurseType
     @IBAction func specalityChange(_ sender: UISegmentedControl) {
         print(sender.selectedSegmentIndex)
         if sender.selectedSegmentIndex == 1 {
             speciality = 1
+            NurseType = 1
 //            print(self.json["data"])
             tableView.reloadData()
+            getFilteredNurse()
         } else if sender.selectedSegmentIndex == 2 {
             speciality = 2
+            NurseType = 2
 //            print(self.json)
             tableView.reloadData()
+            getFilteredNurse()
         } else {
+            NurseType = 0
             speciality = 0
             tableView.reloadData()
+            getFilteredNurse()
         }
     }
     
+    // shift
     @IBAction func timeChange(_ sender: UISegmentedControl) {
         print(sender.selectedSegmentIndex)
         if sender.selectedSegmentIndex == 1 {
             time = 1
-            tableView.reloadData()
+            NurseShift = 1
+            getFilteredNurse()
 //            print(self.json["data"])
         } else if sender.selectedSegmentIndex == 2 {
             time = 2
+            NurseShift = 2
+            getFilteredNurse()
             print(self.json)
             tableView.reloadData()
         } else {
             time = 0
+            NurseShift = 0
+            getFilteredNurse()
+            
             tableView.reloadData()
         }
     }
@@ -111,7 +155,8 @@ class Nurses: UITableViewController {
     }
     
     func getAllNurse() {
-//        print ("Token: ",UserDefaults.standard.string(forKey: "apiToken")!)
+        KVLoading.show()
+        print ("Token: ",UserDefaults.standard.string(forKey: "apiToken")!)
         let url = "http://thenerdcamp.com/calllight/public/api/v1/nurse/all?api_token=" + UserDefaults.standard.string(forKey: "apiToken")!
         let completeUrl = URL(string:url)!
         
@@ -132,15 +177,58 @@ class Nurses: UITableViewController {
 //                    print(self.row)
                     //print(self.json[0]["facilityPictures"])
                     self.nurseTable.reloadData()
+                    KVLoading.hide()
                 }
                 break
             case .failure(let error):
                 print(error)
+                KVLoading.hide()
             }
             
         }
     }
 
+    func getFilteredNurse() {
+        KVLoading.show()
+        print ("Token: ",UserDefaults.standard.string(forKey: "apiToken")!)
+        let url = "http://thenerdcamp.com/calllight/public/api/v1/nurse/all?api_token=\(UserDefaults.standard.string(forKey: "apiToken")!)&speciality=\(NurseSpeciality)&type=\(NurseType)&shift=\(NurseShift)"
+        print(url)
+        let completeUrl = URL(string:url)!
+        
+        let headers: HTTPHeaders = [
+            "api_token": UserDefaults.standard.string(forKey: "apiToken")!
+        ]
+        
+        Alamofire.request(completeUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
+            //            print(response.request as Any)  // original URL request
+            //            print(response.response as Any) // URL response
+            //            print(response.result.value as Any)   // result of response serialization
+            switch response.result {
+            case .success:
+                if let value = response.result.value {
+                    self.json = JSON(value)
+                    //                    print(self.json)
+                    self.row = self.json["data"].count
+                    //                    print(self.row)
+                    //print(self.json[0]["facilityPictures"])
+                    self.nurseTable.reloadData()
+                    KVLoading.hide()
+                }
+                break
+            case .failure(let error):
+                print(error)
+                KVLoading.hide()
+            }
+            
+        }
+    }
+    
+    // request
+    @IBAction func requestNurse(_ sender: UIBarButtonItem) {
+        print("request")
+        performSegue(withIdentifier: "NurseProfileSegue1", sender: self)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -163,6 +251,22 @@ class Nurses: UITableViewController {
                 var ID: Int = Int(str)!
                 var iddAlternative = self.json["data"][(path?.row)!]["id"].int
                 nurseProfileView.id = ID 
+            }else {
+                print("else")
+            }
+        }
+        if segue.identifier == "NurseProfileSegue1" {
+            if let nurseProfileView = segue.destination as? NurseProfile {
+                //                    let path = self.tableView.indexPathForSelectedRow
+                //                print (Int((path?.row)!))
+                var str = String(describing:self.json["data"][0]["id"])
+                var ID: Int = Int(str)!
+                var iddAlternative = self.json["data"][0]["id"].int
+                nurseProfileView.id = ID
+                print (str)
+                print (ID)
+                print (iddAlternative)
+                
             }
         }
     }
