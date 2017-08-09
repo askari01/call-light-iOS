@@ -49,6 +49,13 @@ class NurseProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         // Do any additional setup after loading the view.
 //        print ("id: \(self.id!)")
         
+        // time
+        let date = Date()
+        var time = DateFormatter()
+        time.dateFormat = "hh:mm:ss"
+        var selectedTime = time.string(from: date)
+        self.startTime = selectedTime
+        
         request.layer.cornerRadius = 8
         close.layer.cornerRadius = 8
         
@@ -72,7 +79,7 @@ class NurseProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
                     json1 = JSON(value)
                     print(json1)
                     self.hospitalID = json1["data"]["id"].int
-//                    print (self.hospitalID)
+                    print (self.hospitalID)
                 }
                 
                 break
@@ -232,10 +239,7 @@ class NurseProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
                 self.startTime = "19:00:00"
                 self.endTime = "7:00:00"
             }
-            
-            
             self.startDate = result
-            
             
             self.requestSave()
         }))
@@ -271,7 +275,7 @@ class NurseProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
                 "shift_end_time": endTime
             ]
             
-//            print (parameters)
+            print (parameters)
             
             let headers: HTTPHeaders = [
                 "api_token": UserDefaults.standard.string(forKey: "apiToken")!
@@ -282,7 +286,7 @@ class NurseProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
             let url = "http://thenerdcamp.com/calllight/public/api/v1/hospital/request?api_token=" + UserDefaults.standard.string(forKey: "apiToken")!
             let completeUrl = URL(string:url)!
             
-//            print (completeUrl)
+            print (completeUrl)
             
             Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
 //                print(response.request as Any)  // original URL request
@@ -403,10 +407,12 @@ class NurseProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         var time = DateFormatter()
         time.dateFormat = "hh:mm:ss"
         
-        var selectedTime = time.string(from: endTym)
         if choice == 1 {
             choice = 0
-            endTime = selectedTime
+            if endTym != nil {
+                var selectedTime = time.string(from: endTym)
+                endTime = selectedTime
+            }
         } else {
             choice = 1
         }
