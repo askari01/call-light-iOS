@@ -48,7 +48,16 @@ class Requests: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.row
+        if self.row == 0{
+            var emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+            emptyLabel.text = "No Data"
+            emptyLabel.textAlignment = NSTextAlignment.center
+            self.tableView.backgroundView = emptyLabel
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+            return 0
+        } else {
+            return self.row
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -61,26 +70,26 @@ class Requests: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if self.json["data"][indexPath.row]["has_accepted"].bool == true {
             cell.balance.isHidden = false
 //            cell.confirmed.isHidden = true
-            cell.declined.isHidden = true
-            cell.expired.isHidden = true
-        } else
+//            cell.declined.isHidden = true
+//            cell.expired.isHidden = true
+        }
         if self.json["data"][indexPath.row]["has_confirmed"].bool == true {
             cell.confirmed.isHidden = false
 //            cell.balance.isHidden = true
-            cell.declined.isHidden = true
-            cell.expired.isHidden = true
+//            cell.declined.isHidden = true
+//            cell.expired.isHidden = true
         }
         if self.json["data"][indexPath.row]["has_declined"].bool == true && self.json["data"][indexPath.row]["has_expired"].bool == false {
             cell.declined.isHidden = false
-            cell.balance.isHidden = true
-            cell.confirmed.isHidden = true
-            cell.expired.isHidden = true
+//            cell.balance.isHidden = true
+//            cell.confirmed.isHidden = true
+//            cell.expired.isHidden = true
         }
         if self.json["data"][indexPath.row]["has_declined"].bool == false && self.json["data"][indexPath.row]["has_expired"].bool == true {
             cell.expired.isHidden = false
-            cell.balance.isHidden = true
-            cell.confirmed.isHidden = true
-            cell.declined.isHidden = true
+//            cell.balance.isHidden = true
+//            cell.confirmed.isHidden = true
+//            cell.declined.isHidden = true
         }
         
         if String(describing: Defaults.value(forKey: "UserType")!) == "Hospital" {
