@@ -15,6 +15,7 @@ import KVLoading
 class Nurses: UITableViewController {
 
     @IBOutlet var nurseTable: UITableView!
+    
     var row = 0
     var all = 0
     var time = 0
@@ -189,6 +190,10 @@ class Nurses: UITableViewController {
     }
 
     func getFilteredNurse() {
+        if NurseType == 0 && NurseShift == 0 && NurseSpeciality == "ALL" {
+            getAllNurse()
+            return
+        }
         KVLoading.show()
         print ("Token: ",UserDefaults.standard.string(forKey: "apiToken")!)
         let url = "http://thenerdcamp.com/calllight/public/api/v1/nurse/all?api_token=\(UserDefaults.standard.string(forKey: "apiToken")!)&speciality=\(NurseSpeciality)&type=\(NurseType)&shift=\(NurseShift)"
@@ -223,10 +228,127 @@ class Nurses: UITableViewController {
         }
     }
     
+    // view profile
+    func profileAction(sender:UIButton) {
+        let indexPath = IndexPath(row: sender.tag, section: 0)
+        let cell = tableView.cellForRow(at: indexPath)
+        if cell != nil {
+            performSegue(withIdentifier: "NurseProfileSegue", sender: self)
+        }
+    }
+    
     // request
     @IBAction func requestNurse(_ sender: UIBarButtonItem) {
         print("request")
-        performSegue(withIdentifier: "NurseProfileSegue1", sender: self)
+//        performSegue(withIdentifier: "NurseProfileSegue1", sender: self)
+        if self.json["data"] == nil {
+            return
+        }
+        KVLoading.show()
+        var result: Int!
+        var id = String(describing: self.json["data"][0]["id"])
+        var ID = Int(id)!
+        
+        //new
+        var json: JSON = []
+        
+        let url = "http://thenerdcamp.com/calllight/public/api/v1/profile/nurses/\(ID)?api_token=" + UserDefaults.standard.string(forKey: "apiToken")!
+        let completeUrl = URL(string:url)!
+        //        print(url)
+        let headers: HTTPHeaders = [
+            "api_token": UserDefaults.standard.string(forKey: "apiToken")!
+        ]
+        
+        Alamofire.request(completeUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
+//            print(response.request as Any)  // original URL request
+//            print(response.response as Any) // URL response
+//            print(response.result.value as Any)   // result of response serialization
+            switch response.result {
+            case .success:
+                if let value = response.result.value {
+                    json = JSON(value)
+                    print(json)
+                    print ("request called")
+                    var index = sender.tag
+                    print (index)
+                    
+                    var json12: JSON = []
+                    var result1: String!
+                    
+                    let date = Date()
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "yyyy-MM-dd"
+                    result1 = formatter.string(from: date)
+                    
+                    var startTime: String!
+                    var endTime: String!
+                    
+                    if json["data"]["shift"].string! == "0" {
+                        startTime = "7:00:00"
+                        endTime = "19:00:00"
+                    } else {
+                        startTime = "19:00:00"
+                        endTime = "7:00:00"
+                    }
+                    
+                    let parameters1: Parameters = [
+                        "hospital_id": ID,
+                        "nurse_id" : json["data"]["id"].int! ,
+                        "shift_date": result1,
+                        "shift_start_time" : startTime ,
+                        "shift_end_time": endTime
+                    ]
+                    
+                    print (parameters1)
+                    
+                    let headers1: HTTPHeaders = [
+                        "api_token": UserDefaults.standard.string(forKey: "apiToken")!
+                    ]
+                    
+                    //            print (headers)
+                    
+                    let url1 = "http://thenerdcamp.com/calllight/public/api/v1/hospital/request?api_token=" + UserDefaults.standard.string(forKey: "apiToken")!
+                    let completeUrl1 = URL(string:url1)!
+                    
+                    print (completeUrl1)
+                    
+                    Alamofire.request(completeUrl1, method: .post, parameters: parameters1, encoding: JSONEncoding.default, headers: headers1 ).responseString{ response in
+//                        print(response.request as Any)  // original URL request
+//                        print(response.response as Any) // URL response
+//                        print(response.result.value as Any)
+                        switch response.result {
+                        case .success:
+//                            print(response)
+                            if let value = response.result.value {
+                                var json123 = JSON(value)
+                                print(json123)
+                                print(json123[0])
+                                KVLoading.hide()
+                                // create the alert
+                                let alert = UIAlertController(title: "Request Nurse", message: "Request to Nurse Send", preferredStyle: UIAlertControllerStyle.alert)
+                                
+                                // add the actions (buttons)
+                                alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: {action in
+                                    sender.isEnabled = false
+                                }))
+                                
+                                // show the alert
+                                self.present(alert, animated: true, completion: nil)
+                            }
+                            
+                            break
+                        case .failure(let error):
+                            print(error)
+                            KVLoading.hide()
+                        }
+                    }
+                }
+                break
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -290,10 +412,145 @@ class Nurses: UITableViewController {
         // Main selector
             cell.textLabel?.text = String(describing: self.json["data"][indexPath.row]["name"])
         // Configure the cell...
-
+        print (cell.bounds.width)
+        
+        let label = UILabel(frame: CGRect(x: (cell.bounds.width - 150), y: 8, width: 50, height: 30))
+//        label.center = CGPoint(x: 160, y: 285)
+        label.layer.borderColor = UIColor.lightGray.cgColor
+        label.layer.borderWidth = 2
+        label.layer.cornerRadius = 4
+        label.textAlignment = .center
+        label.text = "View"
+        
+        let button = UIButton(type: UIButtonType.system)
+        button.frame = CGRect(x: (cell.bounds.width - 90), y: 8, width: 70, height: 30)//CGRectMake(100, 100, 120, 50)
+//        button.backgroundColor = UIColor.lightGray
+//        button.setTitleColor(UIColor.green, for: .normal)
+        button.layer.borderWidth = 2
+        button.layer.cornerRadius = 4
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.tag = indexPath.row
+        button.setTitle("Request", for: UIControlState.normal)
+        button.addTarget(self, action:  #selector(buttonAction), for: UIControlEvents.touchUpInside)
+//        button.addTarget(self, action: #selector(profileAction), for: UIControlEvents.touchUpInside)
+        
+        cell.addSubview(label)
+        cell.addSubview(button)
+        
         return cell
     }
  
+    
+    // Request BUtton
+    func buttonAction(sender:UIButton) {
+        KVLoading.show()
+        var result: Int!
+        var id = String(describing: self.json["data"][sender.tag]["id"])
+        var ID = Int(id)!
+        
+        //new
+        var json: JSON = []
+        
+        let url = "http://thenerdcamp.com/calllight/public/api/v1/profile/nurses/\(ID)?api_token=" + UserDefaults.standard.string(forKey: "apiToken")!
+        let completeUrl = URL(string:url)!
+        //        print(url)
+        let headers: HTTPHeaders = [
+            "api_token": UserDefaults.standard.string(forKey: "apiToken")!
+        ]
+        
+        Alamofire.request(completeUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
+            print(response.request as Any)  // original URL request
+            print(response.response as Any) // URL response
+            print(response.result.value as Any)   // result of response serialization
+            switch response.result {
+            case .success:
+                if let value = response.result.value {
+                    json = JSON(value)
+                    print(json)
+                    print ("request called")
+                    var index = sender.tag
+                    print (index)
+                    
+                    var json12: JSON = []
+                    var result1: String!
+                    
+                    let date = Date()
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "yyyy-MM-dd"
+                    result1 = formatter.string(from: date)
+                    
+                    var startTime: String!
+                    var endTime: String!
+                    
+                    if json["data"]["shift"].string! == "0" {
+                        startTime = "7:00:00"
+                        endTime = "19:00:00"
+                    } else {
+                        startTime = "19:00:00"
+                        endTime = "7:00:00"
+                    }
+                    
+                    let parameters1: Parameters = [
+                        "hospital_id": ID,
+                        "nurse_id" : json["data"]["id"].int! ,
+                        "shift_date": result1,
+                        "shift_start_time" : startTime ,
+                        "shift_end_time": endTime
+                    ]
+                    
+                    print (parameters1)
+                    
+                    let headers1: HTTPHeaders = [
+                        "api_token": UserDefaults.standard.string(forKey: "apiToken")!
+                    ]
+                    
+                    //            print (headers)
+                    
+                    let url1 = "http://thenerdcamp.com/calllight/public/api/v1/hospital/request?api_token=" + UserDefaults.standard.string(forKey: "apiToken")!
+                    let completeUrl1 = URL(string:url1)!
+                    
+                    print (completeUrl1)
+                    
+                    Alamofire.request(completeUrl1, method: .post, parameters: parameters1, encoding: JSONEncoding.default, headers: headers1 ).responseString{ response in
+                        print(response.request as Any)  // original URL request
+                        print(response.response as Any) // URL response
+                        print(response.result.value as Any)
+                        switch response.result {
+                        case .success:
+                            print(response)
+                            if let value = response.result.value {
+                                json12 = JSON(value)
+                                print(json12)
+                                print(json12[0])
+                                KVLoading.hide()
+                                // create the alert
+                                let alert = UIAlertController(title: "Request Nurse", message: "Request to Nurse Send", preferredStyle: UIAlertControllerStyle.alert)
+                                
+                                // add the actions (buttons)
+                                alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: {action in
+                                    sender.isEnabled = false
+                                }))
+                                
+                                // show the alert
+                                self.present(alert, animated: true, completion: nil)
+                            }
+                            
+                            break
+                        case .failure(let error):
+                            print(error)
+                            KVLoading.hide()
+                        }
+                    }
+                }
+                break
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
+        // end nen
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

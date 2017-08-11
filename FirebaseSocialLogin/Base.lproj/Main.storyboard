@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -960,7 +961,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="1gM-6e-9pb">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="112"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="186"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KyM-dG-0MT">
@@ -1018,7 +1019,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NurseCell" id="ZVi-9x-2ZC">
-                                <rect key="frame" x="0.0" y="140" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="214" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZVi-9x-2ZC" id="rao-kZ-AJW">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -1028,10 +1029,22 @@
                                             <rect key="frame" x="8" y="0.0" width="121" height="99"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXM-zx-Cfk">
+                                            <rect key="frame" x="340" y="6" width="66" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="66" id="T8k-Dz-iwi"/>
+                                            </constraints>
+                                            <state key="normal" title="Request"/>
+                                        </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="TXM-zx-Cfk" firstAttribute="trailing" secondItem="rao-kZ-AJW" secondAttribute="trailingMargin" id="Isn-aa-Lo3"/>
+                                        <constraint firstItem="TXM-zx-Cfk" firstAttribute="centerY" secondItem="rao-kZ-AJW" secondAttribute="centerY" id="PLa-cL-m99"/>
+                                    </constraints>
                                     <variation key="default">
                                         <mask key="subviews">
                                             <exclude reference="IMC-b8-Sds"/>
+                                            <exclude reference="TXM-zx-Cfk"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -1074,7 +1087,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PzY-hP-uyO">
-                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                             </mapView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1k-Dz-rRj">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -1321,7 +1334,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="unk-2I-NfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2452" y="2599"/>
+            <point key="canvasLocation" x="2439" y="2599"/>
         </scene>
         <!--Profile-->
         <scene sceneID="BhQ-hb-1RT">
@@ -1453,7 +1466,7 @@
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </progressView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zd2-ad-8X3">
-                                <rect key="frame" x="20" y="390" width="374" height="289"/>
+                                <rect key="frame" x="20" y="390" width="374" height="338"/>
                             </mapView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="KkX-Fx-HjM">
                                 <rect key="frame" x="20" y="380" width="374" height="2"/>
@@ -1787,7 +1800,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bfA-b1-a0u">
-                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="140" id="62Q-hz-lY2" customClass="CustomCell" customModule="FirebaseSocialLogin" customModuleProvider="target">
@@ -2321,15 +2334,15 @@
         <image name="user" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="MX9-y5-C08"/>
+        <segue reference="VKG-Yr-5Tm"/>
+        <segue reference="Pqp-jC-GIo"/>
+        <segue reference="xLp-hE-HuP"/>
+        <segue reference="BBS-SF-cZB"/>
         <segue reference="Z6c-22-UjX"/>
-        <segue reference="lsm-uD-gIh"/>
+        <segue reference="wYL-cf-AjO"/>
         <segue reference="mVY-J6-op8"/>
         <segue reference="Enr-rI-ssd"/>
         <segue reference="3Gm-h0-FHV"/>
-        <segue reference="xLp-hE-HuP"/>
-        <segue reference="VKG-Yr-5Tm"/>
-        <segue reference="MX9-y5-C08"/>
-        <segue reference="BBS-SF-cZB"/>
-        <segue reference="Pqp-jC-GIo"/>
     </inferredMetricsTieBreakers>
 </document>
