@@ -476,7 +476,7 @@
 				DEVELOPMENT_TEAM = 79Q3Z37GR8;
 				INFOPLIST_FILE = FirebaseSocialLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.techease.calllight;
+				PRODUCT_BUNDLE_IDENTIFIER = com.th.calllight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
@@ -493,7 +493,7 @@
 				DEVELOPMENT_TEAM = 79Q3Z37GR8;
 				INFOPLIST_FILE = FirebaseSocialLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.techease.calllight;
+				PRODUCT_BUNDLE_IDENTIFIER = com.th.calllight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;

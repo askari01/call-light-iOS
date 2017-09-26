@@ -237,6 +237,121 @@ class Nurses: UITableViewController {
         }
     }
     
+    // main request Button
+    @IBAction func requestNurseMain(_ sender: UIButton) {
+        print("request")
+        //        performSegue(withIdentifier: "NurseProfileSegue1", sender: self)
+        if self.json["data"] == nil {
+            return
+        }
+        KVLoading.show()
+        var result: Int!
+        var id = String(describing: self.json["data"][0]["id"])
+        var ID = Int(id)!
+        
+        //new
+        var json: JSON = []
+        
+        let url = "http://thenerdcamp.com/calllight/public/api/v1/profile/nurses/\(ID)?api_token=" + UserDefaults.standard.string(forKey: "apiToken")!
+        let completeUrl = URL(string:url)!
+        //        print(url)
+        let headers: HTTPHeaders = [
+            "api_token": UserDefaults.standard.string(forKey: "apiToken")!
+        ]
+        
+        Alamofire.request(completeUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
+            //            print(response.request as Any)  // original URL request
+            //            print(response.response as Any) // URL response
+            //            print(response.result.value as Any)   // result of response serialization
+            switch response.result {
+            case .success:
+                if let value = response.result.value {
+                    json = JSON(value)
+                    print(json)
+                    print ("request called")
+                    var index = sender.tag
+                    print (index)
+                    
+                    var json12: JSON = []
+                    var result1: String!
+                    
+                    let date = Date()
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "yyyy-MM-dd"
+                    result1 = formatter.string(from: date)
+                    
+                    var startTime: String!
+                    var endTime: String!
+                    
+                    if json["data"]["shift"].string! == "0" {
+                        startTime = "7:00:00"
+                        endTime = "19:00:00"
+                    } else {
+                        startTime = "19:00:00"
+                        endTime = "7:00:00"
+                    }
+                    
+                    let parameters1: Parameters = [
+                        "hospital_id": ID,
+                        "nurse_id" : json["data"]["id"].int! ,
+                        "shift_date": result1,
+                        "shift_start_time" : startTime ,
+                        "shift_end_time": endTime
+                    ]
+                    
+                    print (parameters1)
+                    
+                    let headers1: HTTPHeaders = [
+                        "api_token": UserDefaults.standard.string(forKey: "apiToken")!
+                    ]
+                    
+                    //            print (headers)
+                    
+                    let url1 = "http://thenerdcamp.com/calllight/public/api/v1/hospital/request?api_token=" + UserDefaults.standard.string(forKey: "apiToken")!
+                    let completeUrl1 = URL(string:url1)!
+                    
+                    print (completeUrl1)
+                    
+                    Alamofire.request(completeUrl1, method: .post, parameters: parameters1, encoding: JSONEncoding.default, headers: headers1 ).responseString{ response in
+                        //                        print(response.request as Any)  // original URL request
+                        //                        print(response.response as Any) // URL response
+                        //                        print(response.result.value as Any)
+                        switch response.result {
+                        case .success:
+                            //                            print(response)
+                            if let value = response.result.value {
+                                var json123 = JSON(value)
+                                print(json123)
+                                print(json123[0])
+                                KVLoading.hide()
+                                // create the alert
+                                let alert = UIAlertController(title: "Request Nurse", message: "Request to Nurse Send", preferredStyle: UIAlertControllerStyle.alert)
+                                
+                                // add the actions (buttons)
+                                alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: {action in
+                                    sender.isEnabled = false
+                                }))
+                                
+                                // show the alert
+                                self.present(alert, animated: true, completion: nil)
+                            }
+                            
+                            break
+                        case .failure(let error):
+                            print(error)
+                            KVLoading.hide()
+                        }
+                    }
+                }
+                break
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
+    }
+    
+    
     // request
     @IBAction func requestNurse(_ sender: UIBarButtonItem) {
         print("request")
@@ -404,7 +519,7 @@ class Nurses: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         if self.row == 0{
             var emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
-            emptyLabel.text = "No Data"
+            emptyLabel.text = "No Nurse Found"
             emptyLabel.textAlignment = NSTextAlignment.center
             self.tableView.backgroundView = emptyLabel
             self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
