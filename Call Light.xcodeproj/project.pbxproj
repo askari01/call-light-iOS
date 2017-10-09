@@ -65,7 +65,7 @@
 		36FCF90A1E9CAAC0001F8884 /* TimePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimePickerView.xib; sourceTree = "<group>"; };
 		36FCF90C1E9CAF6D001F8884 /* TimerPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerPickerView.swift; sourceTree = "<group>"; };
 		7BC9603782C0E741DF30530E /* Pods-FirebaseSocialLogin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseSocialLogin.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseSocialLogin/Pods-FirebaseSocialLogin.release.xcconfig"; sourceTree = "<group>"; };
-		C7BE77F61DBB3A70005E6090 /* FirebaseSocialLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseSocialLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7BE77F61DBB3A70005E6090 /* Call Light.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Call Light.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7BE77F91DBB3A70005E6090 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7BE77FB1DBB3A70005E6090 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C7BE77FE1DBB3A70005E6090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 		C7BE77ED1DBB3A70005E6090 = {
 			isa = PBXGroup;
 			children = (
-				C7BE77F81DBB3A70005E6090 /* FirebaseSocialLogin */,
+				C7BE77F81DBB3A70005E6090 /* Call Light */,
 				C7BE77F71DBB3A70005E6090 /* Products */,
 				088F62095AB25FE6B3E50A69 /* Pods */,
 				88F60E6899A7AB776DDE917C /* Frameworks */,
@@ -121,12 +121,12 @@
 		C7BE77F71DBB3A70005E6090 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C7BE77F61DBB3A70005E6090 /* FirebaseSocialLogin.app */,
+				C7BE77F61DBB3A70005E6090 /* Call Light.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C7BE77F81DBB3A70005E6090 /* FirebaseSocialLogin */ = {
+		C7BE77F81DBB3A70005E6090 /* Call Light */ = {
 			isa = PBXGroup;
 			children = (
 				36EF108C1E8A43B1008A4B65 /* FirebaseSocialLogin.entitlements */,
@@ -157,15 +157,16 @@
 				3616A5941EC59FBD00F10711 /* CustomCell.swift */,
 				36AF4A761ED1E2390033E319 /* Assets.xcassets */,
 			);
+			name = "Call Light";
 			path = FirebaseSocialLogin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C7BE77F51DBB3A70005E6090 /* FirebaseSocialLogin */ = {
+		C7BE77F51DBB3A70005E6090 /* Call Light */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C7BE78081DBB3A70005E6090 /* Build configuration list for PBXNativeTarget "FirebaseSocialLogin" */;
+			buildConfigurationList = C7BE78081DBB3A70005E6090 /* Build configuration list for PBXNativeTarget "Call Light" */;
 			buildPhases = (
 				4D70206E22CF183F37427366 /* [CP] Check Pods Manifest.lock */,
 				C7BE77F21DBB3A70005E6090 /* Sources */,
@@ -179,9 +180,9 @@
 			);
 			dependencies = (
 			);
-			name = FirebaseSocialLogin;
+			name = "Call Light";
 			productName = FirebaseSocialLogin;
-			productReference = C7BE77F61DBB3A70005E6090 /* FirebaseSocialLogin.app */;
+			productReference = C7BE77F61DBB3A70005E6090 /* Call Light.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -215,7 +216,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C7BE77F11DBB3A70005E6090 /* Build configuration list for PBXProject "FirebaseSocialLogin" */;
+			buildConfigurationList = C7BE77F11DBB3A70005E6090 /* Build configuration list for PBXProject "Call Light" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -228,7 +229,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C7BE77F51DBB3A70005E6090 /* FirebaseSocialLogin */,
+				C7BE77F51DBB3A70005E6090 /* Call Light */,
 			);
 		};
 /* End PBXProject section */
@@ -268,13 +269,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FirebaseSocialLogin-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7DA569CE9BC88C9BF3C24326 /* [CP] Embed Pods Frameworks */ = {
@@ -283,9 +287,38 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FirebaseSocialLogin/Pods-FirebaseSocialLogin-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/KVLoading/KVLoading.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyStarRatingView/SwiftyStarRatingView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVLoading.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStarRatingView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -298,9 +331,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FirebaseSocialLogin/Pods-FirebaseSocialLogin-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -503,7 +541,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C7BE77F11DBB3A70005E6090 /* Build configuration list for PBXProject "FirebaseSocialLogin" */ = {
+		C7BE77F11DBB3A70005E6090 /* Build configuration list for PBXProject "Call Light" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C7BE78061DBB3A70005E6090 /* Debug */,
@@ -512,7 +550,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C7BE78081DBB3A70005E6090 /* Build configuration list for PBXNativeTarget "FirebaseSocialLogin" */ = {
+		C7BE78081DBB3A70005E6090 /* Build configuration list for PBXNativeTarget "Call Light" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C7BE78091DBB3A70005E6090 /* Debug */,

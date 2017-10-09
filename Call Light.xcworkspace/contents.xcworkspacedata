@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:FirebaseSocialLogin.xcodeproj">
+      location = "group:/Users/syedaskari/Projects/call-light-iOS/Call Light.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

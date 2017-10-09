@@ -34,9 +34,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C7BE77F51DBB3A70005E6090"
-            BuildableName = "FirebaseSocialLogin.app"
-            BlueprintName = "FirebaseSocialLogin"
-            ReferencedContainer = "container:FirebaseSocialLogin.xcodeproj">
+            BuildableName = "Call Light.app"
+            BlueprintName = "Call Light"
+            ReferencedContainer = "container:Call Light.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -58,9 +58,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C7BE77F51DBB3A70005E6090"
-            BuildableName = "FirebaseSocialLogin.app"
-            BlueprintName = "FirebaseSocialLogin"
-            ReferencedContainer = "container:FirebaseSocialLogin.xcodeproj">
+            BuildableName = "Call Light.app"
+            BlueprintName = "Call Light"
+            ReferencedContainer = "container:Call Light.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
