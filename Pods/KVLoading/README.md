@@ -1,13 +1,8 @@
-# KVLoading
+# Introduction
 
-[![CI Status](http://img.shields.io/travis/vuvankhac/KVLoading.svg?style=flat)](https://travis-ci.org/vuvankhac/KVLoading)
-[![Version](https://img.shields.io/cocoapods/v/KVLoading.svg?style=flat)](http://cocoapods.org/pods/KVLoading)
-[![License](https://img.shields.io/cocoapods/l/KVLoading.svg?style=flat)](http://cocoapods.org/pods/KVLoading)
-[![Platform](https://img.shields.io/cocoapods/p/KVLoading.svg?style=flat)](http://cocoapods.org/pods/KVLoading)
+`KVLoading` is a loading screen and you can customize. Really simple to use, just add the class and write few line of code.
 
 ## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 | Default | Custom |
 | --- | --- |
@@ -15,13 +10,16 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+* iOS 8.0+
+* Swift 3.0
+
 ## Installation
 
 KVLoading is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'KVLoading', '~> 1.4'
+pod 'KVLoading', '~> 1.5'
 ```
 
 ## Usage

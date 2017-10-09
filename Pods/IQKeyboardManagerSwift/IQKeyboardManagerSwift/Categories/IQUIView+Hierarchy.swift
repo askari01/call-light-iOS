@@ -113,11 +113,11 @@ public extension UIView {
                     if unwrappedSuperView.superview?.isKind(of: UITableView.self) == false &&
                         unwrappedSuperView.superview?.isKind(of: UITableViewCell.self) == false &&
                         classNameString.hasPrefix("_") == false {
-                        return superView;
+                        return superView
                     }
                 }
                 else {
-                    return superView;
+                    return superView
                 }
             }
             
@@ -140,7 +140,7 @@ public extension UIView {
             
             for textField in siblings {
                 
-                if textField._IQcanBecomeFirstResponder() == true {
+                if (textField == self || textField.ignoreSwitchingByNextPrevious == false) && textField._IQcanBecomeFirstResponder() == true {
                     tempTextFields.append(textField)
                 }
             }
@@ -159,7 +159,7 @@ public extension UIView {
         
         for textField in subviews {
             
-            if textField._IQcanBecomeFirstResponder() == true {
+            if (textField == self || textField.ignoreSwitchingByNextPrevious == false) && textField._IQcanBecomeFirstResponder() == true {
                 textfields.append(textField)
             }
 

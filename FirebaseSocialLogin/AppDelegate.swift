@@ -15,6 +15,7 @@ import UserNotifications
 import SwiftyJSON
 import IQKeyboardManagerSwift
 import SwiftyUserDefaults
+import Sentry
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UNUserNotificationCenterDelegate {
@@ -29,7 +30,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDel
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        // FireBase
         FirebaseApp.configure()
+        
+        // Sentry
+        // Create a Sentry client and start crash handler
+        do {
+            Client.shared = try Client(dsn: "https://124e84aff6294b80bdc8ab3631d56cba:8b081facbe214653a51a6b91f1743af9@sentry.io/227561")
+            try Client.shared?.startCrashHandler()
+        } catch let error {
+            print("\(error)")
+            // Wrong DSN or KSCrash not installed
+        }
+        
+        // testing sentry
+        // Sentry Checking: Message as event to check in sentry dashboard
+        let event = Event(level: .debug)
+        event.message = "Test Message"
+        event.environment = "staging ios app"
+        event.extra = ["ios": true]
+        Client.shared?.send(event: event)
         
         // for Keyboard
         IQKeyboardManager.sharedManager().enable = true

@@ -1,72 +1,88 @@
 PODS:
-  - Alamofire (4.5.0)
+  - Alamofire (4.5.1)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
-  - Fabric (1.6.12)
-  - FBSDKCoreKit (4.25.0):
+  - Fabric (1.6.13)
+  - FBSDKCoreKit (4.27.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.25.0):
+  - FBSDKLoginKit (4.27.0):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.25.0):
+  - FBSDKShareKit (4.27.0):
     - FBSDKCoreKit
-  - Firebase/Auth (4.0.4):
+  - Firebase/Auth (4.3.0):
     - Firebase/Core
-    - FirebaseAuth (= 4.0.0)
-  - Firebase/Core (4.0.4):
-    - FirebaseAnalytics (= 4.0.2)
-    - FirebaseCore (= 4.0.4)
-  - FirebaseAnalytics (4.0.2):
+    - FirebaseAuth (= 4.2.1)
+  - Firebase/Core (4.3.0):
+    - FirebaseAnalytics (= 4.0.4)
+    - FirebaseCore (= 4.0.8)
+  - FirebaseAnalytics (4.0.4):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseAuth (4.0.0):
+    - nanopb (~> 0.3)
+  - FirebaseAuth (4.2.1):
     - FirebaseAnalytics (~> 4.0)
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (4.0.4):
+  - FirebaseCore (4.0.8):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
-  - FirebaseInstanceID (2.0.0):
-    - FirebaseCore (~> 4.0)
-  - GoogleSignIn (4.0.2):
+  - FirebaseInstanceID (2.0.4)
+  - GoogleSignIn (4.1.0):
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
     - GTMOAuth2 (~> 1.0)
     - GTMSessionFetcher/Core (~> 1.1)
-  - GoogleToolboxForMac/DebugUtils (2.1.1):
-    - GoogleToolboxForMac/Defines (= 2.1.1)
-  - GoogleToolboxForMac/Defines (2.1.1)
-  - GoogleToolboxForMac/NSData+zlib (2.1.1):
-    - GoogleToolboxForMac/Defines (= 2.1.1)
-  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.1):
-    - GoogleToolboxForMac/DebugUtils (= 2.1.1)
-    - GoogleToolboxForMac/Defines (= 2.1.1)
-    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
-  - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
-  - GTMOAuth2 (1.1.4):
+  - GoogleToolboxForMac/DebugUtils (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.3):
+    - GoogleToolboxForMac/DebugUtils (= 2.1.3)
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)
+  - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
+  - GTMOAuth2 (1.1.5):
     - GTMSessionFetcher (~> 1.1)
-  - GTMSessionFetcher (1.1.11):
-    - GTMSessionFetcher/Full (= 1.1.11)
-  - GTMSessionFetcher/Core (1.1.11)
-  - GTMSessionFetcher/Full (1.1.11):
-    - GTMSessionFetcher/Core (= 1.1.11)
-  - IQKeyboardManagerSwift (4.0.11)
-  - KVLoading (1.4)
+  - GTMSessionFetcher (1.1.12):
+    - GTMSessionFetcher/Full (= 1.1.12)
+  - GTMSessionFetcher/Core (1.1.12)
+  - GTMSessionFetcher/Full (1.1.12):
+    - GTMSessionFetcher/Core (= 1.1.12)
+  - IQKeyboardManagerSwift (5.0.3)
+  - KSCrash/Core (1.15.12):
+    - KSCrash/Reporting/Filters/Basic
+  - KSCrash/Recording (1.15.12):
+    - KSCrash/Recording/Tools (= 1.15.12)
+  - KSCrash/Recording/Tools (1.15.12)
+  - KSCrash/Reporting/Filters/Base (1.15.12):
+    - KSCrash/Recording
+  - KSCrash/Reporting/Filters/Basic (1.15.12):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - KVLoading (1.5)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - Sentry (3.8.3):
+    - Sentry/Core (= 3.8.3)
+    - Sentry/KSCrash (= 3.8.3)
+  - Sentry/Core (3.8.3)
+  - Sentry/KSCrash (3.8.3):
+    - KSCrash/Core (~> 1.15.12)
   - SwiftyJSON (3.1.4)
   - SwiftyStarRatingView (1.0.4)
   - SwiftyUserDefaults (3.0.0)
-  - TwitterCore (3.0.0)
-  - TwitterKit (3.0.4):
-    - TwitterCore (>= 3.0.0)
+  - TwitterCore (3.0.1)
+  - TwitterKit (3.1.1):
+    - TwitterCore (>= 3.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -79,36 +95,39 @@ DEPENDENCIES:
   - GoogleSignIn
   - IQKeyboardManagerSwift
   - KVLoading (~> 1.1)
+  - Sentry
   - SwiftyJSON
   - SwiftyStarRatingView
   - SwiftyUserDefaults
   - TwitterKit
 
 SPEC CHECKSUMS:
-  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
-  FBSDKCoreKit: 53e3f4bfb64e80c5f229dd30ae33ff57fbbbd2d1
-  FBSDKLoginKit: f628c09684dae9c17f071cf90b014e886f5093ea
-  FBSDKShareKit: aea699d3cac749af08e360f4e949b82ffa8813f5
-  Firebase: 1492bf04e1b73a7353b4fb2cf5a20bac9692f341
-  FirebaseAnalytics: ad41720e3e67fc63fbe3d2948d3e26932a8de311
-  FirebaseAuth: ebb6abcbabae00fc47446d690c19ce68d8484fde
-  FirebaseCore: cfc042628ef9f20debe09c0eb683135fcd404cb4
-  FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
-  GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
-  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
-  GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
-  IQKeyboardManagerSwift: 10f0a6b8ea2904c8943c0e1a116c99f5b8ad83af
-  KVLoading: 64785bf0333c1873265c4a7c7cbdb4565ef63d55
+  Fabric: 2fb5676bc811af011a04513451f463dac6803206
+  FBSDKCoreKit: ebc6c5f5b3f0e72396041050e2266781a38ac587
+  FBSDKLoginKit: 887be4b7452e1c5a3cc4485ce152529965a0c41e
+  FBSDKShareKit: 4f83956d4ca2960730fe7588a168eb8d535c06dc
+  Firebase: 83283761a1ef6dc9846e03d08059f51421afbd65
+  FirebaseAnalytics: 722b53c7b32bfc7806b06e0093a2f5180d4f2c5a
+  FirebaseAuth: d7f047fbeab98062b98ea933b8d934e0fb1190e2
+  FirebaseCore: 69b1a5ac5f857ba6d5fd9d5fe794f4786dd5e579
+  FirebaseInstanceID: 70c2b877e9338971b2429ea5a4293df6961aa44e
+  GoogleSignIn: 8c599fc10d25b2af86a3f82fd9631e863f2b1400
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
+  GTMOAuth2: be83fd28d63ae3087e7d351b1f39c1a7e24ab6e7
+  GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
+  IQKeyboardManagerSwift: e257e513744cf32123eca7061272acea0246fc83
+  KSCrash: 931b6caeebfbfe0d316007fcd209f6cb9889c624
+  KVLoading: 9143eb98256a2e2fcecb94f563608fec2ce3f6a3
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  Sentry: 0f2986f8ae88ce2134b5e1ef85998ef8b4f066b6
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   SwiftyStarRatingView: a2b0057700e0adeb8e7442c55d99cb53b531d2f4
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
-  TwitterCore: 8ce250be1eb34633a0e6acc89520d4165ec52c10
-  TwitterKit: 5064d99632a8d6e5f1364e6e8f7b211d196c0840
+  TwitterCore: 6856288a1c25e5281363250681f33b42fce1da42
+  TwitterKit: 313bf02baee8427f7649b3640169178e5a8b5a99
 
-PODFILE CHECKSUM: 20cefb87e93c547b1793b4793a09f6cd34a91ca5
+PODFILE CHECKSUM: 00c2508c17b0a51b3bd3d53c6a9a81457e7e2c3b
 
 COCOAPODS: 1.3.1

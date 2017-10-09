@@ -49,12 +49,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>KSCrash.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>KVLoading.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-FirebaseSocialLogin.xcscheme</key>
+		<key>Pods-Call Light.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Sentry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

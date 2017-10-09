@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "77E739EE16422EAA2DC3BABB59AD1EE1"
+               BlueprintIdentifier = "AE01B891DBBF01F9CADBAEC726DEBA5B"
                BuildableName = "SwiftyStarRatingView.framework"
                BlueprintName = "SwiftyStarRatingView"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "77E739EE16422EAA2DC3BABB59AD1EE1"
+            BlueprintIdentifier = "AE01B891DBBF01F9CADBAEC726DEBA5B"
             BuildableName = "SwiftyStarRatingView.framework"
             BlueprintName = "SwiftyStarRatingView"
             ReferencedContainer = "container:Pods.xcodeproj">
