@@ -28,7 +28,6 @@
 		36F280101E9B471600EB2239 /* Logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F2800F1E9B471600EB2239 /* Logout.swift */; };
 		36FCF90B1E9CAAC0001F8884 /* TimePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36FCF90A1E9CAAC0001F8884 /* TimePickerView.xib */; };
 		36FCF90D1E9CAF6D001F8884 /* TimerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FCF90C1E9CAF6D001F8884 /* TimerPickerView.swift */; };
-		3BB11F5A22C3F1D8EF7DEB6A /* Pods_FirebaseSocialLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07674C9BE8EC46635E4CCD4B /* Pods_FirebaseSocialLogin.framework */; };
 		892CAA7970426477AD8F2324 /* Pods_Call_Light.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC8D7EADA13B26AD886661A /* Pods_Call_Light.framework */; };
 		C7BE77FA1DBB3A70005E6090 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BE77F91DBB3A70005E6090 /* AppDelegate.swift */; };
 		C7BE77FC1DBB3A70005E6090 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BE77FB1DBB3A70005E6090 /* ViewController.swift */; };
@@ -83,7 +82,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BB11F5A22C3F1D8EF7DEB6A /* Pods_FirebaseSocialLogin.framework in Frameworks */,
 				892CAA7970426477AD8F2324 /* Pods_Call_Light.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,9 +535,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FirebaseSocialLogin/FirebaseSocialLogin.entitlements;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 79Q3Z37GR8;
 				INFOPLIST_FILE = FirebaseSocialLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = com.th.calllight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -554,9 +554,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FirebaseSocialLogin/FirebaseSocialLogin.entitlements;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 79Q3Z37GR8;
 				INFOPLIST_FILE = FirebaseSocialLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = com.th.calllight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
