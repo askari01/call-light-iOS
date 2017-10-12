@@ -44,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDel
             // Wrong DSN or KSCrash not installed
         }
         
+        
         // testing sentry
         // Sentry Checking: Message as event to check in sentry dashboard
         let event = Event(level: .debug)

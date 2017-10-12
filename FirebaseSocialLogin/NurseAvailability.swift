@@ -38,6 +38,10 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         startShiftBtn.layer.cornerRadius = 8
         startLunchBreakAction.layer.cornerRadius = 8
         
+        image.layer.borderWidth = 2
+        image.layer.cornerRadius = 5
+        image.layer.borderColor = UIColor.darkGray.cgColor
+        
 //        // adding tap gesture
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -105,6 +109,18 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         }
         
     }
+    
+    
+    @IBAction func logoutAction(_ sender: Any) {
+        var a = Logout.logOut()
+        if a {
+            performSegue(withIdentifier: "logOut", sender: self)
+        } else {
+            print ("logout issue")
+        }
+    }
+    
+    
 //
 //    func keyboardWillShow(notification: NSNotification) {
 //        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {

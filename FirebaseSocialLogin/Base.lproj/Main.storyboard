@@ -15,7 +15,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Call_Light" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -177,7 +177,7 @@
         <!--Log In Email-->
         <scene sceneID="Rlk-s7-oV5">
             <objects>
-                <viewController title="Log In Email" id="vVP-jf-3d2" customClass="loginEmail" customModule="FirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Log In Email" id="vVP-jf-3d2" customClass="loginEmail" customModule="Call_Light" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vvz-Bf-P9p"/>
                         <viewControllerLayoutGuide type="bottom" id="pQo-mM-ymM"/>
@@ -281,7 +281,7 @@
         <!--Forgot Password-->
         <scene sceneID="RAR-4Y-en7">
             <objects>
-                <viewController title="Forgot Password" id="NoA-wY-w3c" customClass="ForgotPassword" customModule="FirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Forgot Password" id="NoA-wY-w3c" customClass="ForgotPassword" customModule="Call_Light" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y0o-a0-4CJ"/>
                         <viewControllerLayoutGuide type="bottom" id="puA-T6-T94"/>
@@ -372,7 +372,7 @@
         <!--Verify Code Password Change-->
         <scene sceneID="iG2-md-wVP">
             <objects>
-                <viewController id="uce-m0-gdR" customClass="VerifyCodePasswordChange" customModule="FirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uce-m0-gdR" customClass="VerifyCodePasswordChange" customModule="Call_Light" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mMq-hH-Wch"/>
                         <viewControllerLayoutGuide type="bottom" id="Vm4-oX-4Qv"/>
@@ -449,7 +449,7 @@
         <!--Change password-->
         <scene sceneID="4ul-Qp-x8u">
             <objects>
-                <viewController title="Change password" id="0pC-c6-YBe" customClass="ChangePassword" customModule="FirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Change password" id="0pC-c6-YBe" customClass="ChangePassword" customModule="Call_Light" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1bq-uX-KEu"/>
                         <viewControllerLayoutGuide type="bottom" id="mid-q5-3Lt"/>
@@ -545,7 +545,7 @@
         <!--Sign Up Email-->
         <scene sceneID="Ey2-My-E2Z">
             <objects>
-                <viewController title="Sign Up Email" id="C0E-ze-3A8" customClass="SignUpEmail" customModule="FirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Sign Up Email" id="C0E-ze-3A8" customClass="SignUpEmail" customModule="Call_Light" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kpn-u3-xX7"/>
                         <viewControllerLayoutGuide type="bottom" id="Kgg-EB-8mE"/>
@@ -700,7 +700,7 @@
         <!--Nurse Sign Up-->
         <scene sceneID="czL-oa-Adi">
             <objects>
-                <viewController title="Nurse Sign Up" id="IZf-bw-gOf" customClass="NurseShift" customModule="FirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Nurse Sign Up" id="IZf-bw-gOf" customClass="NurseShift" customModule="Call_Light" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="62W-qz-Lmg"/>
                         <viewControllerLayoutGuide type="bottom" id="qCn-0c-eov"/>
@@ -898,7 +898,7 @@
         <!--Add Documents-->
         <scene sceneID="2EK-3Z-7JG">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="n8A-3o-Gsk" customClass="AddDocumentsHospital" customModule="FirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="n8A-3o-Gsk" customClass="AddDocumentsHospital" customModule="Call_Light" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="IfS-c9-Boy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -955,7 +955,7 @@
         <!--Nurse-->
         <scene sceneID="64G-AJ-nPi">
             <objects>
-                <tableViewController title="Nurse" id="oub-ZI-iTI" customClass="Nurses" customModule="FirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Nurse" id="oub-ZI-iTI" customClass="Nurses" customModule="Call_Light" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="XQ2-mK-J1x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1112,7 +1112,7 @@
         <!--Map-->
         <scene sceneID="fDy-tp-tlm">
             <objects>
-                <viewController id="gqL-dq-KWo" customClass="NursesMaps" customModule="FirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gqL-dq-KWo" customClass="NursesMaps" customModule="Call_Light" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="exd-O3-IJZ"/>
                         <viewControllerLayoutGuide type="bottom" id="9VA-sX-pyv"/>
@@ -1169,7 +1169,7 @@
         <!--Nurse Profile-->
         <scene sceneID="8pr-Y6-pDR">
             <objects>
-                <viewController id="lhh-mp-cv3" customClass="NurseProfile" customModule="FirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lhh-mp-cv3" customClass="NurseProfile" customModule="Call_Light" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6WY-Is-J35"/>
                         <viewControllerLayoutGuide type="bottom" id="M00-pl-phu"/>
@@ -1374,7 +1374,7 @@
         <!--Profile-->
         <scene sceneID="BhQ-hb-1RT">
             <objects>
-                <viewController storyboardIdentifier="HospitalProfileView" id="sQQ-X4-Xra" customClass="HospitalProfile" customModule="FirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HospitalProfileView" id="sQQ-X4-Xra" customClass="HospitalProfile" customModule="Call_Light" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Aap-dH-9eh"/>
                         <viewControllerLayoutGuide type="bottom" id="wgn-QD-qfK"/>
@@ -1768,7 +1768,7 @@
         <!--Payment-->
         <scene sceneID="Sa5-FU-Pjg">
             <objects>
-                <viewController id="7Ld-ir-2Qo" customClass="Payment" customModule="FirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7Ld-ir-2Qo" customClass="Payment" customModule="Call_Light" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Fv-mH-QOp"/>
                         <viewControllerLayoutGuide type="bottom" id="4o9-Pk-sa1"/>
@@ -1825,7 +1825,7 @@
         <!--History-->
         <scene sceneID="VyS-K7-aBn">
             <objects>
-                <viewController id="aT5-6c-dfb" customClass="Requests" customModule="FirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aT5-6c-dfb" customClass="Requests" customModule="Call_Light" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dvu-6d-ari"/>
                         <viewControllerLayoutGuide type="bottom" id="Tn8-jl-ikk"/>
@@ -1838,7 +1838,7 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="140" id="62Q-hz-lY2" customClass="CustomCell" customModule="FirebaseSocialLogin" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="140" id="62Q-hz-lY2" customClass="CustomCell" customModule="Call_Light" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="62Q-hz-lY2" id="bR3-BD-VYS">
@@ -2074,7 +2074,7 @@
         <!--Home-->
         <scene sceneID="D5z-dK-XcT">
             <objects>
-                <viewController id="VMm-8j-Vv2" customClass="NurseAvailability" customModule="FirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VMm-8j-Vv2" customClass="NurseAvailability" customModule="Call_Light" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wcX-tb-a6i"/>
                         <viewControllerLayoutGuide type="bottom" id="tsO-uI-HoX"/>
@@ -2128,6 +2128,20 @@
                                     <action selector="startShiftActoin:" destination="VMm-8j-Vv2" eventType="touchUpInside" id="9d3-q0-bjs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tm-3e-eoX">
+                                <rect key="frame" x="263" y="28" width="131" height="30"/>
+                                <color key="backgroundColor" red="0.22352941179999999" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="131" id="aLL-LQ-YQx"/>
+                                </constraints>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutAction:" destination="IZf-bw-gOf" eventType="touchUpInside" id="A1H-ln-egO"/>
+                                    <action selector="logoutAction:" destination="VMm-8j-Vv2" eventType="touchUpInside" id="iH8-CA-K96"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -2155,9 +2169,11 @@
                             <constraint firstAttribute="trailing" secondItem="Gc5-Jz-4Ps" secondAttribute="trailing" id="aUV-2J-rls"/>
                             <constraint firstItem="aFl-E2-Ii1" firstAttribute="trailing" secondItem="Gc5-Jz-4Ps" secondAttribute="trailing" id="fpQ-Qo-gbS"/>
                             <constraint firstItem="aFl-E2-Ii1" firstAttribute="centerX" secondItem="9hd-r3-Ugy" secondAttribute="centerX" id="pGq-A2-QZW"/>
+                            <constraint firstItem="8tm-3e-eoX" firstAttribute="top" secondItem="wcX-tb-a6i" secondAttribute="bottom" constant="8" symbolic="YES" id="qrR-3O-tUs"/>
                             <constraint firstItem="tsO-uI-HoX" firstAttribute="top" secondItem="bnY-jc-EhN" secondAttribute="bottom" constant="89" id="sEV-pQ-KUt"/>
                             <constraint firstItem="9hd-r3-Ugy" firstAttribute="centerX" secondItem="OVG-Bj-S7C" secondAttribute="centerX" id="uJh-aB-rRN"/>
                             <constraint firstItem="Gc5-Jz-4Ps" firstAttribute="top" secondItem="aFl-E2-Ii1" secondAttribute="top" id="vPX-Qk-Kcf"/>
+                            <constraint firstItem="8tm-3e-eoX" firstAttribute="trailing" secondItem="9hd-r3-Ugy" secondAttribute="trailing" id="ycw-lh-wf7"/>
                             <constraint firstItem="OVG-Bj-S7C" firstAttribute="leading" secondItem="Vq1-IG-LNF" secondAttribute="leading" constant="20" id="zN1-Eh-YiD"/>
                         </constraints>
                     </view>
@@ -2234,7 +2250,7 @@
         <!--Location-->
         <scene sceneID="TkZ-c4-OaE">
             <objects>
-                <viewController id="ay4-ta-Sdq" customClass="signUpLocation" customModule="FirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ay4-ta-Sdq" customClass="signUpLocation" customModule="Call_Light" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y9L-6u-0TV"/>
                         <viewControllerLayoutGuide type="bottom" id="vMv-aV-dlj"/>
@@ -2304,7 +2320,7 @@
         <!--Location Search Table-->
         <scene sceneID="kT5-Od-ur7">
             <objects>
-                <tableViewController storyboardIdentifier="LocationSearchTable" id="LV1-yG-NFx" customClass="LocationSearchTable" customModule="FirebaseSocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LocationSearchTable" id="LV1-yG-NFx" customClass="LocationSearchTable" customModule="Call_Light" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4ya-m9-zJF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2372,7 +2388,7 @@
         <image name="user" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Aqf-Jj-MDa"/>
+        <segue reference="xLp-hE-HuP"/>
         <segue reference="BBS-SF-cZB"/>
         <segue reference="Z6c-22-UjX"/>
         <segue reference="3Gm-h0-FHV"/>
@@ -2381,6 +2397,6 @@
         <segue reference="mVY-J6-op8"/>
         <segue reference="VKG-Yr-5Tm"/>
         <segue reference="Pqp-jC-GIo"/>
-        <segue reference="QHO-6Q-ZhC"/>
+        <segue reference="7Pw-ZG-dXd"/>
     </inferredMetricsTieBreakers>
 </document>
