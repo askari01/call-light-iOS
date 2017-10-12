@@ -31,7 +31,7 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         super.viewDidLoad()
         
         // check availability
-//        check()
+        check()
         print("I am: \(Defaults[self.available])")
         
         
@@ -54,8 +54,8 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         
         view.addGestureRecognizer(tap1)
         
-        label.text = "Tap to set Status"
-        image.image = UIImage(named: "red_720.png")
+//        label.text = "Tap to set Status"
+//        image.image = UIImage(named: "red_720.png")
         
         if UserDefaults.standard.bool(forKey: "profileVerified") == false {
             let alert = UIAlertController(title: "Profile Status", message: "Your Account Verification Request is pending approval", preferredStyle: UIAlertControllerStyle.alert)
@@ -301,27 +301,32 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
         self.present(alert1, animated: true, completion: nil)
     }
     
-//    func check () {
+    func check () {
 //        if let UserDefaults.standard.string(forKey: "avail")
 //       if UserDefaults.standard.string(forKey: "avail") != "-1" {
-//        if (UserDefaults.standard.string(forKey: "avail") == "1" ) {
-//            label.text = "Available"
-//            image.image = UIImage(named: "green_720.png")
+        print (UserDefaults.standard.string(forKey: "avail")!)
+        print (Defaults[available])
+        if Defaults[available] != nil {
+            UserDefaults.standard.set(Defaults[available], forKey: "avail")
+        }
+        if (Defaults[available] == 1 ) {
+            label.text = "Available"
+            image.image = UIImage(named: "green_720.png")
 //            Defaults.setValue("1", forKey: "avail")
-//        } else if (UserDefaults.standard.string(forKey: "avail") == "0") {
-//            label.text = "Not Available"
-//            image.image = UIImage(named: "red_720.png")
+        } else if (Defaults[available] == 0) {
+            label.text = "Not Available"
+            image.image = UIImage(named: "red_720.png")
 //            Defaults.setValue("0", forKey: "avail")
-//        } else {
-//            label.text = "Your Account is Pending Approval"
-//            image.image = UIImage(named: "nurseDecline.png")
-//            Defaults.setValue("-1", forKey: "avail")
+        } else {
+            label.text = "Your Account is Pending Approval"
+            image.image = UIImage(named: "nurseDecline.png")
+            Defaults.setValue("-1", forKey: "avail")
 //            self.blur.isHidden = false
 //        }        } else {
 //        print ("else")
-////        Defaults.setValue("-1", forKey: "avail")
-//        }
-//    }
+//            Defaults.setValue("-1", forKey: "avail")
+        }
+    }
     
     // text area
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -528,18 +533,22 @@ class NurseAvailability: UIViewController, UIGestureRecognizerDelegate, UITabBar
     }
     
     func availabilitySet() {
+        print (UserDefaults.standard.string(forKey: "avail")!)
         if (Defaults[available] == 1 ) {
+            UserDefaults.standard.set(1, forKey: "avail" )
             label.text = "Available"
             image.image = UIImage(named: "green_720.png")
-            Defaults.setValue("1", forKey: "avail")
+//            Defaults.setValue("1", forKey: "avail")
         } else if (Defaults[available] == 0) {
+            UserDefaults.standard.set(0, forKey: "avail" )
             label.text = "Not Available"
             image.image = UIImage(named: "red_720.png")
-            Defaults.setValue("0", forKey: "avail")
+//            Defaults.setValue("0", forKey: "avail")
         } else {
+            UserDefaults.standard.set( -1 , forKey: "avail" )
             label.text = "Your Account is Pending Approval"
             image.image = UIImage(named: "nurseDecline.png")
-            Defaults.setValue("-1", forKey: "avail")
+//            Defaults.setValue("-1", forKey: "avail")
             self.blur.isHidden = false
         }
         KVLoading.hide()
