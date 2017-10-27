@@ -302,7 +302,7 @@ class NurseProfile: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
 //                        print(json[0])
                         KVLoading.hide()
                         // create the alert
-                        let alert = UIAlertController(title: "Request Nurse", message: "Request to Nurse Send", preferredStyle: UIAlertControllerStyle.alert)
+                        let alert = UIAlertController(title: "Request Nurse", message: "Request to Nurse Sent", preferredStyle: UIAlertControllerStyle.alert)
                         
                         // add the actions (buttons)
                         alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: {action in

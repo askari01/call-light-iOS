@@ -325,7 +325,7 @@ class Nurses: UITableViewController {
                                 print(json123[0])
                                 KVLoading.hide()
                                 // create the alert
-                                let alert = UIAlertController(title: "Request Nurse", message: "Request to Nurse Send", preferredStyle: UIAlertControllerStyle.alert)
+                                let alert = UIAlertController(title: "Request Nurse", message: "Request to Nurse Sent", preferredStyle: UIAlertControllerStyle.alert)
                                 
                                 // add the actions (buttons)
                                 alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: {action in
@@ -440,7 +440,7 @@ class Nurses: UITableViewController {
                                 print(json123[0])
                                 KVLoading.hide()
                                 // create the alert
-                                let alert = UIAlertController(title: "Request Nurse", message: "Request to Nurse Send", preferredStyle: UIAlertControllerStyle.alert)
+                                let alert = UIAlertController(title: "Request Nurse", message: "Request to Nurse Sent", preferredStyle: UIAlertControllerStyle.alert)
                                 
                                 // add the actions (buttons)
                                 alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: {action in
@@ -648,7 +648,7 @@ class Nurses: UITableViewController {
                                 print(json12[0])
                                 KVLoading.hide()
                                 // create the alert
-                                let alert = UIAlertController(title: "Request Nurse", message: "Request to Nurse Send", preferredStyle: UIAlertControllerStyle.alert)
+                                let alert = UIAlertController(title: "Request Nurse", message: "Request to Nurse Sent", preferredStyle: UIAlertControllerStyle.alert)
                                 
                                 // add the actions (buttons)
                                 alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: {action in
