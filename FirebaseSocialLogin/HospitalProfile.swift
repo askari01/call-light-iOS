@@ -34,6 +34,7 @@ class HospitalProfile: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var numberLbl: UILabel!
     @IBOutlet weak var addressLbl: UILabel!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var nameC: UILabel!
     
     @IBAction func logOut(_ sender: Any) {
         var a = Logout.logOut()
@@ -216,6 +217,9 @@ class HospitalProfile: UIViewController, MKMapViewDelegate {
                         print (address)
                         if json1["data"]["country"].string != "empty" {
                             self.addressLbl.text = address
+                        }
+                        if json1["data"]["hospital_name"].string != nil {
+                            self.nameC.text = json1["data"]["hospital_name"].string 
                         }
                     }
                 }

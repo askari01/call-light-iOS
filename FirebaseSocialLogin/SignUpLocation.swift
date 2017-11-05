@@ -33,6 +33,7 @@ class signUpLocation: UIViewController, UIGestureRecognizerDelegate {
     var shift: Int = 0
     var type: Int = 0
     var speciality: String = "empty"
+    var hospitalName: String = "empty"
 
     @IBOutlet weak var mapView: MKMapView!
 
@@ -43,6 +44,7 @@ class signUpLocation: UIViewController, UIGestureRecognizerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
+        locationManager.startUpdatingLocation()
         // Do any additional setup after loading the view.
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -113,7 +115,8 @@ class signUpLocation: UIViewController, UIGestureRecognizerDelegate {
                 "gender": self.gender,
                 "shift": self.shift,
                 "type": self.type,
-                "speciality": self.speciality
+                "speciality": self.speciality,
+                "hospital_name": self.hospitalName
                 //                "user_id": 5
             ]
             

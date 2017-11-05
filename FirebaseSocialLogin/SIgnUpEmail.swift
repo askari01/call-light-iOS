@@ -22,6 +22,7 @@ class SignUpEmail: UIViewController, UIGestureRecognizerDelegate, UIImagePickerC
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var authPersonalName: UITextField!
     
     let picker = UIImagePickerController()
     var json: JSON = []
@@ -40,6 +41,11 @@ class SignUpEmail: UIViewController, UIGestureRecognizerDelegate, UIImagePickerC
         picker.delegate = self
         
 //        print ("PROFILE USER TYPE: ", Defaults.value(forKey: "UserType"))
+        if UserDefaults.standard.string(forKey: "UserType") == "Hospital" {
+            self.authPersonalName.isHidden = false
+        } else {
+            self.authPersonalName.isHidden = true
+        }
     }
     
     func pickImageOptions() {
@@ -99,15 +105,27 @@ class SignUpEmail: UIViewController, UIGestureRecognizerDelegate, UIImagePickerC
             deviceToken = UserDefaults.standard.string(forKey: "deviceToken")!
         }
     
-        let parameters: Parameters = [
+        let parameters: Parameters!
+        if UserDefaults.standard.string(forKey: "UserType") == "Hospital" {
+            parameters = [
             "name": name.text,
             "email": email.text,
             "phone": phoneNumber.text,
             "password": password.text,
             "type": String(describing: UserDefaults.standard.string(forKey: "UserType")!),
             "device_token": deviceToken
-        ]
-
+            ]
+        } else {
+            parameters = [
+                "name": name.text,
+                "email": email.text,
+                "phone": phoneNumber.text,
+                "password": password.text,
+                "type": String(describing: UserDefaults.standard.string(forKey: "UserType")!),
+                "hospital_name": authPersonalName.text,
+                "device_token": deviceToken
+            ]
+        }
         print(parameters)
         
         Alamofire.request("http://thenerdcamp.com/calllight/public/api/v1/user/register", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil ).responseJSON{ response in

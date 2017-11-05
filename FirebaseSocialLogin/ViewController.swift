@@ -85,6 +85,12 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         googlePlusButton.layer.cornerRadius = 8
         signUpButton.layer.cornerRadius = 8
         emailButton.layer.cornerRadius = 8
+        
+        if UserDefaults.standard.string(forKey: "UserType") == "Hospital" {
+            userType.selectedSegmentIndex = 1
+        } else {
+            userType.selectedSegmentIndex = 0
+        }
     }
     
     @IBAction func signUpAction(_ sender: Any) {
