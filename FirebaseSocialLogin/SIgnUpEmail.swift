@@ -43,8 +43,10 @@ class SignUpEmail: UIViewController, UIGestureRecognizerDelegate, UIImagePickerC
 //        print ("PROFILE USER TYPE: ", Defaults.value(forKey: "UserType"))
         if UserDefaults.standard.string(forKey: "UserType") == "Hospital" {
             self.authPersonalName.isHidden = false
+            self.name.placeholder = "Hospital"
         } else {
             self.authPersonalName.isHidden = true
+            self.name.placeholder = "Name"
         }
     }
     
