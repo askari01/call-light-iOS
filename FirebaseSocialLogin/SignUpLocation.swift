@@ -20,9 +20,9 @@ protocol HandleMapSearch {
 
 class signUpLocation: UIViewController, UIGestureRecognizerDelegate {
     
+    var resultSearchController:UISearchController!
+    var selectedPin:MKPlacemark?
     let locationManager = CLLocationManager()
-    var resultSearchController:UISearchController? = nil
-    var selectedPin:MKPlacemark? = nil
     var altitude: Double = 0.0
     var country: String = "empty"
     var zipCode: String = "empty"
@@ -36,7 +36,7 @@ class signUpLocation: UIViewController, UIGestureRecognizerDelegate {
     var hospitalName: String = "empty"
 
     @IBOutlet weak var mapView: MKMapView!
-
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -56,25 +56,32 @@ class signUpLocation: UIViewController, UIGestureRecognizerDelegate {
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
         searchBar.placeholder = "Search for places"
-        navigationItem.titleView = resultSearchController?.searchBar
+        
+        self.navigationItem.titleView = searchBar
         
         resultSearchController?.hidesNavigationBarDuringPresentation = false
         resultSearchController?.dimsBackgroundDuringPresentation = true
         definesPresentationContext = true
         
         locationSearchTable.mapView = mapView
-        
         locationSearchTable.handleMapSearchDelegate = self
         
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap) )
         gestureRecognizer.delegate = self
         mapView.addGestureRecognizer(gestureRecognizer)
-    
+        navigationController?.isNavigationBarHidden = false
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func getDirections(){
+        guard let selectedPin = selectedPin else { return }
+        let mapItem = MKMapItem(placemark: selectedPin)
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+        mapItem.openInMaps(launchOptions: launchOptions)
     }
     
     func handleTap(gestureReconizer: UILongPressGestureRecognizer) {
@@ -269,7 +276,7 @@ extension signUpLocation : CLLocationManagerDelegate {
 extension signUpLocation: HandleMapSearch {
     func dropPinZoomIn(placemark:MKPlacemark){
         // stop Updating Location
-        locationManager.stopUpdatingLocation()
+//        locationManager.stopUpdatingLocation()
         
         // cache the pin
         selectedPin = placemark
@@ -286,5 +293,27 @@ extension signUpLocation: HandleMapSearch {
         let span = MKCoordinateSpanMake(0.05, 0.05)
         let region = MKCoordinateRegionMake(placemark.coordinate, span)
         mapView.setRegion(region, animated: true)
+    }
+}
+
+extension ViewController : MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?{
+        
+        guard !(annotation is MKUserLocation) else { return nil }
+        let reuseId = "pin"
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        if pinView == nil {
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+        }
+        pinView?.pinTintColor = UIColor.orange
+        pinView?.canShowCallout = true
+        let smallSquare = CGSize(width: 30, height: 30)
+        let button = UIButton(frame: CGRect(origin: CGPoint(x: 0,y :0), size: smallSquare))
+        button.setBackgroundImage(UIImage(named: "car"), for: .normal)
+        button.addTarget(self, action: #selector(signUpLocation.getDirections), for: .touchUpInside)
+        pinView?.leftCalloutAccessoryView = button
+        
+        return pinView
     }
 }

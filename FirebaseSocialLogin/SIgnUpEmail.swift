@@ -110,6 +110,7 @@ class SignUpEmail: UIViewController, UIGestureRecognizerDelegate, UIImagePickerC
         let parameters: Parameters!
         if UserDefaults.standard.string(forKey: "UserType") == "Hospital" {
             parameters = [
+            "hospital_name": authPersonalName.text,
             "name": name.text,
             "email": email.text,
             "phone": phoneNumber.text,
