@@ -14,11 +14,12 @@
 		3606409D1E8BB1B10059D116 /* Nurses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3606409C1E8BB1B10059D116 /* Nurses.swift */; };
 		360909001E9381B2007BC915 /* NurseShift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360908FF1E9381B2007BC915 /* NurseShift.swift */; };
 		3616A5951EC59FBD00F10711 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3616A5941EC59FBD00F10711 /* CustomCell.swift */; };
-		361E36131E6D4F82004EC88E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 361E36121E6D4F82004EC88E /* GoogleService-Info.plist */; };
+		361E36131E6D4F82004EC88E /* GoogleService-Info-1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 361E36121E6D4F82004EC88E /* GoogleService-Info-1.plist */; };
 		3634A0531E766BE2002816B2 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3634A0521E766BE2002816B2 /* ForgotPassword.swift */; };
 		3634A0551E766EBD002816B2 /* VerifyCodePasswordChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3634A0541E766EBD002816B2 /* VerifyCodePasswordChange.swift */; };
 		3634A0571E76798C002816B2 /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3634A0561E76798C002816B2 /* ChangePassword.swift */; };
 		3668D2D91E9E31310006767F /* HospitalProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3668D2D81E9E31310006767F /* HospitalProfile.swift */; };
+		36877CE61FC033750064BAA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36877CE51FC033740064BAA8 /* GoogleService-Info.plist */; };
 		36AA03651E96705F00571731 /* NursesMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AA03641E96705F00571731 /* NursesMaps.swift */; };
 		36AF4A771ED1E2390033E319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36AF4A761ED1E2390033E319 /* Assets.xcassets */; };
 		36B71D1B1EB095B500AA0F00 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B71D1A1EB095B500AA0F00 /* Requests.swift */; };
@@ -46,11 +47,12 @@
 		3606409C1E8BB1B10059D116 /* Nurses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nurses.swift; sourceTree = "<group>"; };
 		360908FF1E9381B2007BC915 /* NurseShift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NurseShift.swift; sourceTree = "<group>"; };
 		3616A5941EC59FBD00F10711 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
-		361E36121E6D4F82004EC88E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		361E36121E6D4F82004EC88E /* GoogleService-Info-1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-1.plist"; sourceTree = "<group>"; };
 		3634A0521E766BE2002816B2 /* ForgotPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		3634A0541E766EBD002816B2 /* VerifyCodePasswordChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyCodePasswordChange.swift; sourceTree = "<group>"; };
 		3634A0561E76798C002816B2 /* ChangePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
 		3668D2D81E9E31310006767F /* HospitalProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalProfile.swift; sourceTree = "<group>"; };
+		36877CE51FC033740064BAA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		36AA03641E96705F00571731 /* NursesMaps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NursesMaps.swift; sourceTree = "<group>"; };
 		36AF4A761ED1E2390033E319 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36B71D1A1EB095B500AA0F00 /* Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
@@ -141,7 +143,8 @@
 				C7BE77FD1DBB3A70005E6090 /* Main.storyboard */,
 				C7BE78021DBB3A70005E6090 /* LaunchScreen.storyboard */,
 				C7BE78051DBB3A70005E6090 /* Info.plist */,
-				361E36121E6D4F82004EC88E /* GoogleService-Info.plist */,
+				36877CE51FC033740064BAA8 /* GoogleService-Info.plist */,
+				361E36121E6D4F82004EC88E /* GoogleService-Info-1.plist */,
 				3603270D1E7288BA00C1D412 /* SIgnUpEmail.swift */,
 				3603270F1E72A61900C1D412 /* loginEmail.swift */,
 				3634A0521E766BE2002816B2 /* ForgotPassword.swift */,
@@ -247,7 +250,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7BE78041DBB3A70005E6090 /* LaunchScreen.storyboard in Resources */,
-				361E36131E6D4F82004EC88E /* GoogleService-Info.plist in Resources */,
+				361E36131E6D4F82004EC88E /* GoogleService-Info-1.plist in Resources */,
+				36877CE61FC033750064BAA8 /* GoogleService-Info.plist in Resources */,
 				36FCF90B1E9CAAC0001F8884 /* TimePickerView.xib in Resources */,
 				C7BE77FF1DBB3A70005E6090 /* Main.storyboard in Resources */,
 				36AF4A771ED1E2390033E319 /* Assets.xcassets in Resources */,

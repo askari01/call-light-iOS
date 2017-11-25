@@ -183,7 +183,12 @@ class NurseShift: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addLocation" {
-            let nextVC = (segue.destination as! signUpLocation)
+            print (self.NurseSpecilitySelect)
+            print (self.nurseTypeSelect)
+            print (self.nurseShiftSelect)
+            let VC = (segue.destination as! UINavigationController)
+            let nextVC = VC.topViewController as! signUpLocation
+            
             nextVC.speciality = self.NurseSpecilitySelect
             nextVC.type = self.nurseTypeSelect
             nextVC.shift = self.nurseShiftSelect

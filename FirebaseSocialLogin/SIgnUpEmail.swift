@@ -23,6 +23,7 @@ class SignUpEmail: UIViewController, UIGestureRecognizerDelegate, UIImagePickerC
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var authPersonalName: UITextField!
+    @IBOutlet weak var manualAddress: UITextField!
     
     let picker = UIImagePickerController()
     var json: JSON = []
@@ -90,6 +91,24 @@ class SignUpEmail: UIViewController, UIGestureRecognizerDelegate, UIImagePickerC
     
     @IBAction func SignUp(_ sender: Any) {
         KVLoading.show()
+        if manualAddress.text == nil {
+            return
+        }
+        if name.text == nil {
+            return
+        }
+        if email.text == nil {
+            return
+        }
+        if password.text == nil {
+            return
+        }
+        if password.text != confirmPassword.text {
+            return
+        }
+        if phoneNumber.text == nil {
+            return
+        }
 //        print("hello sexy")
         var deviceToken: String?
 //        #if (arch(i386) || arch(x86_64)) && os(iOS)
@@ -100,6 +119,7 @@ class SignUpEmail: UIViewController, UIGestureRecognizerDelegate, UIImagePickerC
 //        #else
 //                deviceToken = UserDefaults.standard.string(forKey: "deviceToken")!
 //        #endif
+        UserDefaults.standard.set("\(manualAddress.text!)", forKey: "address")
         
         if UserDefaults.standard.string(forKey: "deviceToken")! == nil {
             deviceToken = "-1"

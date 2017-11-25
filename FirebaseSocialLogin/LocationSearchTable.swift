@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import KVLoading
 
 class LocationSearchTable: UITableViewController {
 
@@ -56,6 +57,7 @@ class LocationSearchTable: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        print("view did load LocationSearchTable")
     }
 
     override func didReceiveMemoryWarning() {
@@ -175,6 +177,11 @@ extension LocationSearchTable {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print (matchingItems.count)
+        if matchingItems.count < 1 {
+            KVLoading.show()
+        } else {
+            KVLoading.hide()
+        }
         return matchingItems.count
     }
 

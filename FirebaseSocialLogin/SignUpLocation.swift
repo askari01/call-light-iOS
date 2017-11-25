@@ -34,8 +34,10 @@ class signUpLocation: UIViewController, UIGestureRecognizerDelegate {
     var type: Int = 0
     var speciality: String = "empty"
     var hospitalName: String = "empty"
+    var manualAddress: String = "empty"
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet var gesture1: UILongPressGestureRecognizer!
     
     override func viewDidLoad() {
         
@@ -48,10 +50,12 @@ class signUpLocation: UIViewController, UIGestureRecognizerDelegate {
         // Do any additional setup after loading the view.
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        
         let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
         resultSearchController = UISearchController(searchResultsController: locationSearchTable)
         resultSearchController?.searchResultsUpdater = locationSearchTable
+
+        locationSearchTable.updateSearchResults(for: resultSearchController)
+        print("view did load SignUp Location")
         
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
@@ -66,10 +70,27 @@ class signUpLocation: UIViewController, UIGestureRecognizerDelegate {
         locationSearchTable.mapView = mapView
         locationSearchTable.handleMapSearchDelegate = self
         
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap) )
-        gestureRecognizer.delegate = self
-        mapView.addGestureRecognizer(gestureRecognizer)
+//        let gestureRecognizer = UITapGestureRecognizer(target: self.view , action: #selector(handleTap(_:)))
+//        gestureRecognizer.delegate = self
+//        print (gestureRecognizer)
+//        self.mapView.addGestureRecognizer(gestureRecognizer)
+//        mapView.addGestureRecognizer(gestureRecognizer)
+        
+        gesture1.delegate = self
+        self.mapView.addGestureRecognizer(gesture1)
+        mapView.addGestureRecognizer(gesture1)
+        
         navigationController?.isNavigationBarHidden = false
+        
+        manualAddress = String(describing: UserDefaults.standard.value(forKey: "address")!)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if manualAddress != "empty" {
+            self.resultSearchController.isActive = true
+            self.resultSearchController.becomeFirstResponder()
+            self.resultSearchController.searchBar.text = "\(manualAddress)"
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,9 +105,109 @@ class signUpLocation: UIViewController, UIGestureRecognizerDelegate {
         mapItem.openInMaps(launchOptions: launchOptions)
     }
     
-    func handleTap(gestureReconizer: UILongPressGestureRecognizer) {
+    
+    @IBAction func handleTap1(_ sender: UILongPressGestureRecognizer) {
+        let location = sender.location(in: mapView)
+        let coordinate = mapView.convert(location,toCoordinateFrom: mapView)
         
-        let location = gestureReconizer.location(in: mapView)
+        
+        // Add annotation:
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        let allAnnotations = self.mapView.annotations
+        self.mapView.removeAnnotations(allAnnotations)
+        mapView.addAnnotation(annotation)
+        //        print("location: \(location)  coordinate: \(coordinate)")
+        
+        // create the alert
+        let alert = UIAlertController(title: "Add Your Location", message: "Would you like to mark this place as your address ?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: { action in
+            
+            KVLoading.show()
+            // saving data
+            var json: JSON = []
+            var parameters: Parameters = [:]
+            
+            // in case of nurse
+            parameters = [
+                "latitude": coordinate.latitude,
+                "longitude": coordinate.longitude,
+                "altitude": self.altitude,
+                "country": self.country,
+                "zip_code": self.zipCode,
+                "state": self.state,
+                "city": self.city,
+                "address": self.address,
+                "gender": self.gender,
+                "shift": self.shift,
+                "type": self.type,
+                "speciality": self.speciality,
+                "hospital_name": self.hospitalName
+                //                "user_id": 5
+            ]
+            
+            print (parameters)
+            
+            let headers: HTTPHeaders = [
+                "api_token": UserDefaults.standard.string(forKey: "apiToken")!
+            ]
+            
+            var url = ""
+            
+            if UserDefaults.standard.string(forKey: "UserType") == "Hospital" {
+                url = "http://thenerdcamp.com/calllight/public/api/v1/profile/hospitals?api_token="+UserDefaults.standard.string(forKey: "apiToken")!
+            } else {
+                url = "http://thenerdcamp.com/calllight/public/api/v1/profile/nurses?api_token="+UserDefaults.standard.string(forKey: "apiToken")!
+            }
+            
+            //            print("url: ",url)
+            let completeUrl = URL(string:url)!
+            
+            Alamofire.request(completeUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers ).responseJSON{ response in
+                //                print(response.request as Any)  // original URL request
+                //                print(response.response as Any) // URL response
+                //                print(response.result.value as Any)   // result of response serialization
+                switch response.result {
+                case .success:
+                    //                    print(response)
+                    if let value = response.result.value {
+                        json = JSON(value)
+                        //                        print(json)
+                        
+                        //                        self.profileComplete.set(true, forKey: "profileComplete")
+                        //                        Defaults.set(true, forKey: "profileComplete")
+                        
+                        //                        print (UserDefaults.standard.string(forKey: "UserType"))
+                        KVLoading.hide()
+                        
+                        //                        print ("User TYpe:", UserDefaults.standard.string(forKey: "UserType"))
+                        
+                        if UserDefaults.standard.string(forKey: "UserType")! == "Nurse" {
+                            self.performSegue(withIdentifier: "NurseProfileSegue", sender: self)
+                        } else {
+                            self.performSegue(withIdentifier: "NursesShowSegue", sender: self)
+                        }
+                    }
+                    
+                    break
+                case .failure(let error):
+                    print(error)
+                }
+                
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func handleTap(_ sender: UILongPressGestureRecognizer) {
+        
+        let location = sender.location(in: mapView)
         let coordinate = mapView.convert(location,toCoordinateFrom: mapView)
         
         
@@ -127,6 +248,7 @@ class signUpLocation: UIViewController, UIGestureRecognizerDelegate {
                 //                "user_id": 5
             ]
             
+            print (parameters)
             
             let headers: HTTPHeaders = [
                 "api_token": UserDefaults.standard.string(forKey: "apiToken")!
@@ -208,7 +330,7 @@ extension signUpLocation : CLLocationManagerDelegate {
             let span = MKCoordinateSpanMake(0.05, 0.05)
             let region = MKCoordinateRegion(center: location.coordinate, span: span)
             self.altitude = location.altitude
-            mapView.setRegion(region, animated: true)
+//            mapView.setRegion(region, animated: true)
             
             // get address
             let geoCoder = CLGeocoder()
