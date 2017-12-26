@@ -128,25 +128,26 @@ class SignUpEmail: UIViewController, UIGestureRecognizerDelegate, UIImagePickerC
         }
     
         let parameters: Parameters!
+        print ("\(authPersonalName.text)")
         if UserDefaults.standard.string(forKey: "UserType") == "Hospital" {
             parameters = [
-            "hospital_name": authPersonalName.text,
-            "name": name.text,
-            "email": email.text,
-            "phone": phoneNumber.text,
-            "password": password.text,
+            "hospital_name": authPersonalName.text! ,
+            "name": name.text! ,
+            "email": email.text! ,
+            "phone": phoneNumber.text! ,
+            "password": password.text! ,
             "type": String(describing: UserDefaults.standard.string(forKey: "UserType")!),
-            "device_token": deviceToken
+            "device_token": deviceToken!
             ]
         } else {
             parameters = [
-                "name": name.text,
-                "email": email.text,
-                "phone": phoneNumber.text,
-                "password": password.text,
+                "name": name.text! ,
+                "email": email.text! ,
+                "phone": phoneNumber.text! ,
+                "password": password.text! ,
                 "type": String(describing: UserDefaults.standard.string(forKey: "UserType")!),
-                "hospital_name": authPersonalName.text,
-                "device_token": deviceToken
+                "hospital_name": authPersonalName.text! ,
+                "device_token": deviceToken!
             ]
         }
         print(parameters)

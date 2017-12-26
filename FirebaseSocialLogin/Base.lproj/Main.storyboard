@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -2257,7 +2257,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="bOt-7w-zwn">
             <objects>
-                <tabBarController id="aHU-gW-yQx" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="nurseTab" id="aHU-gW-yQx" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="EHL-Id-aTB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2304,7 +2304,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cX8-Y2-jrr">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cX8-Y2-jrr">
                                 <rect key="frame" x="0.0" y="64" width="414" height="574"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -2313,7 +2313,7 @@
                                 </connections>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap and hold to add pin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k96-qo-F54">
-                                <rect key="frame" x="20" y="707" width="374" height="21"/>
+                                <rect key="frame" x="20" y="658" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -2349,8 +2349,6 @@
                         <outlet property="gesture1" destination="Qbb-0Q-ZZQ" id="I41-nE-OGr"/>
                         <outlet property="mapView" destination="cX8-Y2-jrr" id="wnf-Ky-fff"/>
                         <outlet property="searchDisplayController" destination="diK-en-vJd" id="Ys5-YC-Ddl"/>
-                        <segue destination="wDb-8i-i5j" kind="show" identifier="NurseProfileSegue" id="pPD-kB-dPe"/>
-                        <segue destination="aHU-gW-yQx" kind="show" identifier="NursesShowSegue" id="mxe-FH-Hc9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hK0-iX-rYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2462,16 +2460,15 @@
         <image name="user" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lbO-IW-iiC"/>
-        <segue reference="mSD-I2-bn6"/>
-        <segue reference="BBS-SF-cZB"/>
-        <segue reference="uCu-st-Da9"/>
-        <segue reference="P2z-RU-ZGw"/>
-        <segue reference="Enr-rI-ssd"/>
+        <segue reference="L2G-GE-7Xe"/>
+        <segue reference="shi-9L-5zd"/>
+        <segue reference="Z6c-22-UjX"/>
+        <segue reference="Qdd-UI-XKn"/>
+        <segue reference="N8O-lX-Imq"/>
         <segue reference="wYL-cf-AjO"/>
         <segue reference="mVY-J6-op8"/>
-        <segue reference="XB4-YS-0UI"/>
+        <segue reference="KKJ-xf-1U6"/>
         <segue reference="2X0-eU-s8U"/>
-        <segue reference="QHO-6Q-ZhC"/>
+        <segue reference="fDV-yb-k3Q"/>
     </inferredMetricsTieBreakers>
 </document>

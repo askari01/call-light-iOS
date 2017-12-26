@@ -166,6 +166,10 @@ class HospitalProfile: UIViewController, MKMapViewDelegate {
             declineBtn.isHidden = true
             declineBtn.isEnabled = false
             hospitalLbl.text = UserDefaults.standard.string(forKey: "userName")
+            print ("\(UserDefaults.standard.string(forKey: "userName"))")
+            if hospitalLbl.text == "empty" {
+                hospitalLbl.text = self.name
+            }
             numberLbl.text = UserDefaults.standard.string(forKey: "userNumber")
             getData()
         }
@@ -218,8 +222,9 @@ class HospitalProfile: UIViewController, MKMapViewDelegate {
                         if json1["data"]["country"].string != "empty" {
                             self.addressLbl.text = address
                         }
-                        if json1["data"]["hospital_name"].string != nil {
-                            self.nameC.text = json1["data"]["hospital_name"].string 
+                        if json1["data"]["hospital_name"].string != nil && json1["data"]["hospital_name"].string != "empty" {
+                            self.nameC.text = json1["data"]["hospital_name"].string
+                            self.hospitalLbl.text = json1["data"]["hospital_name"].string
                         }
                     }
                 }

@@ -81,7 +81,10 @@ class signUpLocation: UIViewController, UIGestureRecognizerDelegate {
         mapView.addGestureRecognizer(gesture1)
         
         navigationController?.isNavigationBarHidden = false
-        
+        print (UserDefaults.standard.value(forKey: "address"))
+        guard let mAddress =  UserDefaults.standard.value(forKey: "address") else {
+            return
+        }
         manualAddress = String(describing: UserDefaults.standard.value(forKey: "address")!)
     }
     
@@ -115,7 +118,7 @@ class signUpLocation: UIViewController, UIGestureRecognizerDelegate {
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
         let allAnnotations = self.mapView.annotations
-        self.mapView.removeAnnotations(allAnnotations)
+//        self.mapView.removeAnnotations(allAnnotations)
         mapView.addAnnotation(annotation)
         //        print("location: \(location)  coordinate: \(coordinate)")
         
@@ -176,8 +179,8 @@ class signUpLocation: UIViewController, UIGestureRecognizerDelegate {
                         json = JSON(value)
                         //                        print(json)
                         
-                        //                        self.profileComplete.set(true, forKey: "profileComplete")
-                        //                        Defaults.set(true, forKey: "profileComplete")
+//                                                self.profileComplete.set(true, forKey: "profileComplete")
+                                                Defaults.set(true, forKey: "profileComplete")
                         
                         //                        print (UserDefaults.standard.string(forKey: "UserType"))
                         KVLoading.hide()
@@ -185,9 +188,15 @@ class signUpLocation: UIViewController, UIGestureRecognizerDelegate {
                         //                        print ("User TYpe:", UserDefaults.standard.string(forKey: "UserType"))
                         
                         if UserDefaults.standard.string(forKey: "UserType")! == "Nurse" {
-                            self.performSegue(withIdentifier: "NurseProfileSegue", sender: self)
+//                            self.performSegue(withIdentifier: "NurseProfileSegue", sender: self)
+                            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "NurseMenu") {
+                                self.present(vc, animated: true, completion: nil)
+                            }
                         } else {
-                            self.performSegue(withIdentifier: "NursesShowSegue", sender: self)
+//                            self.performSegue(withIdentifier: "NursesShowSegue", sender: self)
+                            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "nurseTab") {
+                                self.present(vc, animated: true, completion: nil)
+                            }
                         }
                     }
                     
@@ -285,9 +294,15 @@ class signUpLocation: UIViewController, UIGestureRecognizerDelegate {
 //                        print ("User TYpe:", UserDefaults.standard.string(forKey: "UserType"))
                         
                         if UserDefaults.standard.string(forKey: "UserType")! == "Nurse" {
-                            self.performSegue(withIdentifier: "NurseProfileSegue", sender: self)
+//                            self.performSegue(withIdentifier: "NurseProfileSegue", sender: self)
+                            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "NurseMenu") {
+                                self.present(vc, animated: true, completion: nil)
+                            }
                         } else {
-                                self.performSegue(withIdentifier: "NursesShowSegue", sender: self)
+//                                self.performSegue(withIdentifier: "NursesShowSegue", sender: self)
+                            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "nurseTab") {
+                                self.present(vc, animated: true, completion: nil)
+                            }
                         }
                     }
                     
@@ -355,7 +370,7 @@ extension signUpLocation : CLLocationManagerDelegate {
                         } else {
                             self.address = "empty"
                         }
-//                        print("postalCode: \(placemark.postalCode)")
+                        print("postalCode: \(placemark.postalCode)")
                         
                         if placemark.postalCode != nil {
                             self.zipCode = placemark.postalCode!
