@@ -133,7 +133,7 @@ class NursesMaps: UIViewController, UIGestureRecognizerDelegate, MKMapViewDelega
 //        print ("tapped on annotation")
         let a = view.annotation
 //        print(a?.title)
-        performSegue(withIdentifier: "showNurseSegue", sender: self)
+//        performSegue(withIdentifier: "showNurseSegue", sender: self)
         
     }
 
@@ -141,7 +141,6 @@ class NursesMaps: UIViewController, UIGestureRecognizerDelegate, MKMapViewDelega
         
         let url = "http://thenerdcamp.com/calllight/public/api/v1/nurse/all?api_token=" + UserDefaults.standard.string(forKey: "apiToken")!
         let completeUrl = URL(string:url)!
-        
         
         let headers: HTTPHeaders = [
             "api_token": UserDefaults.standard.string(forKey: "apiToken")!

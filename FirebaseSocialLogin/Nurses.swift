@@ -45,14 +45,17 @@ class Nurses: UITableViewController {
             alert.addAction(UIAlertAction(title: "Log Out", style: UIAlertActionStyle.default, handler: { action in
                 var a = Logout.logOut()
                 if a {
-                    self.performSegue(withIdentifier: "logOut", sender: self)
+//                    self.performSegue(withIdentifier: "logOut", sender: self)
+                    let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "loginVC") as? ViewController
+                    
+                    self.present(loginViewController!, animated: true, completion: nil)
                 } else {
                     print ("logout issue")
                 }
             }))
             
             // show the alert
-//            self.present(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
